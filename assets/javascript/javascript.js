@@ -110,4 +110,22 @@ $(document).ready(function() {
                 }, 2000);
         });
 
+        // CONTACT PAGE SCROLL FUNCTIONS
+        $(".contact-footer-scroll").click(function() {
+                $("html, body").animate({
+                        scrollTop: $(".contact-page-top-sec").offset().top - 50
+                }, 2000);
+        });
+
+        // SIDE NAV OPEN/CLOSE FUNCTIONS
+        function openSlideMenu(){
+                $('.side-menu').css("width", "250px");
+                $('.shop-page-content-container').css("margin-left", "250px");
+        }
+
+        function closeSlideMenu(){
+                $('.side-menu').css("width", "0px");
+                $('.shop-page-content-container').css("margin-left", "0px");
+        }
+
 });

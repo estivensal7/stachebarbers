@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html>
+
+        <head>
+
+                <title>Stache Barbers</title>
+                <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+                <link 
+                        rel="stylesheet" 
+                        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+                        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
+                        crossorigin="anonymous"
+                >
+                <link 
+                        rel="stylesheet" 
+                        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+                        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+                        crossorigin="anonymous"
+                >
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+                
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+        </head>
+
+        <body>
+
+                <!-- NAV HEADER / LOWER NAV BAR -->
+                <nav>
+                        
+                        <div class="nav-header shop-nav">
+                                
+                                <ul>
+                                        
+                                        <li class="phone-logo">
+                                                <img src="./assets/images/phone.png">
+                                                <p>(908)-222-2222</p>
+                                        </li>
+                                        
+                                        <li class="email-logo">
+                                                <img src="./assets/images/emailLogo.png">
+                                                <p>stache@barbers.com</p>
+                                        </li>
+                                        
+                                        <li class="instagram-logo">
+                                                <img src="./assets/images/instagram.png">
+                                        </li>
+                                        
+                                        <li class="facebook-logo">
+                                                <img src="./assets/images/facebook.png">
+                                        </li>
+                                        
+                                        <li class="nav-book-appointment">
+                                                <p>BOOK APPOINTMENT</p>
+                                        </li>
+                                        
+                                        <li class="nav-shop">
+                                                <a href="./shop.html"><p>SHOP</p></a>
+                                        </li>
+                                        
+                                        <li class="nav-cart">
+                                                <p>CART [ 0 ]</p>
+                                        </li>
+                                        
+                                </ul>
+                        </div>
+                        
+                        
+                        <ul class="main-ul">
+                                <li>
+                                        <a href="#">
+                                                <span class="open-slide">
+                                                        <a href="#" onclick="openSlideMenu()">
+                                                                FILTER
+                                                        </a>
+                                                </span>
+                                        </a>
+                                </li>
+                                <li><a href="./index.html">HOME</a></li>
+                                <li><a href="./about.html">ABOUT</a></li>
+                                <li><a href="./services.html">SERVICES</a></li>
+
+                                <li class="logo">
+                                        <div id="base">
+                                                <img src="./assets/images/sbLogo1.png">
+                                        </div>
+                                </li>
+
+                                <li><a href="./gallery.html">GALLERY</a></li>
+                                <li><a href="./news.html">NEWS</a></li>
+                                <li><a href="./contact.html">CONTACT</a></li>
+
+                                <li><a href="#  ">CHECKOUT</a></li>
+                        </ul>
+
+                </nav>
+
+                
+                <!-- SERVICES PAGE HEADER -->
+                
+                <div class="shop-page-top-sec">
+                        
+                        <div class="top-sec-header">STACHE SHOP</div>
+                        
+                </div>
+                
+                
+                <!-- SERVICES PAGE CONTENT -->
+                
+                <div class="shop-page-content-container">
+                        
+                        <!-- SIDE NAV -->
+                        <div id="side-menu" class="side-nav">
+                                <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+                                <a href="#">STACHE ORIGINALS</a>
+                                <a href="#">Capes</a>
+                                <a href="#">T-Shirts</a>
+                                <a href="#">Hair Styling</a>
+                                <a href="#">Beard/Shave/Mustache</a>
+                                <a href="#">Facial Body</a>
+                                <a href="#">Razors</a>
+                                <a href="#">Snapbacks</a>
+                                <a href="#">Shop By Brand</a>
+                                <a href="#" class="brand-links">Stache</a>
+                                <a href="#" class="brand-links">Modern Male</a>
+                                <a href="#" class="brand-links">Slick Gorilla</a>
+                                <a href="#" class="brand-links">Victory Crown</a>
+                                <a href="#" class="brand-links">Xotics</a>
+                        </div>
+
+                        <!-- SHOP ITEMS -->
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee1.png" />
+                                <p class="shop-item-name">BARBERSHOP BANDITS T-SHIRT</p>
+                                <p class="shop-item-price">$27.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee2.png" />
+                                <p class="shop-item-name">BARBERSHOP BULLIES T-SHIRT</p>
+                                <p class="shop-item-price">$32.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee3.png" />
+                                <p class="shop-item-name">CLIPPER CONTROL T-SHIRT</p>
+                                <p class="shop-item-price">$32.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee4.png" />
+                                <p class="shop-item-name">CUTTING IS MY CULTURE</p>
+                                <p class="shop-item-price">$27.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee5.png" />
+                                <p class="shop-item-name">FADE TO RICHES T-SHIRT</p>
+                                <p class="shop-item-price">$29.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee6.png" />
+                                <p class="shop-item-name">I LOVE MY CLIPPERS T-SHIRT</p>
+                                <p class="shop-item-price">$27.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee7.png" />
+                                <p class="shop-item-name">STACHE MASK T-SHIRT</p>
+                                <p class="shop-item-price">$27.50</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                        <img src="./assets/images/shop-items/tee8.png" />
+                        <p class="shop-item-name">KING OF MY CRAFT T-SHIRT</p>
+                        <p class="shop-item-price">$32.95</p>
+
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                        <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                        <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                </div>
+                                                        <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                        </div>
+                        </div>
+                                        
+                                        <div class="btn-group" role="group">
+                                                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Size
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <p class="dropdown-item">Small</p>
+                                                        <p class="dropdown-item">Medium</p>
+                                                        <p class="dropdown-item">Large</p>
+                                                        <p class="dropdown-item">X-Large</p>
+                                                </div>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                        </div>
+
+                        <div class="shop-item">
+                                <img src="./assets/images/shop-items/tee9.png" />
+                                <p class="shop-item-name">RAZOR REBEL T-SHIRT</p>
+                                <p class="shop-item-price">$27.95</p>
+
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                        </div>
+                                                                <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                Size
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                <p class="dropdown-item">Small</p>
+                                                                <p class="dropdown-item">Medium</p>
+                                                                <p class="dropdown-item">Large</p>
+                                                                <p class="dropdown-item">X-Large</p>
+                                                        </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                                </div>
+
+                        <div class="shop-item">
+                        <img src="./assets/images/shop-items/tee10.png" />
+                        <p class="shop-item-name">I LOVE MY RAZOR T-SHIRT</p>
+                        <p class="shop-item-price">$27.95</p>
+
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                        <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                        <div class="input-group-text shop-item-btn" id="btnGroupAddon">Qty</div>
+                                                </div>
+                                                        <input type="text" class="form-control shop-item-qty-text" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                        </div>
+                        </div>
+                                        
+                                        <div class="btn-group" role="group">
+                                                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle shop-item-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Size
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <p class="dropdown-item">Small</p>
+                                                        <p class="dropdown-item">Medium</p>
+                                                        <p class="dropdown-item">Large</p>
+                                                        <p class="dropdown-item">X-Large</p>
+                                                </div>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary shop-item-btn">Add To Cart</button>
+                        </div>
+
+                </div>
+
+                <!-- FOOTER / FOOTER - BAR -->
+
+                <div class="footer">
+
+                        <div class="footer-content-container">
+                                <p class="footer-content-one">
+                                                414 Chestnut St, 
+                                                <br />
+                                                Union, NJ 07083
+                                                <br />
+                                                (908) 810-1648
+                                                <br />
+                                                stachebarbers@gmail.com
+                                </p>
+
+                                <img src="./assets/images/SBTransparent.png" class="footer-sb-image"/>
+                        
+                                <p class="footer-content-two">
+                                                Monday	10AM–8PM
+                                                <br />
+                                                Tuesday	10AM–8PM
+                                                <br />
+                                                Wednesday 10AM–8PM
+                                                <br />
+                                                Thursday 10AM–8PM
+                                                <br />
+                                                Friday 10AM–8PM
+                                                <br />
+                                                Saturday 10AM–6PM
+                                                <br />
+                                                Sunday Closed
+                                </p>
+                        </div>
+
+                        <div class="footer-bar">
+
+                                <p class="copyright-logo">Copyright <i class="far fa-copyright"> 2019 Stache Barbers</i></p>
+
+                                <p class="shop-footer-scroll"><i class="fas fa-angle-double-up"></i>      Back To Top     <i class="fas fa-angle-double-up"></i></p>
+
+                                <img src="./assets/images/instagram.png" class="instagram-logo">
+
+                                <img src="./assets/images/facebook.png" class="facebook-logo">
+                                
+                        </div>
+
+                </div>
+
+        </body>
+
+        <script type="text/javascript" src="./assets/javascript/javascript.js"></script>
+        <script type="text/javascript">
+                // SIDE NAV OPEN/CLOSE FUNCTIONS
+                function openSlideMenu(){
+                        $('#side-menu').css("width", "250px");
+                        console.log("clicked open");
+                }
+
+                function closeSlideMenu(){
+                        $('#side-menu').css("width", "0px");
+                        console.log("clicked closed");
+                }
+        </script>
+
+</html>
