@@ -1,0 +1,1105 @@
+
+body {
+        margin: 0;
+        padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Trocchi');
+
+body * {
+        font-family: 'Trocchi', serif;
+}
+
+/* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
+
+/* Lower Nav CSS */
+nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 180px;
+        padding: 0;
+        box-sizing: border-box;
+        transition: .5s;
+        background: #555;
+        z-index: 5;
+}
+
+nav > ul {
+        height: 135px;
+        background: url("../images/nav-wood.png");
+        transition: .5s;
+}
+
+nav.transparent > ul {
+        height: 105px;
+        background-color: rgba(102, 102, 102, 0.3);
+        transition: .5s;
+}
+
+/* transparent class will be added upon user scroll to lower-nav */
+nav.transparent {
+        background-color: rgba(102, 102, 102, 0.5);
+        height: 150px;
+        padding: 0;
+}
+
+nav > .logo {
+        display: block;
+        margin: auto;
+}
+
+nav > ul > li.logo > div#base > img {
+        height: 145px;
+        transition: .5s;
+}
+
+nav.transparent > ul > li.logo > div#base > img {
+        height: 110px;
+}
+
+/* styling banner around SB Logo in nav bar */
+#base {
+        background: #e7d0a2;
+        display: inline-block;
+        height: 145px;
+        position: relative;
+        width: 120px;
+        transition: .5s;
+}
+
+#base:before {
+        border-top: 35px solid #e7d0a2;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-radius: 2px;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 145px;
+        width: 0;
+        transition: .5s;
+}
+
+nav.transparent > ul > li.logo > div#base {
+        background: #e7d0a2;
+        display: inline-block;
+        height: 110px;
+        position: relative;
+        width: 90px;
+        transition: .5s;
+}
+
+nav.transparent > ul > li.logo > div#base:before {
+        border-top: 35px solid #e7d0a2;
+        border-left: 45px solid transparent;
+        border-right: 45px solid transparent;
+        border-radius: 2px;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 109px;
+        width: 0;
+        transition: .5s;
+}
+
+nav > ul {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+}
+
+nav > ul > li {
+        list-style: none;
+}
+
+nav > ul > li > a {
+        line-height: 115px;
+        color: #fff;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: .5s;
+        margin-left: 20px;
+        margin-right: 20px;
+}
+
+nav.transparent > ul > li > a {
+        line-height: 95px;
+}
+
+nav > ul > li > a.active,
+nav > ul > li > a:hover {
+        color: #000;
+        background-color: #e7d0a2;
+        border-radius: 2px;
+        text-decoration: none;
+}
+
+/* Section 1 */
+
+div.sec1 {
+        width: 100%;
+        height: 71vh;
+        background: url("../images/HomeHeader.png");
+        background-size: cover;
+}
+
+.sec1 > .sec1-street-logo {
+        width: 400px;
+        height: 230px;
+        background: url("../images/SBLogo3.png");
+        background-size: cover;
+        margin: auto;
+        position: relative;
+        top: 40%;
+        opacity: .4;
+}
+
+/* Nav Header CSS */
+.nav-header {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+        padding: 0;
+        box-sizing: border-box;
+        transition: .5s;
+        background: #000;
+        font-size: 13px;
+}
+
+.nav-header > ul {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        color: white;
+}
+
+.nav-header > ul > li {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+}
+
+.nav-header > ul > li > a {
+        list-style: none;
+        height: 20px;
+        margin: 0px;
+        padding: 0px 5px 0px 5px;
+        text-decoration: none;
+        color: #000;
+        background-color: #e7d0a2;
+        border-radius: 2px;
+        text-decoration: none;
+
+}
+
+.nav-header > ul > li.phone-logo,
+.nav-header > ul > li.email-logo {
+        margin-right: 20px;
+        float: left;
+        padding-top: 5px;
+}
+
+.nav-header > ul > li.phone-logo {
+        font-size: 16px;
+}
+
+.nav-header > ul > li.instagram-logo,
+.nav-header > ul > li.facebook-logo {
+        margin-right: 20px;
+        float: left;
+        padding-top: 10px;
+}
+
+.nav-header > ul > li > img {
+        width: 45px;
+        height: 45px;
+}
+
+.nav-header > ul > li.instagram-logo > img,
+.nav-header > ul > li.facebook-logo > img {
+        width: 30px;
+        height: 30px;
+        padding-top: 0px; 
+}
+
+.nav-header > ul > li,
+.nav-header > ul > li > p {
+        display: flex;
+        color: #fff;
+        padding: 0px;
+        padding-top: 12px;
+        margin: 0px;
+        text-decoration: none;
+        transition: .5s;
+}
+
+
+.nav-header > ul > li.nav-book-appointment,
+.nav-header > ul > li.nav-shop,
+.nav-header > ul > li.nav-cart {
+        margin-right: 20px;
+        margin-left: 10px;
+        padding-top: 10px;
+        margin-top: 0px;
+}
+
+.nav-header > ul > li.nav-book-appointment {
+        margin-left: 550px;
+}
+
+.nav-header > ul > li.nav-book-appointment > p,
+.nav-header > ul > li.nav-shop > p,
+.nav-header > ul > li.nav-cart > p {
+        background: #e7d0a2;
+        color: #000;
+        padding: 0px;
+        padding-left: 2.5px;
+        padding-right: 2.5px;
+        border-radius: 2px;
+        height: 20px;
+}
+
+/* scroll buttons */
+.first-scroll,
+.second-scroll,
+.about-page-scroll {
+        color: white;
+        position: relative;
+        width: 50px;
+
+        top: 40%;
+        left: 48.37%;
+        height: 50px;
+}
+
+/* Home Service Cards */
+.home-service-cards-container {
+        display: flex;
+        width: 100%;
+        height: 30vh;
+        justify-content: center;
+}
+
+.home-service-card {
+        height: 200px;
+        width: 350px;
+        position: relative;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        background-color: #444;
+        outline: 1px solid #fff;
+        outline-offset: -10px;
+}
+
+.home-service-card-text {
+        width: 100%;
+        font-size: 35px;
+        color: #e7d0a2;
+        text-shadow: #000 2px 2px;
+        bottom: 10px;
+        position: absolute;
+        text-align: center;
+}
+
+div > a > #home-appointments-card {
+        background: url("../images/service2_bg.jpg");
+        background-size: cover;
+        transition: .1s ease-in-out;
+}
+
+div > a > #home-shop-card {
+        background: url("../images/rebelRazor.jpg");
+        background-size: cover;
+        transition: .1s ease-in-out;
+}
+
+div > a > #home-barbers-card {
+        background: url("../images/service1_bg.jpg");
+        background-size: cover;
+        transition: .1s ease-in-out;
+}
+
+div > a > #home-appointments-card:hover {
+        background: url("../images/sb_logo_template.png");
+        background-size: cover;
+        opacity: .5;
+        transition: .1s ease-in-out;
+}
+
+div > a > #home-shop-card:hover {
+        background: url("../images/sb_logo_template.png");
+        background-size: cover;
+        opacity: .5;
+        transition: .1s ease-in-out;
+}
+
+div > a > #home-barbers-card:hover {
+        background: url("../images/sb_logo_template.png");
+        background-size: cover;
+        opacity: .5;
+        transition: .1s ease-in-out;
+}
+
+.home-service-card:hover .home-service-card-text {
+        color: white;
+        background-color: rgba(102, 102, 102, 0.7);
+}
+
+/* Home Content */
+.home-content {
+        width: 100%;
+        height: 600px;
+}
+
+.home-content-image {
+        width: 35%;
+        height: 90%;
+        float: left;
+}
+
+.home-content-text {
+        width: 40%;
+        height: 90%;
+        padding: 10px 20px 10px 20px;
+        float: left;
+}
+
+.home-content-text > h1 {
+        font-size: 30px;
+        margin-top: 20px;
+        padding: 30px 30px;
+
+}
+
+.home-content-text > p {
+        font-size: 20px;
+        padding: 30px 30px;
+}
+
+.home-content-text > a {
+        text-decoration: none;
+        color: black;
+}
+
+.home-content-text > a:hover {
+        text-decoration: none;
+        color: black;
+}
+
+.home-content-learn-more-btn {
+        position: relative;
+        width: 120px;
+        height: 30px;
+        background-color: #e7d0a2;
+        font-size: 20px;
+        border-radius: 2px;
+        margin-left: 30px;
+        margin-right: 0px;
+        text-align: center;
+}
+
+.home-content-scroll-down-p {
+        float: right;
+        transform: rotate(90deg);
+        transform-origin: left top 0;
+        margin-left: 13px;
+        margin-top: 100px;
+}
+
+.carousel-testimonial-divs {
+        height: 300px;
+        width: 700px;
+        padding: 20px 20px;
+        background-color: #fff;
+        color: #000;
+        border-radius: 5px;
+        font-size: 18px;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        -webkit-box-shadow: 0px 0px 30px 3px rgba(128,128,128,1);
+        -moz-box-shadow: 0px 0px 30px 3px rgba(128,128,128,1);
+        box-shadow: 0px 0px 30px 3px rgba(128,128,128,1);
+}
+
+.carousel-testimonial-divs > p {
+        float: left;
+        width: 88%;
+        margin: auto;
+}
+
+.carousel-testimonial-divs > h5 {
+        margin: auto;
+        clear: both;
+}
+
+.fa-quote-left {
+        color: #e7d0a2;
+        float: left;
+        font-size: 35px;
+}
+
+.fa-quote-right {
+        color: #e7d0a2;
+        float: right;
+        font-size: 35px;
+}
+
+/* Footer */
+.footer {
+        width: 100%;
+        height: 300px;
+        background: url("../images/footer-bg.jpg");
+        color: #fff;
+}
+
+.footer-content-container {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+}
+
+.footer-sb-image {
+        height: 75%;
+        display: block;
+        margin: auto;
+}
+
+.footer-content-one {
+        width: 250px;
+        float: left;
+        margin: auto;
+}
+
+.footer-content-two {
+        width: 250px;
+        float: left;
+        margin: auto;
+}
+
+/* Footer Bar */
+.footer-bar {
+        width: 100%;
+        height: 45px;
+        padding: 0;
+        box-sizing: border-box;
+        background: #000;
+        font-size: 15px;
+        float: left;
+        display: flex;
+        justify-content: center;
+}
+
+.footer-bar > .copyright-logo {
+        float: left;
+        margin-top: 10px;
+        margin-left: 15px;      
+}
+
+.footer-bar > .instagram-logo,
+.footer-bar > .facebook-logo {
+        float: right;
+        margin-top: 5px;
+        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+}
+
+.third-scroll {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-left: 29%;
+}
+
+
+/* ---------------------------------------------------------- ABOUT PAGE STYLING ---------------------------------------------------------- */
+
+/* Top - Section */
+
+.about-page-top-sec {
+        position: relative;
+        width: 100%;
+        height: 43vh;
+        top: 50px;
+        background: url("../images/top_imgxx.jpg");
+        /* background-size: cover; */
+}
+
+.about-page-top-sec > .top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
+}
+
+/* Scroll Buttons */
+
+.about-page-scroll {
+        color: white;
+        position: relative;
+        width: 50px;
+
+        top: 80%;
+        left: 48.37%;
+        height: 50px;
+}
+
+/* Content Container */
+
+.about-page-content-container {
+        width: 100%;
+        height: 85vh;
+        background-color: #fff;
+        margin-top: 10%;
+}
+
+.about-content-text {
+        width: 50%;
+        margin: auto;
+        height: 90%;
+        float: left;
+        margin-left: 10%;
+}
+
+.about-content-text-p {
+        width: 100%;
+        font-size: 20px;
+}
+
+.about-content-text-header {
+        width: 100%;
+        font-size: 30px;
+        text-transform: uppercase;
+}
+
+.about-content-img {
+        height: 85%;
+}
+
+.about-content-scroll {
+        font-size: 20px;
+        margin-top: 50px;
+}
+ 
+.about-divider-container {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+}
+
+.divider-header {
+        font-size: 40px;
+        position: relative;
+}
+
+/* Barbers List Styling */
+
+.barbers-list-container {
+        width: 100%;
+}
+
+.barber-container {
+        width: 23%;
+        margin: 2.5%;
+        text-align: center;
+        float: left;
+}
+
+.barber-img {
+        width: 100%;
+}
+
+.barber-name {
+        font-size: 23px;
+}
+
+.barber-title {
+        font-size: 20px;
+}
+
+.barber-info {
+        font-size: 16px;
+}
+
+.barber-list-row1 {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: space-between;
+}
+
+.barber-list-row2 {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+}
+
+.barber-list-row3 {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: space-between;
+}
+
+.about-footer-scroll {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-left: 29%;
+}
+
+/* ---------------------------------------------------------- SERVICES PAGE STYLING ---------------------------------------------------------- */
+
+/* Top - Section */
+
+.services-page-top-sec {
+        position: relative;
+        width: 100%;
+        height: 55vh;
+        top: 50px;
+        background: url("../images/top_imgxx.jpg");
+        background-size: cover;
+}
+
+.services-page-top-sec > .top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
+}
+
+/* Scroll Buttons */
+
+.services-content-scroll {
+        font-size: 20px;
+        height: 20px;
+        margin-top: 10px;
+}
+
+/* Content Container */
+
+.services-page-content-container {
+        width: 100%;
+        height: 50vh;
+        background-color: #fff;
+        margin-top: 20px;
+        text-align: center;
+}
+
+.service-img {
+        width: 25%;
+        height: 60%;
+        margin: 0;
+        padding: 0;
+        float: left;
+}
+ 
+.services-divider-container {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+}
+
+.divider-header {
+        font-size: 40px;
+        position: relative;
+}
+
+.services-footer-scroll {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-left: 29%;
+}
+
+.pricing-container {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+}
+
+.cuts-pricing-container {
+        width: 20%;
+        float: left;
+}
+
+.shave-pricing-container {
+        width: 20%;
+        float: left;
+}
+
+.color-pricing-container {
+        width: 20%;
+        float: left;
+}
+
+.specialized-pricing-container {
+        width: 20%;
+        float: left;
+}
+
+.service-list-header {
+        font-size: 25px;
+        color: #e7d0a2
+}
+
+.list-item-price {
+        color: #e7d0a2;
+}
+
+/* ---------------------------------------------------------- GALLERY PAGE STYLING ---------------------------------------------------------- */
+
+/* TOP SECTION */
+
+.gallery-page-top-sec {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        top: 50px;
+        background: url("../images/top_imgxx.jpg");
+        background-size: cover;
+}
+
+.gallery-page-top-sec > .top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
+}
+
+/* CONTENT CONTAINER */
+.gallery-page-content-container {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+}
+
+.gallery-shop-link {
+        width: 30%;
+        height: 50%;
+        background-color: #e7d0a2;
+        margin: auto;
+        text-align: center;
+}
+
+.gallery-shop-link > div {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+        background-image: url("../images/footer-bg.jpg");
+}
+
+.gallery-shop-link > div > span {
+        font-size: 40px;
+        color: #e7d0a2;
+        margin: auto;
+}
+
+.gallery-shop-link:hover {
+        text-decoration: none;
+        color: #e7d0a2
+}
+
+.gallery-gentlemens-link {
+        width: 30%;
+        height: 50%;
+        background-color: #e7d0a2;
+        margin: auto;
+        text-align: center;
+}
+
+.gallery-gentlemens-link > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+        background-image: url("../images/footer-bg.jpg");
+}
+
+.gallery-gentlemens-link > div > span {
+        font-size: 40px;
+        color: #e7d0a2;
+        margin: auto;
+}
+
+.gallery-gentlemens-link:hover {
+        text-decoration: none;
+        color: #e7d0a2
+}
+
+/* SCROLL BUTTON(S) */
+.gallery-footer-scroll {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-left: 29%;
+}
+
+/* ---------------------------------------------------------- GALLERY-OUR SHOP PAGE STYLING ---------------------------------------------------------- */
+
+.gentlemens-page-content-container,
+.shop-gallery-page-content-container {
+        margin-bottom: 20px;
+        margin-top: 100px;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+}
+
+.gallery-img-container {
+        width: 22%;
+        height: 250px;
+        float: left;
+        margin: 20px;
+}
+
+.gallery-img {
+        width: 100%;
+        height: 100%;
+}
+
+/* ---------------------------------------------------------- CONTACT PAGE STYLING ---------------------------------------------------------- */
+
+/* Top - Section */
+
+.contact-page-top-sec {
+        position: relative;
+        width: 100%;
+        height: 55vh;
+        top: 50px;
+        background: url("../images/top_imgxx.jpg");
+        background-size: cover;
+}
+
+.contact-page-top-sec > .top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
+}
+
+/* CONTENT CONTAINER */
+.contact-page-content-container {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 20px;
+        text-align: center;
+}
+
+.contact-icons-container {
+        display: flex;
+        width: 90%;
+        height: 30vh;
+        margin: auto;
+}
+
+.icon-container {
+        margin-top: 100px;
+        margin: auto;
+}
+
+.contact-icon {
+        color: #e7d0a2;
+        font-size: 40px;
+}
+
+.contact-form {
+        width: 50%;
+        margin: auto;
+}
+
+#contact-name,
+#contact-email,
+#contact-message {
+        color: #000;
+        border-radius: 0px;
+        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+        border-color: #e7d0a2 !important;
+        box-shadow: inset 0 10px 10px rgba(231, 208, 162, 0.075), 0px 2px 8px rgba(231, 208, 162, 1) !important;
+
+}
+
+.form-control::placeholder {
+        color: #e7d0a2 !important;
+}
+
+.form-control:focus::placeholder {
+        color: #000 !important;
+}
+
+.btn-outline-warning {
+        color: #e7d0a2 !important;
+        border-color: #e7d0a2 !important; 
+        box-shadow: inset 0 10px 10px rgba(231, 208, 162, 0.075), 0px 2px 8px rgba(231, 208, 162, 1) !important;
+        margin-bottom: 10px;
+}
+
+.btn-outline-warning:hover {
+        background-color: #e7d0a2 !important; 
+        color: #000 !important;
+}
+
+
+/* SCROLL BUTTON(S) */
+.contact-footer-scroll {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-left: 29%;
+}
+
+
+/* ---------------------------------------------------------- SHOP PAGE STYLING ---------------------------------------------------------- */
+
+/* Top - Section */
+
+.shop-page-top-sec {
+        position: relative;
+        width: 100%;
+        height: 55vh;
+        top: 50px;
+        background: url("../images/top_imgxx.jpg");
+        background-size: cover;
+}
+
+.shop-page-top-sec > .top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
+}
+
+/* CONTENT CONTAINER */
+.shop-page-content-container {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 70px;
+        text-align: center;
+        background-image: url("../images/stacheBGTemplate.png");
+        display: inline-block
+}
+
+/* SCROLL BUTTON(S) */
+.shop-footer-scroll {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-left: 29%;
+}
+
+/* SIDE NAV STYLING */
+.side-nav {
+        height: 100%;
+        width: 0px;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        opacity: 0.9;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+}
+      
+.side-nav a {
+        padding: 10px 10px 10px 30px;
+        text-decoration: underline;
+        font-size: 18px;
+        color: #e7d0a2;
+        display: block;
+        transition: 0.3s;
+}
+
+.side-nav .btn-close {
+        text-decoration: none;
+}
+
+.side-nav .brand-links {
+        font-size: 14px;
+        text-decoration: none;
+}
+      
+.side-nav a:hover {
+        color: #fff;
+        text-decoration: none;
+}
+      
+.side-nav .btn-close {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        font-size: 36px;
+        margin-left: 50px;
+}
+
+.shop-item {
+        width: 30%;
+        height: 400px;
+        margin-top: 25px;
+        float: left;
+        margin-left: 3%;
+}
+
+.shop-item > img {
+        width: 100%;
+        height: 275px;
+}
+
+.input-group > .form-control {
+        width: 45px !important;
+}
+
+.shop-item-btn {
+        background-color: #e7d0a2 !important;
+        border-color: #e7d0a2 !important;
+        border-radius: 0px !important;
+        color: #000 !important;
+}
+
+.shop-item-qty-text {
+        border-radius: 0px !important;
+}

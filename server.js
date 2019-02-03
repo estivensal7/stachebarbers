@@ -1,26 +1,35 @@
-// Create dependencies
-const express = require("express");
+//Dependencies
+const express = require('express');
 const bodyParser = require("body-parser");
-const routes = require("./routes");
-const PORT = process.env.PORT || 3001;
+const path = require("path");
+const db = require("./app/config/connection");
+const htmlRoutes = require('./app/routes/html-routes.js');
+const apiRoutes = require('./app/routes/api-routes.js');
+
+//Initialize app
 const app = express();
-const db = require("./config/connection");
 
 // Set up body-parser
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("app/public"));
 
-// sets static folder
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("client/build"));
-}
-// Allows for usage of defined routs
-app.use(routes);
+app.use("/", htmlRoutes);
+// app.use("/products", apiRoutes);
+require('./app/routes/api-routes.js')(app);
+
+const PORT = process.env.PORT || 3000;
 
 
 // Open server on PORT
 db.sync().then(function() {
-	app.listen(PORT, function() {
-		console.log(`Listening to PORT ${PORT}`)
+	app.listen(PORT, function(error) {
+                if(error) {
+                        console.log(`ERROR: ${error}`);
+                } else {
+                        console.log(
+                                `Database Connected... \nListening to PORT ${PORT}`
+                        )
+                }
 	})
 })
