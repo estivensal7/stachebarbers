@@ -101,7 +101,7 @@ $(document).ready(function() {
                 $(".gallery-shop-link").addClass("animated fadeInUp");
 
                 $(".gallery-gentlemens-link").addClass("animated fadeInUp");
-                console.log(window);
+                
         })
 
         $(".gallery-footer-scroll").click(function() {

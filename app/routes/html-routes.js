@@ -43,7 +43,7 @@ const app = express();
                 res.sendFile(path.join(__dirname, '../public/services.html'));
         });
 
-        app.get("/shop",function(req,res){
+        app.get("/products/",function(req,res){
                 res.sendFile(path.join(__dirname, '../public/shop.html'));
         });
 

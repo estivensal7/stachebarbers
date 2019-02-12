@@ -14,19 +14,19 @@ const Product = sequelize.define('product', {
 	product_name: {
 		type: Sequelize.STRING
 	},
-	product_category: {
+	category: {
 		type: Sequelize.STRING
 	},
-	product_category_two: {
+	category_two: {
 		type: Sequelize.STRING
 	},
-	product_brand: {
+	brand: {
 		type: Sequelize.STRING
 	},
-	product_price: {
+	price: {
 		type: Sequelize.DECIMAL(4, 2)
 	},
-	product_stock: {
+	stock: {
 		type: Sequelize.INTEGER
 	}	
 },

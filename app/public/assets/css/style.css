@@ -186,6 +186,54 @@ div.sec1 {
         padding: 0px;
 }
 
+.nav-header > ul > li > .dropdown > button {
+        width: 80px;
+        font-size: 12px;
+        height: 23px;
+        margin: 0px;
+        padding: 0px;
+        background-color: #e7d0a2;
+        color: #000;
+}
+
+.dropdown-divider {
+        border-top: 7px solid #e7d0a2 !important;
+}
+
+div.cart-item {
+        max-width: 100%;
+        font-size: 16px;
+        height: 200px;
+}
+
+div.cart-item > img {
+        width: 80px;
+        height: 80px;
+        font-size: 14px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        /* margin-right: 10px; */
+        margin-top: 20px;
+}
+
+div.cart-item > .cart-item-info {
+        width: 200px;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+        float: right;
+        text-align: center;
+        margin-top: 20px;
+}
+
+.nav-cart-dropdown-menu {
+        width: 350px;
+        max-height: 500px;
+        overflow: scroll;
+        border: 0;
+}
+
 .nav-header > ul > li > a {
         list-style: none;
         height: 20px;
@@ -1090,7 +1138,7 @@ div > a > #home-barbers-card:hover {
 }
 
 .input-group > .form-control {
-        width: 45px !important;
+        width: 65px !important;
 }
 
 .shop-item-btn {
@@ -1102,4 +1150,16 @@ div > a > #home-barbers-card:hover {
 
 .shop-item-qty-text {
         border-radius: 0px !important;
+}
+
+.category-links,
+.brand-links {
+        text-decoration: none !important;
+}
+
+/* ---------------------------------------------------------- CHECKOUT PAGE STYLING ---------------------------------------------------------- */
+
+.checkout-page-container {
+        padding: 20px;
+        margin-top: 250px;
 }

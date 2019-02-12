@@ -7,9 +7,9 @@ USE stacheBarbers;
 CREATE TABLE products (
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         product_name VARCHAR(50) NOT NULL,
-        product_category VARCHAR(50) NOT NULL,
-        product_category_two VARCHAR(50),
-        product_brand VARCHAR(50) NOT NULL,
-        product_price FLOAT(6,2) default 0,
-        product_stock INT NOT NULL default 0
+        category VARCHAR(50) NOT NULL,
+        category_two VARCHAR(50),
+        brand VARCHAR(50) NOT NULL,
+        price FLOAT(6,2) default 0,
+        stock INT NOT NULL default 0
 );
