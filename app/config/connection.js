@@ -1,8 +1,8 @@
 //Dependencies
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('heroku_e0aaacc1c5b6261', 'bda6cccc103dc0', '216ff071', {
-        host: 'us-cdbr-iron-east-03.cleardb.net',
+const sequelize = new Sequelize('lfesn5sm21okzzlw', 'qkfwtu56seke27ve', 'ac35qjiubyn0vf8z', {
+        host: 'pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         dialect: 'mysql',
         operatorsAliases: false,
 
