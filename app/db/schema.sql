@@ -11,5 +11,6 @@ CREATE TABLE products (
         category_two VARCHAR(50),
         brand VARCHAR(50) NOT NULL,
         price FLOAT(6,2) default 0,
+        size BOOLEAN,
         stock INT NOT NULL default 0
 );

@@ -14,14 +14,18 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("app/public"));
+// app.set('view engine', 'html');
 
 app.use("/", htmlRoutes);
 // app.use("/products", apiRoutes);
 require('./app/routes/api-routes.js')(app);
+// require('./app/routes/charge-routes.js')(app);
 
 app.post('/charge', (req, res) => {
-        const amount = 999;
-        
+        const amount =req.body.coKey;
+
+        console.log(req);
+
         stripe.customers.create({
           email: req.body.stripeEmail,
           source: req.body.stripeToken
@@ -32,7 +36,7 @@ app.post('/charge', (req, res) => {
           currency: 'usd',
           customer: customer.id
         }))
-        .then(charge => res.render('success'));
+        .then(charge => res.sendFile(path.join(__dirname, './app/public/success.html')));
 });
 
 const PORT = process.env.PORT || 3000;

@@ -95,20 +95,20 @@
                                 </ul>
                         </div>
 
-                        <!-- <div class="col-md-8 order-md-1">
+                        <!-- <div class="col-md-8 offset-2 order-md-1">
                                 <h4 class="mb-3">Billing address</h4>
-                                <form class="needs-validation" novalidate="">
+                                <form class="needs-validation" novalidate="" action="/charge" method="POST" id="checkout-form">
                                         <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                         <label for="firstName">First name</label>
-                                                        <input type="text" class="form-control" id="firstName" placeholder="John" value="" required="">
+                                                        <input type="text" class="form-control" id="firstName" placeholder="John" value="" required>
                                                         <div class="invalid-feedback">
                                                                 Valid first name is required.
                                                         </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                         <label for="lastName">Last name</label>
-                                                        <input type="text" class="form-control" id="lastName" placeholder="Smith" value="" required="">
+                                                        <input type="text" class="form-control" id="lastName" placeholder="Smith" value="" required>
                                                         <div class="invalid-feedback">
                                                                 Valid last name is required.
                                                         </div>
@@ -117,7 +117,7 @@
                         
                                         <div class="mb-3">
                                                 <label for="address">Address</label>
-                                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                                                 <div class="invalid-feedback">
                                                         Please enter your shipping address.
                                                 </div>
@@ -131,7 +131,7 @@
                                         <div class="row">
                                                 <div class="col-md-5 mb-3">
                                                         <label for="country">Country</label>
-                                                        <select class="custom-select d-block w-100" id="country" required="">
+                                                        <select class="custom-select d-block w-100" id="country" required>
                                                                 <option value="">Choose...</option>
                                                                 <option>United States</option>
                                                         </select>
@@ -141,7 +141,7 @@
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                         <label for="state">State</label>
-                                                        <select class="custom-select d-block w-100" id="state" required="">
+                                                        <select class="custom-select d-block w-100" id="state" required>
                                                                 <option value="">Choose...</option>
                                                                 <option>Alabama</option>
                                                                 <option>Alaska</option>
@@ -200,21 +200,25 @@
                                                 </div>
                                                 <div class="col-md-3 mb-3">
                                                         <label for="zip">Zip</label>
-                                                        <input type="text" class="form-control" id="zip" placeholder="10001" required="">
+                                                        <input type="text" class="form-control" id="zip" placeholder="10001" required>
                                                         <div class="invalid-feedback">
                                                                 Zip code required.
                                                         </div>
                                                 </div>
-                                        </div> -->
+                                        </div>
                         
-                                        <!-- <hr class="mb-4"> -->
+                                        <hr class="mb-4">
                         
-                                        <!-- <h4 class="mb-3">Payment</h4> -->
+                                        <h4 class="mb-3">Payment</h4>
+
+                                        <div class="row">
+                                                <div id="payment-errors" class="col-md-8 offset-2 mb-3 alert alert-danger d-none"></div>
+                                        </div>
                         
-                                        <!-- <div class="row">
+                                        <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                         <label for="cc-name">Name on card</label>
-                                                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                                         <small class="text-muted"><i class="chrome-extension-mutihighlight chrome-extension-mutihighlight-style-6">Full</i> name as displayed on card</small>
                                                         <div class="invalid-feedback">
                                                                 Name on card is required
@@ -222,49 +226,43 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                         <label for="cc-number">Credit card number</label>
-                                                        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                                        <input type="text" class="form-control" id="cc-number" placeholder="" required>
                                                         <div class="invalid-feedback">
                                                                 Credit card number is required
                                                         </div>
                                                 </div>
-                                        </div> -->
-                                        <!-- <div class="row">
+                                        </div>
+                                        <div class="row">
                                                 <div class="col-md-3 mb-3">
-                                                        <label for="cc-expiration">Expiration</label>
-                                                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                                        <label for="cc-expiration">Expiration Month</label>
+                                                        <input type="text" class="form-control" id="cc-expiration-month" placeholder="" required>
+                                                        <div class="invalid-feedback">
+                                                                Expiration date required
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                        <label for="cc-expiration">Expiration Year</label>
+                                                        <input type="text" class="form-control" id="cc-expiration-year" placeholder="" required="">
                                                         <div class="invalid-feedback">
                                                                 Expiration date required
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3 mb-3">
                                                         <label for="cc-expiration">CVV</label>
-                                                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
                                                         <div class="invalid-feedback">
                                                                 <i class="chrome-extension-mutihighlight chrome-extension-mutihighlight-style-6">Security</i> code required
                                                         </div>
                                                 </div>
-                                        </div> -->
-                                        <!-- <hr class="mb-4"> -->
-                                </form>
-                                <!-- <button class="btn btn-primary btn-lg btn-block process-payment-btn" type="submit">Process Payment</button> -->
+                                        </div>
+                                        <hr class="mb-4">
+                                        <button type="submit" class="btn btn-dark text-white btn-lg" href="/charge">Process Payment</button>
+                                </form> -->
                                 
-                                
+                                <!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
                         </div>
                         <div class="row">
-                                <form class="col-md-2 mx-auto" action="/charge" method="POST">
-                                                <script
-                                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                                        data-key="pk_test_fHYWvPPZvMWJQ8YZKvOYafuY"
-                                                        data-amount="999"
-                                                        data-name="Stache Barbers"
-                                                        data-description="Stache Shop"
-                                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                                        data-locale="auto">
-                                                </script>
-                                                <script>
-                                                        // Hide default stripe button
-                                                        document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
-                                                </script>
+                                <form class="col-md-2 mx-auto" action="/charge" method="POST" id="stripe-form">
                                                 <button type="submit" class="btn btn-dark text-white btn-lg" href="/charge">Process Payment</button>
                                 </form>
                         </div>

@@ -26,6 +26,9 @@ const Product = sequelize.define('product', {
 	price: {
 		type: Sequelize.DECIMAL(4, 2)
 	},
+	size: {
+		type: Sequelize.BOOLEAN
+	},
 	stock: {
 		type: Sequelize.INTEGER
 	}	

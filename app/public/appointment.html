@@ -5,7 +5,7 @@
         <head>
 
                 <title>Stache Barbers</title>
-                <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+                <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
                 <link 
                         rel="stylesheet" 
                         href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
@@ -34,114 +34,122 @@
                 <!-- NAV HEADER / LOWER NAV BAR -->
                 <nav>
                         
-                        <div class="nav-header shop-nav">
-                                
+                        <div class="nav-header">
                                 <ul>
-                                        
+
                                         <li class="phone-logo">
-                                                <img src="/assets/images/phone.png">
+                                                <img src="./assets/images/phone.png">
                                                 <p>(908)-222-2222</p>
                                         </li>
-                                        
+
                                         <li class="email-logo">
-                                                <img src="/assets/images/emailLogo.png">
+                                                <img src="./assets/images/emailLogo.png">
                                                 <p>stache@barbers.com</p>
                                         </li>
-                                        
+
                                         <li class="instagram-logo">
-                                                <img src="/assets/images/instagram.png">
+                                                <img src="./assets/images/instagram.png">
                                         </li>
-                                        
+
                                         <li class="facebook-logo">
-                                                <img src="/assets/images/facebook.png">
+                                                <img src="./assets/images/facebook.png">
                                         </li>
-                                        
+
                                         <li class="nav-book-appointment">
                                                 <p>BOOK APPOINTMENT</p>
                                         </li>
-                                        
+
                                         <li class="nav-shop">
                                                 <a href="/products/"><p>SHOP</p></a>
                                         </li>
-                                        
+
                                         <li class="nav-cart">
-                                                <!-- <p>CART [ 0 ]</p> -->
-                                                <div class="dropdown nav-cart-dropdown">
-                                                        <button class="btn btn-secondary nav-cart-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        CART
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                <!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
-                                                        </div>
-                                                </div>
+                                                <p>CART [ 0 ]</p>
                                         </li>
-                                        
+                                
                                 </ul>
                         </div>
-                        
-                        
-                        <ul class="main-ul">
-                                <li>
-                                        <a href="#">
-                                                <span class="open-slide">
-                                                        <a href="#" onclick="openSlideMenu()">
-                                                                FILTER
-                                                        </a>
-                                                </span>
-                                        </a>
-                                </li>
+
+                        <ul>
                                 <li><a href="/">HOME</a></li>
                                 <li><a href="/about">ABOUT</a></li>
                                 <li><a href="/services">SERVICES</a></li>
 
                                 <li class="logo">
                                         <div id="base">
-                                                <img src="/assets/images/sbLogo1.png">
+                                                <img src="./assets/images/sbLogo1.png">
                                         </div>
                                 </li>
 
                                 <li><a href="/gallery">GALLERY</a></li>
                                 <li><a href="/news">NEWS</a></li>
                                 <li><a href="/contact">CONTACT</a></li>
-
-                                <li><a href="/checkout" class="checkout-page-link">CHECKOUT</a></li>
                         </ul>
 
                 </nav>
 
-                
-                <!-- SERVICES PAGE HEADER -->
-                
-                <div class="shop-page-top-sec">
-                        
-                        <div class="top-sec-header">STACHE SHOP</div>
-                        
+                <!-- CONTACT PAGE HEADER -->
+
+                <div class="contact-page-top-sec">
+
+                        <div class="top-sec-header appointment-top-sec">APPOINTMENT EXAMPLE</div>
+        
                 </div>
-                
-                
-                <!-- SERVICES PAGE CONTENT -->
-                
-                
-                <!-- SIDE NAV -->
-                <div id="side-menu" class="side-nav">
-                        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-                        <a href="#" >STACHE ORIGINALS</a>
-                        <a href="#" class="category-links" id="filter-capes">Capes</a>
-                        <a href="#" class="category-links" id="filter-tShirts">T-Shirts</a>
-                        <a href="#" class="category-links" id="filter-hairStyling">Hair Styling</a>
-                        <a href="#" class="category-links" id="filter-beardShaveMustache">Beard/Shave/Mustache</a>
-                        <a href="#" class="category-links" id="filter-facialBody">Facial Body</a>
-                        <a href="#" class="category-links" id="filter-razors">Razors</a>
-                        <a href="#" class="category-links" id="filter-snapbacks">Snapbacks</a>
-                        <a href="#">Shop By Brand</a>
-                        <a href="#" class="brand-links" id="filter-stache">Stache</a>
-                        <a href="#" class="brand-links" id="filter-modernMale">Modern Male</a>
-                        <a href="#" class="brand-links" id="filter-slickGorilla">Slick Gorilla</a>
-                        <a href="#" class="brand-links" id="filter-victoryCrown">Victory Crown</a>
-                        <a href="#" class="brand-links" id="filter-xotics">Xotics</a>
+
+
+                <!-- CONTACT PAGE CONTENT -->
+
+                <!-- <div 
+                        id='frameTitle' 
+                        class='embedded-widget-title' 
+                        style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'>Book an appointment with us!
+                </div> -->
+                <div class="vagaro-widget-container">
+                        <!-- <div 
+                                class="vagaro" 
+                                style="width:350px; padding:0; border:0; margin:0 auto; text-align:center;">
+                                
+                                <style>
+                                        .vagaro a {font-size:14px; color:#000; text-decoration:none;}
+                                </style>
+                                <a href="https://sales.vagaro.com/">Powered by Vagaro</a>
+                                        &nbsp;
+                                <a href="https://sales.vagaro.com/salon-software">Salon Software</a>
+                                        ,&nbsp;
+                                <a href="https://sales.vagaro.com/spa-software">Spa Software</a>
+                                        &nbsp;&amp;&nbsp;
+                                <a href="https://sales.vagaro.com/fitness-software">Fitness Software</a> -->
+                                <!-- <script 
+                                        type="text/javascript" 
+                                        src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqnEJOpC2PqFJ5y79oz34mC2PeFJ4mC30m9cyUeJUtjP0mjn0mk3WtjBSwDhAtEX0xjBeq43gva9CxdfcJE1wZCBOvifCs7fc?v=sW3zTmOr5HfVIbY6zAWugHZa9GqhsvZApNRZbetYW2s#">
+                                // </script>
+                        </div> -->
+
+                        <!-- <div class="vagaro" style="width:250px; padding:0; border:0; margin:0 auto; text-align:center; font-size:14px; color:#AAA;"><style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style><a href="https://sales.vagaro.com/">Powered by Vagaro</a>&nbsp;<a href="https://sales.vagaro.com/salon-software">Salon Software</a>,&nbsp;<a href="https://sales.vagaro.com/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;<a href="https://sales.vagaro.com/fitness-software">Fitness Software</a><script type="text/javascript" src="https://www.vagaro.com//resources/WidgetPopupLoader/OZqnEJOpC2PqFJ5y79oz34mC2PlFK9lRsiWJcyxapkUcPCu7gCmjZcoapOUcO?v=A8vyUmWa9SnXh9uQkCxoh1A1rtawzoUB1HAShRw0GgY#"></script></div> -->
+                        <div 
+                                class="vagaro" 
+                                style="width:250px; padding:0; border:0; margin:0 auto; text-align:center; font-size:14px; color:#AAA;"
+                        >
+                                <style>
+                                        .vagaro a {font-size:14px; color:#AAA; text-decoration:none;}
+                                </style>
+                                <a href="https://sales.vagaro.com/">Powered by Vagaro</a>
+                                &nbsp;
+                                <a href="https://sales.vagaro.com/salon-software">Salon Software</a>
+                                ,&nbsp;
+                                <a href="https://sales.vagaro.com/spa-software">Spa Software</a>
+                                &nbsp;&amp;&nbsp;
+                                <a href="https://sales.vagaro.com/fitness-software">Fitness Software</a>
+                                
+                                <script 
+                                        type="text/javascript" 
+                                        src="https://www.vagaro.com//resources/WidgetWindowLoader/OZqnEJOpC2PqFJ5y79oz34mC2PlFK9lRsiWJcyxapkUcPCu7gCmjZcoapOUcO?v=PWAYhJyz5y01eMmHNzMyYHweOX6FWKZhOgiizFIL4wUO#"
+                                >
+                                </script>
+                        </div>
+
                 </div>
-                
-                <div class="shop-page-content-container"></div>
+
 
                 <!-- FOOTER / FOOTER - BAR -->
 
@@ -158,7 +166,7 @@
                                                 stachebarbers@gmail.com
                                 </p>
 
-                                <img src="/assets/images/SBTransparent.png" class="footer-sb-image"/>
+                                <img src="./assets/images/SBTransparent.png" class="footer-sb-image"/>
                         
                                 <p class="footer-content-two">
                                                 Monday	10AM–8PM
@@ -181,32 +189,18 @@
 
                                 <p class="copyright-logo">Copyright <i class="far fa-copyright"> 2019 Stache Barbers</i></p>
 
-                                <p class="shop-footer-scroll"><i class="fas fa-angle-double-up"></i>      Back To Top     <i class="fas fa-angle-double-up"></i></p>
+                                <p class="contact-footer-scroll"><i class="fas fa-angle-double-up"></i>      Back To Top     <i class="fas fa-angle-double-up"></i></p>
 
-                                <img src="/assets/images/instagram.png" class="instagram-logo">
+                                <img src="./assets/images/instagram.png" class="instagram-logo">
 
-                                <img src="/assets/images/facebook.png" class="facebook-logo">
+                                <img src="./assets/images/facebook.png" class="facebook-logo">
                                 
                         </div>
 
                 </div>
 
         </body>
-        
-        <script type="text/javascript" src="/javascript/javascript.js"></script>
-        <script type="text/javascript" src="/javascript/shop.js"></script>
-        <script type="text/javascript">
-                // SIDE NAV OPEN/CLOSE FUNCTIONS
-                function openSlideMenu(){
-                        $('#side-menu').css("width", "250px");
-                        console.log("clicked open");
-                }
 
-                function closeSlideMenu(){
-                        $('#side-menu').css("width", "0px");
-                        console.log("clicked closed");
-                }
-
-        </script>
+        <script type="text/javascript" src="./javascript/javascript.js"></script>
 
 </html>

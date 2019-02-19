@@ -4,35 +4,59 @@ $(document).ready(function() {
         let shopContainer = $('.shop-page-content-container');
         let cartDropDownContainer = $('.nav-cart-dropdown-menu');
         let checkoutCartList = $('.checkout-cart-list');
+        let storageData = JSON.parse(localStorage.getItem('item'));
         let cartTotals = 0;
+        let cartTotalPrice = 0;
+        let adjustedCartTotal;
 
+        let stripeTotal;
+        
         let cartItems = [];
         let itemToAdd = {
                 name: '',
                 price: '',
                 quantity: '',
-                size: ''
+                size: '',
+                totalPrice: ''
         };
+
+
+        if (storageData == null) {
+                cartItems = [];
+                cartTotals = 0;
+        } else {
+                cartItems = storageData;
+                cartTotals = storageData.length;
+        }
+
+        $('.nav-cart-btn').text(`CART [ ${cartTotals} ]`);
 
         // ADD ITEMS TO CART - FUNCTION
         $(document).on('click', 'button.add-to-cart', function() {
-                let itemName = $(this).parent().find('p.shop-item-name').text();
-                let itemPrice = $(this).parent().find('p.shop-item-price').text();
+                let itemName = $(this).parent().parent().find('.shop-item-name').text();
+                let itemPrice = $(this).parent().parent().find('.shop-item-price').text();
                 let itemQuantity = $(this).parent().find("input[name='item-quantity']").val();
                 let itemSize = $(this).parent().find('select.size-control').val();
+
+                //grabbing total price by multiply item's price by the quantity selected
+                let priceInteger = parseFloat(itemPrice.slice(1));
+                let quantityInteger = parseInt(itemQuantity);
+                let totalPrice = (priceInteger * quantityInteger).toFixed(2);
 
                 itemToAdd = {
                         name: `${itemName}`,
                         price: `${itemPrice}`,
                         quantity: `${itemQuantity}`,
-                        size: `${itemSize}`
+                        size: `${itemSize}`,
+                        totalPrice: `${totalPrice}`
                 };
 
-                // console.log(itemToAdd);
-                // console.log("~~~~~~~~~~~~~~~~~~~~~");
+                if (itemToAdd.size == 'undefined') {
+                        itemToAdd.size = ' ';
+                }
 
                 cartItems.push(itemToAdd);
-                // console.log(cartItems);
+        
                 localStorage.setItem('item', JSON.stringify(cartItems));
                 
                 // adding item quantity to cartTotal
@@ -42,12 +66,9 @@ $(document).ready(function() {
                         name: '',
                         price: '',
                         quantity: '',
-                        size: ''
+                        size: '',
+                        totalPrice: ''
                 };
-
-                // console.log('Second:');
-                // console.log(itemToAdd);
-                // console.log("~~~~~~~~~~~~~~~~~~~~~");
 
                 $('.nav-cart-btn').text(`CART [ ${cartTotals} ]`);
 
@@ -81,8 +102,6 @@ $(document).ready(function() {
 
                 let items = JSON.parse(localStorage.getItem('item'));
 
-                // console.log(items);
-
                 let itemToAddToCart = [];
                         
                 for (let i = 0; i < items.length; i++) {
@@ -100,63 +119,87 @@ $(document).ready(function() {
                 productContainer.addClass('shop-item');
 
                 productContainer.html(`
-                        <img src='https://via.placeholder.com/300' />
-                        <p class='shop-item-name'>${product.product_name} </p>
-                        <p class='shop-item-price'>$${product.price}</p>
-
-                        <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
-                                <div class='input-group'>
-                                        <div class='input-group-prepend'>
-                                                <div class='input-group-text shop-item-btn item-quantity' id='btnGroupAddon'>Qty</div>
-                                        </div>
-                                        <input type='number' min="1" max="100" class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
-                                </div>
-                        </div>
-                                        
-                        <div class='btn-group' role='group'>
-                                <div class="form-group" value="">
-                                        <select class="form-control size-control" id="exampleFormControlSelect1">
-                                                <option class="size-option" value="Small">Small</option>
-                                                <option class="size-option" value="Medium">Medium</option>
-                                                <option class="size-option" value="Large">Large</option>
-                                                <option class="size-option" value="X-Large">X-Large</option>
-                                        </select>
-                                </div>
-                        </div>
-                        <button  class=' shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
-                `)
-
-                // <div class="card" style="width: 18rem;">
-                //         <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
-                //         <div class="card-body">
-                //                 <h5 class="card-title">Card title</h5>
-                //                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                //         </div>
-                //                 <ul class="list-group list-group-flush">
-                //                 <li class="list-group-item">Cras justo odio</li>
-                //                 <li class="list-group-item">Dapibus ac facilisis in</li>
-                //                 <li class="list-group-item">Vestibulum at eros</li>
-                //         </ul>
-                //         <div class="card-body">
-                //                 <a href="#" class="card-link">Card link</a>
-                //                 <a href="#" class="card-link">Another link</a>
-                //         </div>
-                // </div>
                 
+                        <div class="card" style="width: 100%; height: 100%;">
+                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <div class="card-body">
+                                        <h5 class="card-title shop-item-name">${product.product_name}</h5>
+                                        <p class="card-text shop-item-price">$${product.price}</p>
+                                </div>
+                                <div class="card-body">
+                                        <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
+                                                <div class='input-group'>
+                                                        <div class='input-group-prepend'>
+                                                                <div class='input-group-text shop-item-btn item-quantity' id='btnGroupAddon'>Qty</div>
+                                                        </div>
+                                                        <input type='number' min="1" max="100" class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
+                                                </div>
+                                        </div>
+                                        <div class='btn-group size-control-div' role='group'>
+                                                
+                                        </div>
+                                        <button  class=' shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
+                                </div>
+                        </div>
+                `)
+                        
+                return productContainer;
 
-                // console.log(product);
+        }
 
+
+        function createNewSizedDataContainer(product) {
+
+                let productContainer = $('<div>');
+                productContainer.addClass('shop-item');
+
+                productContainer.html(`
+                
+                        <div class="card" style="width: 100%; height: 100%;">
+                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <div class="card-body">
+                                        <h5 class="card-title shop-item-name">${product.product_name}</h5>
+                                        <p class="card-text shop-item-price">$${product.price}</p>
+                                </div>
+                                <div class="card-body">
+                                        <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
+                                                <div class='input-group'>
+                                                        <div class='input-group-prepend'>
+                                                                <div class='input-group-text shop-item-btn item-quantity' id='btnGroupAddon'>Qty</div>
+                                                        </div>
+                                                        <input type='number' min="1" max="100" class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
+                                                </div>
+                                        </div>
+                                        <div class='btn-group size-control-div' role='group'>
+                                                <div class="form-group" value="">
+                                                        <select class="form-control size-control" id="exampleFormControlSelect1">
+                                                                <option class="size-option" value="Small">Small</option>
+                                                                <option class="size-option" value="Medium">Medium</option>
+                                                                <option class="size-option" value="Large">Large</option>
+                                                                <option class="size-option" value="X-Large">X-Large</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+                                        <button  class=' shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
+                                </div>
+                        </div>
+                `)
+                        
                 return productContainer;
 
         }
 
         function initializeDataContainers() {
                 let productsToAdd = [];
-
                 shopContainer.empty();
 
+
                 for(let i = 0; i < products.length; i++) {
-                        productsToAdd.push(createNewDataContainer(products[i]));
+                        if (products[i].size == false) {
+                                productsToAdd.push(createNewDataContainer(products[i]));
+                        } else {
+                                productsToAdd.push(createNewSizedDataContainer(products[i]));
+                        }
                 }
 
                 shopContainer.append(productsToAdd);
@@ -164,13 +207,6 @@ $(document).ready(function() {
 
         // Creating template for Checkout Cart Item Row 
         function createCheckoutCartRow(items) {
-                // <li class="list-group-item d-flex justify-content-between lh-condensed">
-                //         <div>
-                //                 <h6 class="my-0">Product name</h6>
-                //                 <small class="text-muted">Brief description</small>
-                //         </div>
-                //         <span class="text-muted">$12</span>
-                // </li>
 
                 let cartRow = $('<li>');
                 cartRow.addClass('list-group-item d-flex justify-content-between lh-condensed');
@@ -178,17 +214,23 @@ $(document).ready(function() {
                 cartRow.html(`
                                 <div>
                                         <h6 class="my-0">${items.name}</h6>
-                                        <small class="text-muted">${items.size}</small>
-                                        <small class="text-muted">${items.quantity}</small>
+                                        <small class="text-muted">${items.size} | </small>
+                                        <small class="text-muted">Quantity: ${items.quantity} | </small>
+                                        <span class="text-muted">Price: ${items.price}</span>
                                 </div>
-                                <span class="text-muted">${items.price}</span>
+                                <span class="text-muted">Total Item Price: $${items.totalPrice}</span>
                 `)
+
+                //generating total cart price by adding current cartTotalPrice value to 'this' item's totalPrice
+                cartTotalPrice += parseFloat(items.totalPrice);
 
                 return cartRow;
         }
 
         function initializeCheckoutCartRows() {
                 let items = JSON.parse(localStorage.getItem('item'));
+                let totalPriceCartRow = $('<li>');
+                totalPriceCartRow.addClass('list-group-item d-flex justify-content-between lh-condensed');
 
                 let itemToAddToCheckout = [];
                         
@@ -197,12 +239,70 @@ $(document).ready(function() {
                 }
                 
                 checkoutCartList.append(itemToAddToCheckout);
+
+                console.log(cartTotalPrice);
+
+                //Some Cart Totals are not displaying the extra '0' at the end since the float number is being rounded. Fixing it down here.
+                let splitCartTotal = cartTotalPrice.toString().split('.');
+                let cartTotalDollars = splitCartTotal[0];
+                let cartTotalCents = splitCartTotal[1];
+
+                if (cartTotalCents.length == 1) {
+                        cartTotalCents += '0';
+                }
+
+                adjustedCartTotal = cartTotalDollars + cartTotalCents;
+                cartTotalPrice = `${cartTotalDollars}.${cartTotalCents}`;
+
+                totalPriceCartRow.html(`
+                                <div>
+                                        <h5 class="my-1">Total Price: $${cartTotalPrice}</h6>
+                                </div>
+                `);
+
+                checkoutCartList.append(totalPriceCartRow);
+
+                stripeTotal = adjustedCartTotal
+                console.log(stripeTotal);
+
+                localStorage.setItem('cartTotal', stripeTotal);
                 
         }
         
         if (window.location.pathname === '/checkout') {
                 initializeCheckoutCartRows();
+
+                $("#stripe-form").html(
+                        `<script 
+                                src="https://checkout.stripe.com/checkout.js" 
+                                class="stripe-button" 
+                                data-key="pk_test_fHYWvPPZvMWJQ8YZKvOYafuY" 
+                                data-amount="${stripeTotal}"
+                                data-zip-code="true" 
+                                data-currency="usd" 
+                                data-billing-address="true" 
+                                data-shipping-address="true" 
+                                data-name="Stache Barbers" 
+                                data-description="Stache Shop" 
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                data-locale="auto">
+                        </script>`
+                );
+
+                $('#stripe-form').append(`<input name='coKey' value ='${stripeTotal}' class="d-none"/>`)
         }
+
+        if (window.location.pathname !== '/checkout') {
+                localStorage.removeItem('cartTotal');
+        }
+
+        //handler to clear localStorage after charge has been made
+        const handlePostCheckoutClear = () => {
+                localStorage.clear();
+        } 
+
+        //once 'Back To Home" button on success-page is clicked, localStorage is cleared by calling handlePostCheckoutClear()
+        $('#success-page-btn').on('click', handlePostCheckoutClear);
 
 
 // ~~~~~~~~~~~~~~~~~~~HANDLING ALL DATA REQUESTS / FILTERING OF DATA SETS FROM DB~~~~~~~~~~~~~~~~~~

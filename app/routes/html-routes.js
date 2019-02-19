@@ -51,4 +51,8 @@ const app = express();
                 res.sendFile(path.join(__dirname, '../public/contact.html'));
         });
 
+        // app.get("/",function(req,res){
+        //         res.sendFile(path.join(__dirname, '../public/success.html'));
+        // });
+
 module.exports = app;
