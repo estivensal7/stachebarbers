@@ -1,6 +1,6 @@
 //Dependencies
 const Sequelize = require('sequelize');
-var env       = process.env.NODE_ENV || 'development';
+// var env = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/config.json')[env];
 
 if (process.env.JAWS_DB) {
