@@ -43,7 +43,7 @@ const PORT = process.env.PORT || 3000;
 
 
 // Open server on PORT
-db.sequelize.sync().then(function() {
+db.sync().then(function() {
 	app.listen(PORT, function(error) {
                 if(error) {
                         console.log(`ERROR: ${error}`);
