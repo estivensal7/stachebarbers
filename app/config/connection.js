@@ -1,11 +1,13 @@
 //Dependencies
 const Sequelize = require('sequelize');
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/config.json')[env];
 
-if (process.env.JAWSDB_URL) {
-        var sequelize = new Sequelize(process.env.JAWSDB_URL);
+if (process.env.JAWS_DB) {
+        var sequelize = new Sequelize(process.env.JAWS_DB);
 } else {
-        var sequelize = new Sequelize('stacheBarbers', 'root', 'root1234', {
-                host: 'localhost',
+        var sequelize = new Sequelize(config.database, config.username, config.password, config, {
+                host: config.host,
                 dialect: 'mysql',
                 operatorsAliases: false,
                 
