@@ -110,7 +110,7 @@ $(document).ready(function() {
                 
                 cartDropDownContainer.append(itemToAddToCart);
 
-        })
+        });
 
         //using jQuery to render html elements for each product
         function createNewDataContainer(product) {
@@ -126,13 +126,13 @@ $(document).ready(function() {
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body second-c-body">
                                         <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
                                                 <div class='input-group'>
                                                         <div class='input-group-prepend'>
                                                                 <div class='input-group-text shop-item-btn item-quantity' id='btnGroupAddon'>Qty</div>
                                                         </div>
-                                                        <input type='number' min="1" max="100" class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
+                                                        <input type='number' min="1" max=${product.stock} class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
                                                 </div>
                                         </div>
                                         <div class='btn-group size-control-div' role='group'>
@@ -161,13 +161,13 @@ $(document).ready(function() {
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body second-c-body">
                                         <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
                                                 <div class='input-group'>
                                                         <div class='input-group-prepend'>
                                                                 <div class='input-group-text shop-item-btn item-quantity' id='btnGroupAddon'>Qty</div>
                                                         </div>
-                                                        <input type='number' min="1" max="100" class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
+                                                        <input type='number' min="1" max=${product.stock} class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
                                                 </div>
                                         </div>
                                         <div class='btn-group size-control-div' role='group'>
@@ -180,13 +180,13 @@ $(document).ready(function() {
                                                         </select>
                                                 </div>
                                         </div>
-                                        <button  class=' shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
+                                        <button  class='shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
                                 </div>
                         </div>
                 `)
-                        
+                
                 return productContainer;
-
+                
         }
 
         function initializeDataContainers() {
@@ -310,7 +310,6 @@ $(document).ready(function() {
         $.get('/products/all', function(data) {
                 products = data;
                 initializeDataContainers();
-                // console.log(data);
         });
 
         // on click event handlers to request data from DB based off category/brand name

@@ -62,7 +62,7 @@ nav.transparent > ul > li.logo > div#base > img {
 
 /* styling banner around SB Logo in nav bar */
 #base {
-        background: #e7d0a2;
+        background: #9D855D;
         display: inline-block;
         height: 145px;
         position: relative;
@@ -71,7 +71,7 @@ nav.transparent > ul > li.logo > div#base > img {
 }
 
 #base:before {
-        border-top: 35px solid #e7d0a2;
+        border-top: 35px solid #9D855D;
         border-left: 60px solid transparent;
         border-right: 60px solid transparent;
         border-radius: 2px;
@@ -85,7 +85,7 @@ nav.transparent > ul > li.logo > div#base > img {
 }
 
 nav.transparent > ul > li.logo > div#base {
-        background: #e7d0a2;
+        background: #9D855D;
         display: inline-block;
         height: 110px;
         position: relative;
@@ -94,7 +94,7 @@ nav.transparent > ul > li.logo > div#base {
 }
 
 nav.transparent > ul > li.logo > div#base:before {
-        border-top: 35px solid #e7d0a2;
+        border-top: 35px solid #9D855D;
         border-left: 45px solid transparent;
         border-right: 45px solid transparent;
         border-radius: 2px;
@@ -135,7 +135,7 @@ nav.transparent > ul > li > a {
 nav > ul > li > a.active,
 nav > ul > li > a:hover {
         color: #000;
-        background-color: #e7d0a2;
+        background-color: #9D855D;
         border-radius: 2px;
         text-decoration: none;
 }
@@ -193,12 +193,12 @@ div.sec1 {
         height: 23px;
         margin: 0px;
         padding: 0px;
-        background-color: #e7d0a2;
+        background-color: #9D855D;
         color: #000;
 }
 
 .dropdown-divider {
-        border-top: 7px solid #e7d0a2 !important;
+        border-top: 7px solid #9D855D !important;
 }
 
 div.cart-item {
@@ -242,7 +242,7 @@ div.cart-item > .cart-item-info {
         padding: 0px 5px 0px 5px;
         text-decoration: none;
         color: #000;
-        background-color: #e7d0a2;
+        background-color: #9D855D;
         border-radius: 2px;
         text-decoration: none;
 
@@ -306,7 +306,7 @@ div.cart-item > .cart-item-info {
 .nav-header > ul > li.nav-book-appointment > p,
 .nav-header > ul > li.nav-shop > p,
 .nav-header > ul > li.nav-cart > p {
-        background: #e7d0a2;
+        background: #9D855D;
         color: #000;
         padding: 0px;
         padding-left: 2.5px;
@@ -351,7 +351,7 @@ div.cart-item > .cart-item-info {
 .home-service-card-text {
         width: 100%;
         font-size: 35px;
-        color: #e7d0a2;
+        color: #9D855D;
         text-shadow: #000 2px 2px;
         bottom: 10px;
         position: absolute;
@@ -447,7 +447,7 @@ div > a > #home-barbers-card:hover {
         position: relative;
         width: 120px;
         height: 30px;
-        background-color: #e7d0a2;
+        background-color: #9D855D;
         font-size: 20px;
         border-radius: 2px;
         margin-left: 30px;
@@ -493,13 +493,13 @@ div > a > #home-barbers-card:hover {
 }
 
 .fa-quote-left {
-        color: #e7d0a2;
+        color: #9D855D;
         float: left;
         font-size: 35px;
 }
 
 .fa-quote-right {
-        color: #e7d0a2;
+        color: #9D855D;
         float: right;
         font-size: 35px;
 }
@@ -673,6 +673,7 @@ div > a > #home-barbers-card:hover {
 
 .barber-img {
         width: 100%;
+        box-shadow: #000 0px 0px 20px;
 }
 
 .barber-name {
@@ -683,29 +684,26 @@ div > a > #home-barbers-card:hover {
         font-size: 20px;
 }
 
-.barber-info {
-        font-size: 16px;
-}
-
 .barber-list-row1 {
         width: 100%;
-        height: 700px;
+        height: 530px;
         display: flex;
         justify-content: space-between;
-}
-
-.barber-list-row2 {
-        width: 100%;
-        height: 700px;
-        display: flex;
-        justify-content: center;
 }
 
 .barber-list-row3 {
         width: 100%;
-        height: 700px;
+        height: 530px;
         display: flex;
         justify-content: space-between;
+}
+
+button.barber-container-btn {
+        border-radius: 0px !important;
+}
+
+button.barber-container-btn:hover {
+        box-shadow: #000 0px 0px 20px;
 }
 
 .about-footer-scroll {
@@ -814,11 +812,11 @@ div > a > #home-barbers-card:hover {
 
 .service-list-header {
         font-size: 25px;
-        color: #e7d0a2
+        color: #9D855D
 }
 
 .list-item-price {
-        color: #e7d0a2;
+        color: #9D855D;
 }
 
 /* ---------------------------------------------------------- GALLERY PAGE STYLING ---------------------------------------------------------- */
@@ -856,7 +854,7 @@ div > a > #home-barbers-card:hover {
 .gallery-shop-link {
         width: 30%;
         height: 50%;
-        background-color: #e7d0a2;
+        background-color: #9D855D;
         margin: auto;
         text-align: center;
 }
@@ -869,20 +867,22 @@ div > a > #home-barbers-card:hover {
 }
 
 .gallery-shop-link > div > span {
+        position: relative;
         font-size: 40px;
-        color: #e7d0a2;
+        color: #9D855D;
         margin: auto;
+        top: 65px;
 }
 
 .gallery-shop-link:hover {
         text-decoration: none;
-        color: #e7d0a2
+        color: #9D855D
 }
 
 .gallery-gentlemens-link {
         width: 30%;
         height: 50%;
-        background-color: #e7d0a2;
+        background-color: #9D855D;
         margin: auto;
         text-align: center;
 }
@@ -897,13 +897,13 @@ div > a > #home-barbers-card:hover {
 
 .gallery-gentlemens-link > div > span {
         font-size: 40px;
-        color: #e7d0a2;
+        color: #9D855D;
         margin: auto;
 }
 
 .gallery-gentlemens-link:hover {
         text-decoration: none;
-        color: #e7d0a2
+        color: #9D855D
 }
 
 /* SCROLL BUTTON(S) */
@@ -983,7 +983,7 @@ div > a > #home-barbers-card:hover {
 }
 
 .contact-icon {
-        color: #e7d0a2;
+        color: #9D855D;
         font-size: 40px;
 }
 
@@ -1001,13 +1001,13 @@ div > a > #home-barbers-card:hover {
 }
 
 .form-control:focus {
-        border-color: #e7d0a2 !important;
+        border-color: #9D855D !important;
         box-shadow: inset 0 10px 10px rgba(231, 208, 162, 0.075), 0px 2px 8px rgba(231, 208, 162, 1) !important;
 
 }
 
 .form-control::placeholder {
-        color: #e7d0a2 !important;
+        color: #9D855D !important;
 }
 
 .form-control:focus::placeholder {
@@ -1015,14 +1015,14 @@ div > a > #home-barbers-card:hover {
 }
 
 .btn-outline-warning {
-        color: #e7d0a2 !important;
-        border-color: #e7d0a2 !important; 
+        color: #9D855D !important;
+        border-color: #9D855D !important; 
         box-shadow: inset 0 10px 10px rgba(231, 208, 162, 0.075), 0px 2px 8px rgba(231, 208, 162, 1) !important;
         margin-bottom: 10px;
 }
 
 .btn-outline-warning:hover {
-        background-color: #e7d0a2 !important; 
+        background-color: #9D855D !important; 
         color: #000 !important;
 }
 
@@ -1097,7 +1097,7 @@ div > a > #home-barbers-card:hover {
         padding: 10px 10px 10px 30px;
         text-decoration: underline;
         font-size: 18px;
-        color: #e7d0a2;
+        color: #9D855D;
         display: block;
         transition: 0.3s;
 }
@@ -1142,8 +1142,8 @@ div > a > #home-barbers-card:hover {
 }
 
 .shop-item-btn {
-        background-color: #e7d0a2 !important;
-        border-color: #e7d0a2 !important;
+        background-color: #9D855D !important;
+        border-color: #9D855D !important;
         border-radius: 0px !important;
         color: #000 !important;
 }
@@ -1175,4 +1175,84 @@ select.size-control {
         width: 100%;
         margin-bottom: 100px;
         margin-top: 100px;
+}
+
+
+/* ---------------------------------------------------------- BARBERS PROFILE PAGES STYLING ---------------------------------------------------------- */
+
+/* Top - Section */
+
+.barber-page-top-sec {
+        position: relative;
+        width: 100%;
+        height: 43vh;
+        top: 50px;
+        background: url("../images/top_imgxx.jpg");
+        /* background-size: cover; */
+}
+
+.barber-page-top-sec > .top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
+}
+
+/* Content Container */
+
+.barber-page-content-container {
+        width: 100%;
+        height: 50vh;
+        margin-top: 10%;
+}
+ 
+.barber-divider-container {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+}
+
+.barber-divider-container > p {
+        font-size: 30px;
+}
+
+.barber-header {
+        font-size: 40px;
+        position: relative;
+}
+
+/* Footer Bar */
+.barber-footer-bar {
+        width: 100%;
+        height: 45px;
+        padding: 0;
+        box-sizing: border-box;
+        background: #000;
+        font-size: 15px;
+        float: left;
+        display: inline-block;
+        justify-content: center;
+}
+
+.barber-footer-bar > .copyright-logo {
+        float: left;
+        margin-top: 10px;
+        margin-left: 10%;
+}
+
+.barber-footer-bar > .instagram-logo,
+.barber-footer-bar > .facebook-logo {
+        float: right;
+        margin-top: 5px;
+        width: 30px;
+        height: 30px;
+}
+
+.barber-footer-bar > .instagram-logo {
+        margin-right: 15%;
 }

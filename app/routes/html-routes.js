@@ -51,8 +51,28 @@ const app = express();
                 res.sendFile(path.join(__dirname, '../public/contact.html'));
         });
 
-        // app.get("/",function(req,res){
-        //         res.sendFile(path.join(__dirname, '../public/success.html'));
-        // });
+        app.get("/Chaz",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/chaz.html'));
+        });
+
+        app.get("/Checo",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/checo.html'));
+        });
+
+        app.get("/Gregory",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/greg.html'));
+        });
+
+        app.get("/Teruyuki",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/terry.html'));
+        });
+
+        app.get("/Nick",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/nick.html'));
+        });
+
+        app.get("/Pablo",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/pablo.html'));
+        });
 
 module.exports = app;
