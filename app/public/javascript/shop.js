@@ -37,6 +37,8 @@ $(document).ready(function() {
                 let itemPrice = $(this).parent().parent().find('.shop-item-price').text();
                 let itemQuantity = $(this).parent().find("input[name='item-quantity']").val();
                 let itemSize = $(this).parent().find('select.size-control').val();
+                let itemStock = $(this).parent().parent().find('.shop-item-stock').text();
+                let itemId = $(this).parent().parent().find('.shop-item-id').text();
 
                 //grabbing total price by multiply item's price by the quantity selected
                 let priceInteger = parseFloat(itemPrice.slice(1));
@@ -48,7 +50,9 @@ $(document).ready(function() {
                         price: `${itemPrice}`,
                         quantity: `${itemQuantity}`,
                         size: `${itemSize}`,
-                        totalPrice: `${totalPrice}`
+                        totalPrice: `${totalPrice}`,
+                        stock: `${itemStock}`,
+                        id: `${itemId}`
                 };
 
                 if (itemToAdd.size == 'undefined') {
@@ -67,7 +71,9 @@ $(document).ready(function() {
                         price: '',
                         quantity: '',
                         size: '',
-                        totalPrice: ''
+                        totalPrice: '',
+                        stock: '',
+                        id: ''
                 };
 
                 $('.nav-cart-btn').text(`CART [ ${cartTotals} ]`);
@@ -81,16 +87,16 @@ $(document).ready(function() {
                 cartRow.addClass('dropdown-item');
                 
                 cartRow.html(`
-                <div class='cart-item'>
-                <img src='https://via.placeholder.com/300' class='cart-item-img'/>
-                <div class='cart-item-info'>
-                <p class='cart-item-name'>${item.name} </p>
-                <p class='cart-item-price'>${item.price}</p>
-                <p class='cart-item-size'>${item.size} </p>
-                <p class='cart-item-quantity'>Quantity: ${item.quantity}</p>
-                </div>
-                </div>
-                <div class="dropdown-divider"></div>
+                        <div class='cart-item'>
+                        <img src='https://via.placeholder.com/300' class='cart-item-img'/>
+                        <div class='cart-item-info'>
+                        <p class='cart-item-name'>${item.name} </p>
+                        <p class='cart-item-price'>${item.price}</p>
+                        <p class='cart-item-size'>${item.size} </p>
+                        <p class='cart-item-quantity'>Quantity: ${item.quantity}</p>
+                        </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
                 `)
                 
                 return cartRow;
@@ -125,6 +131,8 @@ $(document).ready(function() {
                                 <div class="card-body">
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
+                                        <p class="card-text shop-item-stock">${product.stock}</p>
+                                        <p class="card-text shop-item-id">${product.id}</p>
                                 </div>
                                 <div class="card-body second-c-body">
                                         <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
@@ -141,6 +149,7 @@ $(document).ready(function() {
                                         <button  class=' shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
                                 </div>
                         </div>
+
                 `)
                         
                 return productContainer;
@@ -160,6 +169,8 @@ $(document).ready(function() {
                                 <div class="card-body">
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
+                                        <p class="card-text shop-item-stock">${product.stock}</p>
+                                        <p class="card-text shop-item-id">${product.id}</p>
                                 </div>
                                 <div class="card-body second-c-body">
                                         <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
@@ -179,14 +190,63 @@ $(document).ready(function() {
                                                                 <option class="size-option" value="X-Large">X-Large</option>
                                                         </select>
                                                 </div>
-                                        </div>
-                                        <button  class='shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
+                                                </div>
+                                                <button  class='shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
                                 </div>
                         </div>
+
                 `)
-                
+
                 return productContainer;
+
+        }
+
+        function outOfStockSizedDataContainer(product) {
+
+                let productContainer = $('<div>');
+                productContainer.addClass('shop-item');
+
+                productContainer.html(`
                 
+                        <div class="card" style="width: 100%; height: 100%;">
+                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <div class="card-body">
+                                        <h5 class="card-title shop-item-name">${product.product_name}</h5>
+                                        <p class="card-text shop-item-price">$${product.price}</p>
+                                        <p class="card-text shop-item-stock">${product.stock}</p>
+                                        <p class="card-text shop-item-id">${product.id}</p>
+                                        <div  class='shop-item-btn sized-out-of-stock-div'  value=${product.id}>Out Of Stock</div>
+                                </div>
+                        </div>
+
+                `)
+
+                return productContainer;
+
+        }
+
+        function outOfStockDataContainer(product) {
+
+                let productContainer = $('<div>');
+                productContainer.addClass('shop-item');
+
+                productContainer.html(`
+                
+                        <div class="card" style="width: 100%; height: 100%;">
+                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <div class="card-body">
+                                        <h5 class="card-title shop-item-name">${product.product_name}</h5>
+                                        <p class="card-text shop-item-price">$${product.price}</p>
+                                        <p class="card-text shop-item-stock">${product.stock}</p>
+                                        <p class="card-text shop-item-id">${product.id}</p>
+                                        <div  class=' shop-item-btn out-of-stock-div'  value=${product.id}>Out Of Stock</div>
+                                </div>
+                        </div>
+
+                `)
+
+                return productContainer;
+
         }
 
         function initializeDataContainers() {
@@ -195,9 +255,13 @@ $(document).ready(function() {
 
 
                 for(let i = 0; i < products.length; i++) {
-                        if (products[i].size == false) {
+                        if ( products[i].size == false && products[i].stock <= 0) {
+                                productsToAdd.push(outOfStockDataContainer(products[i]));
+                        } else if (products[i].size == true && products[i].stock <= 0) {
+                                productsToAdd.push(outOfStockSizedDataContainer(products[i]));
+                        } else if (products[i].size == false) {
                                 productsToAdd.push(createNewDataContainer(products[i]));
-                        } else {
+                        } else if (products[i].size == true) {
                                 productsToAdd.push(createNewSizedDataContainer(products[i]));
                         }
                 }
@@ -251,6 +315,16 @@ $(document).ready(function() {
                         cartTotalCents += '0';
                 }
 
+                //Some Cart Totals have too many characters and it is affectting the total price sent to Stripe. Fixing it down here.
+                let adjustedCartCents;
+
+                if (cartTotalCents.length > 2) {
+                        //grabbing the first two characters in the 'cents' portion of the total
+                        adjustedCartCents = cartTotalCents.slice(0, 2);
+                        cartTotalCents = adjustedCartCents;
+                }
+                console.log(adjustedCartCents);
+
                 adjustedCartTotal = cartTotalDollars + cartTotalCents;
                 cartTotalPrice = `${cartTotalDollars}.${cartTotalCents}`;
 
@@ -303,6 +377,29 @@ $(document).ready(function() {
 
         //once 'Back To Home" button on success-page is clicked, localStorage is cleared by calling handlePostCheckoutClear()
         $('#success-page-btn').on('click', handlePostCheckoutClear);
+
+        //UPDATING DB ONCE ORDER IS PROCESSED
+        if (window.location.pathname == "/charge") {
+                let items = JSON.parse(localStorage.getItem('item'))
+                console.log(items.length);
+
+
+                for (let i =0; i < items.length; i++) {
+                        let itemRouteId = parseInt(items[i].id);
+                        let itemRouteStock = parseInt(items[i].stock);
+                        let itemRouteQty = parseInt(items[i].quantity);
+                        let itemNewStock = (itemRouteStock - itemRouteQty);
+
+                        $.ajax({
+                                method: "PUT",
+                                url: `/products/checkout/update/${itemRouteId}/${itemNewStock}`,
+                                data: items
+                        })
+                        .then(function() {
+                                console.log("ran function: update on checkout");
+                        });
+                }
+        }
 
 
 // ~~~~~~~~~~~~~~~~~~~HANDLING ALL DATA REQUESTS / FILTERING OF DATA SETS FROM DB~~~~~~~~~~~~~~~~~~

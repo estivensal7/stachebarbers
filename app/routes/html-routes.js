@@ -75,4 +75,8 @@ const app = express();
                 res.sendFile(path.join(__dirname, '../public/pablo.html'));
         });
 
+        app.get("/charge/update",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/success.html'));
+        });
+
 module.exports = app;

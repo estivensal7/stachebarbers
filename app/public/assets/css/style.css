@@ -1148,6 +1148,29 @@ button.barber-container-btn:hover {
         color: #000 !important;
 }
 
+.out-of-stock-div {
+        background-color: #9D855D !important;
+        border-color: #9D855D !important;
+        border-radius: 0px !important;
+        color: #000 !important;
+        width: 100px;
+        height: 40px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 40px;
+}
+
+.sized-out-of-stock-div {
+        background-color: #9D855D !important;
+        border-color: #9D855D !important;
+        border-radius: 0px !important;
+        color: #000 !important;
+        width: 100px;
+        height: 40px;
+        margin: 0 auto;
+        line-height: 40px;
+}
+
 .shop-item-qty-text {
         border-radius: 0px !important;
 }
@@ -1160,6 +1183,11 @@ button.barber-container-btn:hover {
 select.size-control {
         margin-top: 15px !important;
         border-radius: 0px !important;
+}
+
+p.shop-item-stock,
+p.shop-item-id {
+        display: none;
 }
 
 /* ---------------------------------------------------------- CHECKOUT PAGE STYLING ---------------------------------------------------------- */

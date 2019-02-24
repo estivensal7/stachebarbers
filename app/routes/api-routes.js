@@ -39,5 +39,16 @@ module.exports = function(app) {
 			console.log(err);
 		})
 	})
+
+	//Updating DB upon order being processed
+	app.put("/products/checkout/update/:id/:newstock", (req, res) => {
+		Products.update(
+				{stock: req.params.newstock},
+				{where: {id: req.params.id}}
+		).then(function(dbProduct) {
+			console.log(dbProduct);
+			res.status(200);
+		})
+	});
 	
 }
