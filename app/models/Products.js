@@ -31,6 +31,12 @@ const Product = sequelize.define('product', {
 	},
 	stock: {
 		type: Sequelize.INTEGER
+	},
+	route_name: {
+		type: Sequelize.STRING
+	},
+	image_source: {
+		type: Sequelize.STRING
 	}	
 },
 

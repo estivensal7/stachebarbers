@@ -26,7 +26,6 @@ const app = express();
                 res.sendFile(path.join(__dirname, '../public/gallery.html'));
         });
 
-
         app.get("/gallery-gentlemens",function(req,res){
                 res.sendFile(path.join(__dirname, '../public/gallery-gentlemens.html'));
         });
@@ -49,6 +48,10 @@ const app = express();
 
         app.get("/contact",function(req,res){
                 res.sendFile(path.join(__dirname, '../public/contact.html'));
+        });
+
+        app.get("/book-appointment",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/appointment.html'));
         });
 
         app.get("/Chaz",function(req,res){

@@ -47,7 +47,7 @@ $(document).ready(function() {
 
         $(".about-content-scroll").click(function() {
                 $("html, body").animate({
-                        scrollTop: $(".barbers-list-container").offset().top - 115
+                        scrollTop: $(".barbers-list-container").offset().top - 175
                 }, 2000);
         });
 
@@ -80,13 +80,7 @@ $(document).ready(function() {
         // SERVICES PAGE SCROLL FUNCTIONS
         $(".services-content-scroll").click(function() {
                 $("html, body").animate({
-                        scrollTop: $(".services-divider-container").offset().top - 200
-                }, 2000);
-        });
-
-        $(".services-content-scroll").click(function() {
-                $("html, body").animate({
-                        scrollTop: $(".services-divider-container").offset().top - 200
+                        scrollTop: $(".services-divider-container").offset().top - 175
                 }, 2000);
         });
 
@@ -127,5 +121,10 @@ $(document).ready(function() {
                 $('.side-menu').css("width", "0px");
                 $('.shop-page-content-container').css("margin-left", "0px");
         }
+
+        // SINGLE PRODUCT PAGE LOAD FUNCTIONS
+        $(window).on("load", function() {
+                $(".single-product-top-sec-header").addClass("animated fadeInLeft");
+        })
 
 });

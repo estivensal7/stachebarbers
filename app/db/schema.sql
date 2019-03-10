@@ -12,5 +12,7 @@ CREATE TABLE products (
         brand VARCHAR(50) NOT NULL,
         price FLOAT(6,2) default 0,
         size BOOLEAN,
-        stock INT NOT NULL default 0
+        stock INT NOT NULL default 0,
+        route_name VARCHAR(50) NOT NULL,
+        image_source VARCHAR(100) NOT NULL
 );

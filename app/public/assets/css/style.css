@@ -5,10 +5,11 @@ body {
         background-image: url('../images/bgPattern.jpg')
 }
 
-@import url('https://fonts.googleapis.com/css?family=Trocchi');
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
 
 body * {
-        font-family: 'Trocchi', serif;
+        font-family: 'Cinzel', serif;
 }
 
 /* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
@@ -144,9 +145,13 @@ nav > ul > li > a:hover {
 
 div.sec1 {
         width: 100%;
-        height: 71vh;
+        height: 85vh;
         background: url("../images/HomeHeader.png");
         background-size: cover;
+        /* overflow: hidden; */
+        position: relative;
+        /* top: -100px; */
+        /* background-position-y: 100px; */
 }
 
 .sec1 > .sec1-street-logo {
@@ -377,29 +382,18 @@ div > a > #home-barbers-card {
 }
 
 div > a > #home-appointments-card:hover {
-        background: url("../images/sb_logo_template.png");
-        background-size: cover;
-        opacity: .5;
+        transform: scale(1.1);
         transition: .1s ease-in-out;
 }
 
 div > a > #home-shop-card:hover {
-        background: url("../images/sb_logo_template.png");
-        background-size: cover;
-        opacity: .5;
+        transform: scale(1.1);
         transition: .1s ease-in-out;
 }
 
 div > a > #home-barbers-card:hover {
-        background: url("../images/sb_logo_template.png");
-        background-size: cover;
-        opacity: .5;
+        transform: scale(1.1);
         transition: .1s ease-in-out;
-}
-
-.home-service-card:hover .home-service-card-text {
-        color: white;
-        background-color: rgba(102, 102, 102, 0.7);
 }
 
 /* Home Content */
@@ -615,7 +609,10 @@ div > a > #home-barbers-card:hover {
 .about-page-content-container {
         width: 100%;
         height: 85vh;
-        margin-top: 10%;
+        padding-top: 5%;
+        background-color: #888;
+        color: #fff;
+        text-shadow: #000 1px 1px;
 }
 
 .about-content-text {
@@ -633,17 +630,18 @@ div > a > #home-barbers-card:hover {
 
 .about-content-text-header {
         width: 100%;
-        font-size: 30px;
+        font-size: 27px;
         text-transform: uppercase;
 }
 
 .about-content-img {
-        height: 85%;
+        width: 40%;
 }
 
 .about-content-scroll {
         font-size: 20px;
         margin-top: 50px;
+        color: #000;
 }
  
 .about-divider-container {
@@ -672,7 +670,8 @@ div > a > #home-barbers-card:hover {
 }
 
 .barber-img {
-        width: 100%;
+        width: 75%;
+        height: 75%;
         box-shadow: #000 0px 0px 20px;
 }
 
@@ -749,10 +748,10 @@ button.barber-container-btn:hover {
 
 .services-page-content-container {
         width: 100%;
-        height: 50vh;
-        background-color: #fff;
+        height: 42vh;
         margin-top: 20px;
         text-align: center;
+        background-color: #777;
 }
 
 .service-img {
@@ -788,6 +787,11 @@ button.barber-container-btn:hover {
         display: flex;
         justify-content: space-between;
         text-align: center;
+        padding: 20px;
+}
+
+.pricing-list-item {
+        background-image: url('../images/bgPattern.jpg');
 }
 
 .cuts-pricing-container {
@@ -826,10 +830,11 @@ button.barber-container-btn:hover {
 .gallery-page-top-sec {
         position: relative;
         width: 100%;
-        height: 50vh;
+        height: 43vh;
         top: 50px;
         background: url("../images/top_imgxx.jpg");
         background-size: cover;
+        margin-bottom: 50px;
 }
 
 .gallery-page-top-sec > .top-sec-header {
@@ -849,61 +854,78 @@ button.barber-container-btn:hover {
         height: 50vh;
         display: flex;
         justify-content: center;
+        background-color: #555;
 }
 
 .gallery-shop-link {
-        width: 30%;
-        height: 50%;
-        background-color: #9D855D;
-        margin: auto;
+        width: 50%;
+        height: 100%;
+        background-color: #000;
+        margin: 0px;
         text-align: center;
+        border: #555 solid 20px;
+        transition: .5s;
+}
+
+.gallery-shop-link:hover {
+        border: #555 solid 5px;
+        transition: .5s;
 }
 
 .gallery-shop-link > div {
         width: 100%;
         height: 100%;
-        box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
-        background-image: url("../images/footer-bg.jpg");
+        background-image: url("../images/our_shop.JPG");
+        background-size: cover;
 }
 
 .gallery-shop-link > div > span {
         position: relative;
         font-size: 40px;
-        color: #9D855D;
+        color: #fff;
+        text-shadow: #000 2px 2px;
         margin: auto;
-        top: 65px;
+        left: 30%;
 }
 
 .gallery-shop-link:hover {
         text-decoration: none;
-        color: #9D855D
 }
 
 .gallery-gentlemens-link {
-        width: 30%;
-        height: 50%;
-        background-color: #9D855D;
-        margin: auto;
+        width: 50%;
+        height: 100%;
+        background-color: #000;
+        margin: 0px;
         text-align: center;
+        border: #555 solid 20px;
+        transition: .5s;
+}
+
+.gallery-gentlemens-link:hover {
+        border: #555 solid 5px;
+        transition: .5s;
 }
 
 .gallery-gentlemens-link > div {
         width: 100%;
         height: 100%;
-        display: flex;
-        box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
-        background-image: url("../images/footer-bg.jpg");
+        background-image: url("../images/gentlemen-sundays/IMG_7991.jpg");
+        background-size: cover;
+        background-position-y: -450px;
 }
 
 .gallery-gentlemens-link > div > span {
         font-size: 40px;
-        color: #9D855D;
+        color: #fff;
         margin: auto;
+        text-shadow: #000 2px 2px;
+        position: relative;
+        left: 15%;
 }
 
 .gallery-gentlemens-link:hover {
         text-decoration: none;
-        color: #9D855D
 }
 
 /* SCROLL BUTTON(S) */
@@ -914,8 +936,14 @@ button.barber-container-btn:hover {
         margin-left: 29%;
 }
 
-/* ---------------------------------------------------------- GALLERY-OUR SHOP PAGE STYLING ---------------------------------------------------------- */
+.gallery-page-footer {
+        margin-top: 50px;
+}
 
+/* ---------------------------------------------------------- GALLERY-OUR SHOP/GENTLEMEN SUNDAY'S PAGE STYLING ---------------------------------------------------------- */
+.gallery-page-top-sec {
+        height: 50vh;
+}
 .gentlemens-page-content-container,
 .shop-gallery-page-content-container {
         margin-bottom: 20px;
@@ -924,6 +952,7 @@ button.barber-container-btn:hover {
         height: 100%;
         width: 100%;
         justify-content: space-between;
+        padding: 20px;
 }
 
 .gallery-img-container {
@@ -1047,6 +1076,7 @@ button.barber-container-btn:hover {
         top: 50px;
         background: url("../images/top_imgxx.jpg");
         background-size: cover;
+
 }
 
 .shop-page-top-sec > .top-sec-header {
@@ -1066,8 +1096,13 @@ button.barber-container-btn:hover {
         background-color: #fff;
         margin-top: 70px;
         text-align: center;
-        background-image: url("../images/stacheBGTemplate.png");
+        background-image: url("../images/bgPattern.jpg");
         display: inline-block
+}
+
+.card {
+        background-image: url("../images/bgPattern.jpg");
+        border: none !important;
 }
 
 /* SCROLL BUTTON(S) */
@@ -1190,6 +1225,17 @@ p.shop-item-id {
         display: none;
 }
 
+div.card-body {
+        background: rgba(255, 255, 255, 0.1) !important;
+        padding-bottom: 5px !important;
+}
+
+.card-img-top {
+        height: 300px;
+        width: 300px;
+        overflow: hidden;
+}
+
 /* ---------------------------------------------------------- CHECKOUT PAGE STYLING ---------------------------------------------------------- */
 
 .checkout-page-container {
@@ -1231,11 +1277,15 @@ p.shop-item-id {
 }
 
 /* Content Container */
-
 .barber-page-content-container {
         width: 100%;
-        height: 50vh;
         margin-top: 10%;
+        margin-bottom: 40px;
+}
+
+.barber-top-bio-container {
+        margin-top: 30px;
+        margin-bottom: 50px;
 }
  
 .barber-divider-container {
@@ -1243,6 +1293,7 @@ p.shop-item-id {
         height: 200px;
         margin: auto;
         text-align: center;
+        margin-top: 80px;
 }
 
 .barber-divider-container > p {
@@ -1253,6 +1304,119 @@ p.shop-item-id {
         font-size: 40px;
         position: relative;
 }
+
+.barber-bio-container > p {
+        width: 90%;
+        margin: auto;
+}
+
+
+.barber-top-bio-container {
+        position: relative;
+        margin-bottom: 20px;
+        height: 60vh;
+}
+
+.barber-profile-pic {
+        float: left;
+        margin-left: 35%;
+        /* margin-right: 25%; */
+        margin-bottom: 20px;
+        max-width: 30%;
+}
+
+.profile-pic-widget-container {
+        position: relative;
+        height: 100%;
+        width: 50%;
+        display: inline-block;
+        justify-content: center;
+}
+
+.barber-availibility {
+        font-size: 20px;
+        float: left;
+        margin-left: 32%;
+        margin-bottom: 10px;
+}
+
+.barber-vacation-hours {
+        font-size: 20px;
+        float: left;
+        margin-left: 30%;
+        margin-bottom: 10px;
+}
+
+.barber-video-container {
+        width: 50%;
+        height: 100%;;
+        float: right;
+}
+
+.barber-video {
+        float: right;
+        margin-right: 50px;
+}
+
+.barber-bio-container {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 50px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.gallery {
+	display: flex;
+        flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	/* margin: -1rem -1rem; */
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+        transition: transform 400ms ease-out;
+        padding: 5px;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/* The following rule will only run if browser supports CSS grid. */
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+
+.greg-video {
+        margin-top: 10%;
+}
+
 
 /* Footer Bar */
 .barber-footer-bar {
@@ -1283,4 +1447,21 @@ p.shop-item-id {
 
 .barber-footer-bar > .instagram-logo {
         margin-right: 15%;
+}
+
+/* ---------------------------------------------------------- SINGLE PRODUCT PAGE ---------------------------------------------------------- */
+
+.single-product-page-content-container {
+        height: 70vh;
+}
+
+.single-product-top-sec-header {
+        width: 400px;
+        height: 230px;
+        margin: 0px;
+        position: relative;
+        top: 60%;
+        font-size: 50px;
+        margin-left: 150px;
+        color: white;
 }

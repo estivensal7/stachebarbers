@@ -39,6 +39,7 @@ $(document).ready(function() {
                 let itemSize = $(this).parent().find('select.size-control').val();
                 let itemStock = $(this).parent().parent().find('.shop-item-stock').text();
                 let itemId = $(this).parent().parent().find('.shop-item-id').text();
+                let itemImgSource = $(this).parent().parent().find('img').attr('src');
 
                 //grabbing total price by multiply item's price by the quantity selected
                 let priceInteger = parseFloat(itemPrice.slice(1));
@@ -52,7 +53,8 @@ $(document).ready(function() {
                         size: `${itemSize}`,
                         totalPrice: `${totalPrice}`,
                         stock: `${itemStock}`,
-                        id: `${itemId}`
+                        id: `${itemId}`,
+                        image_source: `${itemImgSource}`
                 };
 
                 if (itemToAdd.size == 'undefined') {
@@ -73,7 +75,8 @@ $(document).ready(function() {
                         size: '',
                         totalPrice: '',
                         stock: '',
-                        id: ''
+                        id: '',
+                        image_source: ''
                 };
 
                 $('.nav-cart-btn').text(`CART [ ${cartTotals} ]`);
@@ -88,13 +91,13 @@ $(document).ready(function() {
                 
                 cartRow.html(`
                         <div class='cart-item'>
-                        <img src='https://via.placeholder.com/300' class='cart-item-img'/>
-                        <div class='cart-item-info'>
-                        <p class='cart-item-name'>${item.name} </p>
-                        <p class='cart-item-price'>${item.price}</p>
-                        <p class='cart-item-size'>${item.size} </p>
-                        <p class='cart-item-quantity'>Quantity: ${item.quantity}</p>
-                        </div>
+                                <img src='${item.image_source}' class='cart-item-img'/>
+                                <div class='cart-item-info'>
+                                        <p class='cart-item-name'>${item.name} </p>
+                                        <p class='cart-item-price'>${item.price}</p>
+                                        <p class='cart-item-size'>${item.size} </p>
+                                        <p class='cart-item-quantity'>Quantity: ${item.quantity}</p>
+                                </div>
                         </div>
                         <div class="dropdown-divider"></div>
                 `)
@@ -127,7 +130,7 @@ $(document).ready(function() {
                 productContainer.html(`
                 
                         <div class="card" style="width: 100%; height: 100%;">
-                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <img class="card-img-top" src=${product.image_source} alt="Card image cap">
                                 <div class="card-body">
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
@@ -162,10 +165,12 @@ $(document).ready(function() {
                 let productContainer = $('<div>');
                 productContainer.addClass('shop-item');
 
+                console.log(product);
+
                 productContainer.html(`
                 
                         <div class="card" style="width: 100%; height: 100%;">
-                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <img class="card-img-top" src=${product.image_source} alt="Card image cap">
                                 <div class="card-body">
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
@@ -188,10 +193,11 @@ $(document).ready(function() {
                                                                 <option class="size-option" value="Medium">Medium</option>
                                                                 <option class="size-option" value="Large">Large</option>
                                                                 <option class="size-option" value="X-Large">X-Large</option>
+                                                                <option class="size-option" value="XX-Large">XX-Large</option>
                                                         </select>
                                                 </div>
-                                                </div>
-                                                <button  class='shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
+                                        </div>
+                                        <button  class='shop-item-btn add-to-cart'  value=${product.id}>Add To Cart</button>
                                 </div>
                         </div>
 
@@ -209,7 +215,7 @@ $(document).ready(function() {
                 productContainer.html(`
                 
                         <div class="card" style="width: 100%; height: 100%;">
-                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <img class="card-img-top" src="${product.image_source}" alt="Card image cap">
                                 <div class="card-body">
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
@@ -233,7 +239,7 @@ $(document).ready(function() {
                 productContainer.html(`
                 
                         <div class="card" style="width: 100%; height: 100%;">
-                                <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+                                <img class="card-img-top" src="${product.image_source}" alt="Card image cap">
                                 <div class="card-body">
                                         <h5 class="card-title shop-item-name">${product.product_name}</h5>
                                         <p class="card-text shop-item-price">$${product.price}</p>
@@ -268,6 +274,65 @@ $(document).ready(function() {
 
                 shopContainer.append(productsToAdd);
         }
+
+        // adding information into SINGLE PRODUCT PAGE elements.
+        function initializeSingleProductElements(product) {
+                let productContainer = $('.single-product-page-content-container');
+                let singleProductName = $('single-product-name');
+                let singleProductPrice = $('single-product-price');
+
+                singleProductName.text(`${product.name}`);
+                singleProductPrice.text(`${product.price}`);
+        }
+
+        // $(document).on('click', 'button.add-to-cart', function() {
+        //         let itemName = $(this).parent().parent().find('.shop-item-name').text();
+        //         let itemPrice = $(this).parent().parent().find('.shop-item-price').text();
+        //         let itemQuantity = $(this).parent().find("input[name='item-quantity']").val();
+        //         let itemSize = $(this).parent().find('select.size-control').val();
+        //         let itemStock = $(this).parent().parent().find('.shop-item-stock').text();
+        //         let itemId = $(this).parent().parent().find('.shop-item-id').text();
+
+        //         //grabbing total price by multiply item's price by the quantity selected
+        //         let priceInteger = parseFloat(itemPrice.slice(1));
+        //         let quantityInteger = parseInt(itemQuantity);
+        //         let totalPrice = (priceInteger * quantityInteger).toFixed(2);
+
+        //         itemToAdd = {
+        //                 name: `${itemName}`,
+        //                 price: `${itemPrice}`,
+        //                 quantity: `${itemQuantity}`,
+        //                 size: `${itemSize}`,
+        //                 totalPrice: `${totalPrice}`,
+        //                 stock: `${itemStock}`,
+        //                 id: `${itemId}`
+        //         };
+
+        //         if (itemToAdd.size == 'undefined') {
+        //                 itemToAdd.size = ' ';
+        //         }
+
+        //         cartItems.push(itemToAdd);
+        
+        //         localStorage.setItem('item', JSON.stringify(cartItems));
+                
+        //         // adding item quantity to cartTotal
+        //         // cartTotals = cartTotals + parseInt(itemToAdd.quantity);
+
+        //         itemToAdd = {
+        //                 name: '',
+        //                 price: '',
+        //                 quantity: '',
+        //                 size: '',
+        //                 totalPrice: '',
+        //                 stock: '',
+        //                 id: ''
+        //         };
+
+        //         $('.nav-cart-btn').text(`CART [ ${cartTotals} ]`);
+
+              
+        // });    
 
         // Creating template for Checkout Cart Item Row 
         function createCheckoutCartRow(items) {
@@ -480,15 +545,15 @@ $(document).ready(function() {
                 })
         })
 
-        $('#filter-snapbacks').on('click', function(e) {
-                e.preventDefault();
+        // $('#filter-snapbacks').on('click', function(e) {
+        //         e.preventDefault();
 
-                $.get('/products/category/snapbacks', (data) => {
-                        products = data;
-                        initializeDataContainers();
-                        console.log(data);
-                })
-        })
+        //         $.get('/products/category/snapbacks', (data) => {
+        //                 products = data;
+        //                 initializeDataContainers();
+        //                 console.log(data);
+        //         })
+        // })
 
         $('#filter-modernMale').on('click', function(e) {
                 e.preventDefault();
