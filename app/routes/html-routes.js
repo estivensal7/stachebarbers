@@ -82,4 +82,8 @@ const app = express();
                 res.sendFile(path.join(__dirname, '../public/success.html'));
         });
 
+        app.get("/single-item/:routeName/view",function(req,res){
+                res.sendFile(path.join(__dirname, '../public/singleProduct.html'));
+        });
+
 module.exports = app;

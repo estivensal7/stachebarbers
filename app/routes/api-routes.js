@@ -9,10 +9,11 @@ module.exports = function(app) {
 
 	//get all products
 	app.get("/products/all", (req, res) => {
-		Products.findAll({})
+		Products.findAll({
+			where: {primary_item: true}
+		})
 		.then((data) => {
 			res.json(data);
-			// console.log(data);
 		}).catch(error => {
 			console.log(`ERROR: ${error}`);
 		})
@@ -48,6 +49,19 @@ module.exports = function(app) {
 		).then(function(dbProduct) {
 			console.log(dbProduct);
 			res.status(200);
+		}).catch(err => {
+			console.log(err);
+		})
+	});
+
+	//get single-item based off route-name
+	app.get("/single-item/:routeName", (req, res) => {
+		Products.findAll(
+			{where: {route_name: req.params.routeName}}
+		).then(function(data) {
+			console.log(data);
+		}).catch(err => {
+			console.log(err);
 		})
 	});
 	

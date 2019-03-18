@@ -37,6 +37,9 @@ const Product = sequelize.define('product', {
 	},
 	image_source: {
 		type: Sequelize.STRING
+	},
+	primary_item: {
+		type: Sequelize.BOOLEAN
 	}	
 },
 

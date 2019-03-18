@@ -2,6 +2,7 @@ $(document).ready(function() {
 
         let products;
         let shopContainer = $('.shop-page-content-container');
+        let singleProductContainer = $('.single-product-page-content-container');;
         let cartDropDownContainer = $('.nav-cart-dropdown-menu');
         let checkoutCartList = $('.checkout-cart-list');
         let storageData = JSON.parse(localStorage.getItem('item'));
@@ -165,7 +166,7 @@ $(document).ready(function() {
                 let productContainer = $('<div>');
                 productContainer.addClass('shop-item');
 
-                console.log(product);
+                // console.log(product);
 
                 productContainer.html(`
                 
@@ -273,16 +274,6 @@ $(document).ready(function() {
                 }
 
                 shopContainer.append(productsToAdd);
-        }
-
-        // adding information into SINGLE PRODUCT PAGE elements.
-        function initializeSingleProductElements(product) {
-                let productContainer = $('.single-product-page-content-container');
-                let singleProductName = $('single-product-name');
-                let singleProductPrice = $('single-product-price');
-
-                singleProductName.text(`${product.name}`);
-                singleProductPrice.text(`${product.price}`);
         }
 
         // $(document).on('click', 'button.add-to-cart', function() {
@@ -466,12 +457,53 @@ $(document).ready(function() {
                 }
         }
 
+        function singleProductElements(product) {
+                let singleProductDiv = $('<div>');
+
+                singleProductDiv.html(`
+                        <img src="${product.image_source}" class="single-product-img" />
+
+                        <p class="single-product-name">${product.product_name}</p>
+                        <p class="single-product-price">${product.price}</p>
+                        <div class='btn-group size-control-div' role='group'>
+                                <div class="form-group" value="">
+                                        <select class="form-control size-control" id="exampleFormControlSelect1">
+                                                <option class="size-option single-product-s" value="Small">Small</option>
+                                                <option class="size-option single-product-m" value="Medium">Medium</option>
+                                                <option class="size-option single-product-l" value="Large">Large</option>
+                                                <option class="size-option single-product-xl" value="X-Large">X-Large</option>
+                                        </select>
+                                </div>
+                        </div>
+                `)
+
+                return singleProductDiv;
+        }
+
+        // adding information into SINGLE PRODUCT PAGE elements.
+        function initializeSingleProductElements(product) {
+
+                singleProductContainer.empty();
+
+                singleProductContainer.append(singleProductElements(product));
+
+                // singleProductContainer.append(productToAdd);
+                console.log(product);
+        }
+
 
 // ~~~~~~~~~~~~~~~~~~~HANDLING ALL DATA REQUESTS / FILTERING OF DATA SETS FROM DB~~~~~~~~~~~~~~~~~~
         //get all products from DB
         $.get('/products/all', function(data) {
                 products = data;
                 initializeDataContainers();
+        });
+
+        //get single product from DB
+        $.get('/single-item/:routeName', function(data) {
+                product = data;
+                console.log(data);
+                initializeSingleProductElements(product);
         });
 
         // on click event handlers to request data from DB based off category/brand name

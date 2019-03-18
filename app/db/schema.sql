@@ -14,5 +14,6 @@ CREATE TABLE products (
         size BOOLEAN,
         stock INT NOT NULL default 0,
         route_name VARCHAR(50) NOT NULL,
-        image_source VARCHAR(100) NOT NULL
+        image_source VARCHAR(100) NOT NULL,
+        primary_item BOOLEAN
 );

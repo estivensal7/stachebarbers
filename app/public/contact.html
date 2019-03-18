@@ -6,6 +6,7 @@
 
                 <title>Stache Barbers</title>
                 <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+                <link rel="stylesheet" type="text/css" href="./assets/css/media.css">
                 <link 
                         rel="stylesheet" 
                         href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
@@ -27,6 +28,13 @@
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
+                <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+                <script type="text/javascript">
+                        (function(){
+                        emailjs.init("user_sDAbZ5IkFyjc4bLs1mvJm");
+                        })();
+                </script>
+
         </head>
 
         <body>
@@ -34,56 +42,66 @@
                 <!-- NAV HEADER / LOWER NAV BAR -->
                 <nav>
                         
-                        <div class="nav-header">
+                        <div class="nav-header shop-nav">
+                                
                                 <ul>
-
+                                        
                                         <li class="phone-logo">
-                                                <img src="./assets/images/phone.png">
-                                                <p>(908)-222-2222</p>
+                                                <img src="/assets/images/phone.png">
+                                                <p>(908) 810-1648</p>
                                         </li>
-
+                                        
                                         <li class="email-logo">
-                                                <img src="./assets/images/emailLogo.png">
-                                                <p>stache@barbers.com</p>
+                                                <img src="/assets/images/emailLogo.png">
+                                                <p>stachebarbers@gmail.com</p>
                                         </li>
-
+                                        
                                         <li class="instagram-logo">
-                                                <img src="./assets/images/instagram.png">
+                                                <a href="https://www.instagram.com/stachebarbers/?hl=en" target="_blank"><img class="instagram-image" src="/assets/images/instagram.png"></a>
                                         </li>
-
+                                        
                                         <li class="facebook-logo">
-                                                <img src="./assets/images/facebook.png">
+                                                <a href="https://m.facebook.com/Stache-Barbershop-443832585682371/" target="_blank"><img src="/assets/images/facebook.png"></a>
                                         </li>
-
+                                        
                                         <li class="nav-book-appointment">
-                                                <p>BOOK APPOINTMENT</p>
+                                                <a href="/book-appointment"><p>BOOK APPOINTMENT</p></a>
                                         </li>
-
+                                        
                                         <li class="nav-shop">
                                                 <a href="/products/"><p>SHOP</p></a>
                                         </li>
-
+                                        
                                         <li class="nav-cart">
-                                                <p>CART [ 0 ]</p>
+                                                <!-- <p>CART [ 0 ]</p> -->
+                                                <div class="dropdown nav-cart-dropdown">
+                                                        <button class="btn btn-secondary nav-cart-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        CART
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                <!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
+                                                        </div>
+                                                </div>
                                         </li>
-                                
+                                        
                                 </ul>
                         </div>
-
-                        <ul>
+                        
+                        
+                        <ul class="main-ul">
                                 <li><a href="/">HOME</a></li>
                                 <li><a href="/about">ABOUT</a></li>
                                 <li><a href="/services">SERVICES</a></li>
 
                                 <li class="logo">
                                         <div id="base">
-                                                <img src="./assets/images/sbLogo1.png">
+                                                <img src="/assets/images/sbLogo1.png">
                                         </div>
                                 </li>
 
                                 <li><a href="/gallery">GALLERY</a></li>
                                 <li><a href="/news">NEWS</a></li>
-                                <li><a href="/contact" class="active">CONTACT</a></li>
+                                <li><a href="/contact" class="active" >CONTACT</a></li>
                         </ul>
 
                 </nav>
@@ -135,7 +153,10 @@
                         <div class="contact-form">
                                 <form>
                                         <div class="form-group">
-                                                <input type="name" class="form-control" id="contact-name" aria-describedby="emailHelp" placeholder="Name *">
+                                                <input type="first-name" class="form-control" id="contact-first-name" aria-describedby="emailHelp" placeholder="First Name *">
+                                        </div>
+                                        <div class="form-group">
+                                                <input type="last-name" class="form-control" id="contact-last-name" aria-describedby="emailHelp" placeholder="Last Name *">
                                         </div>
                                         <div class="form-group">
                                                 <input type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Email *">
@@ -144,7 +165,7 @@
                                                 <textarea type="text-area" class="form-control" id="contact-message" aria-describedby="emailHelp" placeholder="Message *"></textarea>
                                         </div>
 
-                                        <button type="button" class="btn btn-outline-warning" id="send-msg-button">Send Message</button>
+                                        <button type="submit" class="btn btn-outline-warning" id="send-msg-button">Send Message</button>
                                 </form>
                         </div>
 
@@ -202,5 +223,6 @@
         </body>
 
         <script type="text/javascript" src="./javascript/javascript.js"></script>
+        <script type="text/javascript" src="/javascript/shop.js"></script>
 
 </html>

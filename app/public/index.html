@@ -6,6 +6,7 @@
 
                 <title>Stache Barbers</title>
                 <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+                <link rel="stylesheet" type="text/css" href="./assets/css/media.css">
                 <link 
                         rel="stylesheet" 
                         href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
@@ -31,46 +32,55 @@
 
         <body>
 
-                
-                <nav>
+                <nav class="full-nav d-none d-sm-none d-md-block d-lg-block d-xl-block">
                         
-                        <div class="nav-header">
+                        <div class="nav-header shop-nav">
+                                
                                 <ul>
-
+                                        
                                         <li class="phone-logo">
                                                 <img src="/assets/images/phone.png">
-                                                <p>(908)-222-2222</p>
+                                                <p>(908) 810-1648</p>
                                         </li>
-
+                                        
                                         <li class="email-logo">
                                                 <img src="/assets/images/emailLogo.png">
-                                                <p>stache@barbers.com</p>
+                                                <p>stachebarbers@gmail.com</p>
                                         </li>
-
+                                        
                                         <li class="instagram-logo">
-                                                <img src="/assets/images/instagram.png">
+                                                <a href="https://www.instagram.com/stachebarbers/?hl=en" target="_blank"><img class="instagram-image" src="/assets/images/instagram.png"></a>
                                         </li>
-
+                                        
                                         <li class="facebook-logo">
-                                                <img src="/assets/images/facebook.png">
+                                                <a href="https://m.facebook.com/Stache-Barbershop-443832585682371/" target="_blank"><img src="/assets/images/facebook.png"></a>
                                         </li>
-
+                                        
                                         <li class="nav-book-appointment">
-                                                <p>BOOK APPOINTMENT</p>
+                                                <a href="/book-appointment"><p>BOOK APPOINTMENT</p></a>
                                         </li>
-
+                                        
                                         <li class="nav-shop">
                                                 <a href="/products/"><p>SHOP</p></a>
                                         </li>
-
+                                        
                                         <li class="nav-cart">
-                                                <p>CART [ 0 ]</p>
+                                                <!-- <p>CART [ 0 ]</p> -->
+                                                <div class="dropdown nav-cart-dropdown">
+                                                        <button class="btn btn-secondary nav-cart-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        CART
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                <!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
+                                                        </div>
+                                                </div>
                                         </li>
-                                
+                                        
                                 </ul>
                         </div>
-
-                        <ul>
+                        
+                        
+                        <ul class="main-ul">
                                 <li><a href="/" class="active">HOME</a></li>
                                 <li><a href="/about">ABOUT</a></li>
                                 <li><a href="/services">SERVICES</a></li>
@@ -88,6 +98,21 @@
 
                 </nav>
 
+                <nav role="navigation" id="mobile-nav" class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                        <div id="menuToggle">
+                                <input type="checkbox" />
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <ul id="menu">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Info</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                </ul>
+                        </div>
+                </nav>
+
                 <div class="sec1">
 
                         <div class="sec1-street-logo"></div>
@@ -98,19 +123,19 @@
 
                 <div class="home-service-cards-container">
                         
-                        <a>
+                        <a href="/book-appointment">
                                 <div class="home-service-card" id="home-appointments-card">
                                         <i class="fas fa-cut home-service-card-text">  APPOINTMENTS</i>
                                 </div>
                         </a>
 
-                        <a>
+                        <a href="/products/">
                                 <div class="home-service-card" id="home-shop-card">
                                         <i class="fas fa-cut home-service-card-text"> SHOP</i>
                                 </div>
                         </a>
 
-                        <a>
+                        <a href="/about">
                                 <div class="home-service-card" id="home-barbers-card">
                                         <i class="fas fa-cut home-service-card-text">  THE BARBERS</i>
                                 </div>
@@ -126,11 +151,6 @@
                                         <h1>Stache Barbershop is an upscale men's barbershop with a young energetic vibe.</h1>
 
                                         <hr />
-
-                                        <p>
-                                                We specialize in any style of haircut, ranging from skin tight fades to corporate business man look. 
-                                                We also provide an array of Hot Towel Shave Services which includes, facial cleanse and facial clay mask.
-                                        </p>
 
                                         <a href="/about"><div class="home-content-learn-more-btn">Learn More</div></a>
                                 </div>
@@ -335,5 +355,6 @@
         </body>
 
         <script type="text/javascript" src="/javascript/javascript.js"></script>
+        <script type="text/javascript" src="/javascript/shop.js"></script>
 
 </html>

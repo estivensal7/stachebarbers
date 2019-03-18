@@ -127,4 +127,44 @@ $(document).ready(function() {
                 $(".single-product-top-sec-header").addClass("animated fadeInLeft");
         })
 
+        $('#send-msg-button').on('click', function(e) {
+
+                e.preventDefault();
+
+                let userFirstName = $('#contact-first-name').val();
+                let userLastName = $('#contact-last-name').val();
+                let userEmail = $('#contact-email').val();
+                let userText = $('#contact-message').val();
+                
+                console.log(userFirstName);
+                console.log(userLastName);
+                console.log(userEmail);
+                console.log(userText);
+
+
+                var template_params = {
+                        user_subject: 'Message from StacheBarbers.com',
+                        user_first: userFirstName,
+                        user_last: userLastName,
+                        user_email: userEmail,
+                        text: userText
+                };
+
+                var service_id = "default_service";
+                var template_id = "contact_form";
+                
+                emailjs.send(service_id, template_id, template_params)
+                .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        $('#contact-first-name').val('');
+                        $('#contact-last-name').val('');
+                        $('#contact-email').val('');
+                        $('#contact-message').val('');
+                }, function(error) {
+                        console.log('FAILED...', error);
+                });
+
+
+        })
+
 });
