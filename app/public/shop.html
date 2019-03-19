@@ -1,213 +1,293 @@
 <!DOCTYPE html>
 
 <html>
+	<head>
+		<title>Stache Barbers</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="/assets/css/style.css"
+		/>
+		<!-- <link rel="stylesheet" type="text/css" href="./assets/css/media.css"> -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+			integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+			crossorigin="anonymous"
+		/>
 
-        <head>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+		/>
 
-                <title>Stache Barbers</title>
-                <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-                <link rel="stylesheet" type="text/css" href="./assets/css/media.css">
-                <link 
-                        rel="stylesheet" 
-                        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
-                        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
-                        crossorigin="anonymous"
-                >
-                <link 
-                        rel="stylesheet" 
-                        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
-                        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
-                        crossorigin="anonymous"
-                >
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+			integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+			integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	</head>
 
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<body>
+		<!-- NAV HEADER / LOWER NAV BAR -->
+		<nav>
+			<div class="nav-header shop-nav">
+				<ul>
+					<li class="phone-logo">
+						<img
+							src="/assets/images/phone.png"
+						/>
+						<p>(908)-222-2222</p>
+					</li>
 
-                
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+					<li class="email-logo">
+						<img
+							src="/assets/images/emailLogo.png"
+						/>
+						<p>stache@barbers.com</p>
+					</li>
 
-        </head>
+					<li class="instagram-logo">
+						<img
+							src="/assets/images/instagram.png"
+						/>
+					</li>
 
-        <body>
+					<li class="facebook-logo">
+						<img
+							src="/assets/images/facebook.png"
+						/>
+					</li>
 
-                <!-- NAV HEADER / LOWER NAV BAR -->
-                <nav>
-                        
-                        <div class="nav-header shop-nav">
-                                
-                                <ul>
-                                        
-                                        <li class="phone-logo">
-                                                <img src="/assets/images/phone.png">
-                                                <p>(908)-222-2222</p>
-                                        </li>
-                                        
-                                        <li class="email-logo">
-                                                <img src="/assets/images/emailLogo.png">
-                                                <p>stache@barbers.com</p>
-                                        </li>
-                                        
-                                        <li class="instagram-logo">
-                                                <img src="/assets/images/instagram.png">
-                                        </li>
-                                        
-                                        <li class="facebook-logo">
-                                                <img src="/assets/images/facebook.png">
-                                        </li>
-                                        
-                                        <li class="nav-book-appointment">
-                                                <p>BOOK APPOINTMENT</p>
-                                        </li>
-                                        
-                                        <li class="nav-shop">
-                                                <a href="/products/"><p>SHOP</p></a>
-                                        </li>
-                                        
-                                        <li class="nav-cart">
-                                                <!-- <p>CART [ 0 ]</p> -->
-                                                <div class="dropdown nav-cart-dropdown">
-                                                        <button class="btn btn-secondary nav-cart-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        CART
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                <!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
-                                                        </div>
-                                                </div>
-                                        </li>
-                                        
-                                </ul>
-                        </div>
-                        
-                        
-                        <ul class="main-ul">
-                                <li>
-                                        <a href="#">
-                                                <span class="open-slide">
-                                                        <a href="#" onclick="openSlideMenu()">
-                                                                FILTER
-                                                        </a>
-                                                </span>
-                                        </a>
-                                </li>
-                                <li><a href="/">HOME</a></li>
-                                <li><a href="/about">ABOUT</a></li>
-                                <li><a href="/services">SERVICES</a></li>
+					<li class="nav-book-appointment">
+						<p>BOOK APPOINTMENT</p>
+					</li>
 
-                                <li class="logo">
-                                        <div id="base">
-                                                <img src="/assets/images/sbLogo1.png">
-                                        </div>
-                                </li>
+					<li class="nav-shop">
+						<a href="/products/"
+							><p>SHOP</p></a
+						>
+					</li>
 
-                                <li><a href="/gallery">GALLERY</a></li>
-                                <li><a href="/news">NEWS</a></li>
-                                <li><a href="/contact">CONTACT</a></li>
+					<li class="nav-cart">
+						<!-- <p>CART [ 0 ]</p> -->
+						<div
+							class="dropdown nav-cart-dropdown"
+						>
+							<button
+								class="btn btn-secondary nav-cart-btn"
+								type="button"
+								id="dropdownMenuButton"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								CART
+							</button>
+							<div
+								class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu"
+								aria-labelledby="dropdownMenuButton"
+							>
+								<!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 
-                                <li><a href="/checkout" class="checkout-page-link">CHECKOUT</a></li>
-                        </ul>
+			<ul class="main-ul">
+				<li>
+					<a href="#">
+						<span class="open-slide">
+							<a
+								href="#"
+								onclick="openSlideMenu()"
+							>
+								FILTER
+							</a>
+						</span>
+					</a>
+				</li>
+				<li><a href="/">HOME</a></li>
+				<li><a href="/about">ABOUT</a></li>
+				<li><a href="/services">SERVICES</a></li>
 
-                </nav>
+				<li class="logo">
+					<div id="base">
+						<img
+							src="/assets/images/sbLogo1.png"
+						/>
+					</div>
+				</li>
 
-                
-                <!-- SERVICES PAGE HEADER -->
-                
-                <div class="shop-page-top-sec">
-                        
-                        <div class="top-sec-header">STACHE SHOP</div>
-                        
-                </div>
-                
-                
-                <!-- SERVICES PAGE CONTENT -->
-                
-                
-                <!-- SIDE NAV -->
-                <div id="side-menu" class="side-nav">
-                        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-                        <a href="#" >STACHE ORIGINALS</a>
-                        <a href="#" class="category-links" id="filter-capes">Capes</a>
-                        <a href="#" class="category-links" id="filter-tShirts">T-Shirts</a>
-                        <a href="#" class="category-links" id="filter-hairStyling">Hair Styling</a>
-                        <a href="#" class="category-links" id="filter-beardShaveMustache">Beard/Shave/Mustache</a>
-                        <a href="#" class="category-links" id="filter-facialBody">Facial Body</a>
-                        <a href="#" class="category-links" id="filter-razors">Razors</a>
-                        <!-- <a href="#" class="category-links" id="filter-snapbacks">Snapbacks</a> -->
-                        <a href="#">Shop By Brand</a>
-                        <a href="#" class="brand-links" id="filter-stache">Stache</a>
-                        <a href="#" class="brand-links" id="filter-modernMale">Modern Male</a>
-                        <a href="#" class="brand-links" id="filter-slickGorilla">Slick Gorilla</a>
-                        <a href="#" class="brand-links" id="filter-victoryCrown">Victory Crown</a>
-                        <a href="#" class="brand-links" id="filter-xotics">Xotics</a>
-                </div>
-                
-                <div class="shop-page-content-container"></div>
+				<li><a href="/gallery">GALLERY</a></li>
+				<li><a href="/news">NEWS</a></li>
+				<li><a href="/contact">CONTACT</a></li>
 
-                <!-- FOOTER / FOOTER - BAR -->
+				<li>
+					<a
+						href="/checkout"
+						class="checkout-page-link"
+						>CHECKOUT</a
+					>
+				</li>
+			</ul>
+		</nav>
 
-                <div class="footer">
+		<!-- SERVICES PAGE HEADER -->
 
-                        <div class="footer-content-container">
-                                <p class="footer-content-one">
-                                                414 Chestnut St, 
-                                                <br />
-                                                Union, NJ 07083
-                                                <br />
-                                                (908) 810-1648
-                                                <br />
-                                                stachebarbers@gmail.com
-                                </p>
+		<div class="shop-page-top-sec">
+			<div class="top-sec-header">STACHE SHOP</div>
+		</div>
 
-                                <img src="/assets/images/SBTransparent.png" class="footer-sb-image"/>
-                        
-                                <p class="footer-content-two">
-                                                Monday	10AM–8PM
-                                                <br />
-                                                Tuesday	10AM–8PM
-                                                <br />
-                                                Wednesday 10AM–8PM
-                                                <br />
-                                                Thursday 10AM–8PM
-                                                <br />
-                                                Friday 10AM–8PM
-                                                <br />
-                                                Saturday 10AM–6PM
-                                                <br />
-                                                Sunday Closed
-                                </p>
-                        </div>
+		<!-- SERVICES PAGE CONTENT -->
 
-                        <div class="footer-bar">
+		<!-- SIDE NAV -->
+		<div id="side-menu" class="side-nav">
+			<a href="#" class="btn-close" onclick="closeSlideMenu()"
+				>&times;</a
+			>
+			<a href="#">STACHE ORIGINALS</a>
+			<a href="#" class="category-links" id="filter-capes"
+				>Capes</a
+			>
+			<a href="#" class="category-links" id="filter-tShirts"
+				>T-Shirts</a
+			>
+			<a
+				href="#"
+				class="category-links"
+				id="filter-hairStyling"
+				>Hair Styling</a
+			>
+			<a
+				href="#"
+				class="category-links"
+				id="filter-beardShaveMustache"
+				>Beard/Shave/Mustache</a
+			>
+			<a
+				href="#"
+				class="category-links"
+				id="filter-facialBody"
+				>Facial Body</a
+			>
+			<a href="#" class="category-links" id="filter-razors"
+				>Razors</a
+			>
+			<!-- <a href="#" class="category-links" id="filter-snapbacks">Snapbacks</a> -->
+			<a href="#">Shop By Brand</a>
+			<a href="#" class="brand-links" id="filter-stache"
+				>Stache</a
+			>
+			<a href="#" class="brand-links" id="filter-modernMale"
+				>Modern Male</a
+			>
+			<a href="#" class="brand-links" id="filter-slickGorilla"
+				>Slick Gorilla</a
+			>
+			<a href="#" class="brand-links" id="filter-victoryCrown"
+				>Victory Crown</a
+			>
+			<a href="#" class="brand-links" id="filter-xotics"
+				>Xotics</a
+			>
+		</div>
 
-                                <p class="copyright-logo">Copyright <i class="far fa-copyright"> 2019 Stache Barbers</i></p>
+		<div class="shop-page-content-container"></div>
 
-                                <p class="shop-footer-scroll"><i class="fas fa-angle-double-up"></i>      Back To Top     <i class="fas fa-angle-double-up"></i></p>
+		<!-- FOOTER / FOOTER - BAR -->
 
-                                <img src="/assets/images/instagram.png" class="instagram-logo">
+		<div class="footer">
+			<div class="footer-content-container">
+				<p class="footer-content-one">
+					414 Chestnut St,
+					<br />
+					Union, NJ 07083
+					<br />
+					(908) 810-1648
+					<br />
+					stachebarbers@gmail.com
+				</p>
 
-                                <img src="/assets/images/facebook.png" class="facebook-logo">
-                                
-                        </div>
+				<img
+					src="/assets/images/SBTransparent.png"
+					class="footer-sb-image"
+				/>
 
-                </div>
+				<p class="footer-content-two">
+					Monday 10AM–8PM
+					<br />
+					Tuesday 10AM–8PM
+					<br />
+					Wednesday 10AM–8PM
+					<br />
+					Thursday 10AM–8PM
+					<br />
+					Friday 10AM–8PM
+					<br />
+					Saturday 10AM–6PM
+					<br />
+					Sunday Closed
+				</p>
+			</div>
 
-        </body>
-        
-        <script type="text/javascript" src="/javascript/javascript.js"></script>
-        <script type="text/javascript" src="/javascript/shop.js"></script>
-        <script type="text/javascript">
-                // SIDE NAV OPEN/CLOSE FUNCTIONS
-                function openSlideMenu(){
-                        $('#side-menu').css("width", "250px");
-                        console.log("clicked open");
-                }
+			<div class="footer-bar">
+				<p class="copyright-logo">
+					Copyright
+					<i class="far fa-copyright">
+						2019 Stache Barbers</i
+					>
+				</p>
 
-                function closeSlideMenu(){
-                        $('#side-menu').css("width", "0px");
-                        console.log("clicked closed");
-                }
+				<p class="shop-footer-scroll">
+					<i class="fas fa-angle-double-up"></i>
+					Back To Top
+					<i class="fas fa-angle-double-up"></i>
+				</p>
 
-        </script>
+				<img
+					src="/assets/images/instagram.png"
+					class="instagram-logo"
+				/>
 
+				<img
+					src="/assets/images/facebook.png"
+					class="facebook-logo"
+				/>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="/javascript/javascript.js"></script>
+	<script type="text/javascript" src="/javascript/shop.js"></script>
+	<script type="text/javascript">
+		// SIDE NAV OPEN/CLOSE FUNCTIONS
+		function openSlideMenu() {
+			$("#side-menu").css("width", "250px");
+			console.log("clicked open");
+		}
+
+		function closeSlideMenu() {
+			$("#side-menu").css("width", "0px");
+			console.log("clicked closed");
+		}
+	</script>
 </html>
