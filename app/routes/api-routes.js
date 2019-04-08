@@ -61,12 +61,39 @@ module.exports = function(app) {
 	});
 
 	//get single-item based off route-name
+	// app.get("/api/:routename", (req, res) => {
+	// 	Products.findAll({
+	// 		where: { route_name: req.params.routename }
+	// 	})
+	// 		.then(function(data) {
+	// 			res.json(data);
+	// 		})
+	// 		.catch(err => {
+	// 			console.log(err);
+	// 		});
+	// });
+
 	app.get("/api/:routename", (req, res) => {
 		Products.findAll({
 			where: { route_name: req.params.routename }
 		})
 			.then(function(data) {
-				res.json(data);
+				// res.json(data);
+				if (data.length > 0) {
+					Products.findAll({
+						where: {
+							product_name:
+								data[0]
+									.product_name
+						}
+					})
+						.then(function(allData) {
+							res.json(allData);
+						})
+						.catch(function(err) {
+							console.log(err);
+						});
+				}
 			})
 			.catch(err => {
 				console.log(err);

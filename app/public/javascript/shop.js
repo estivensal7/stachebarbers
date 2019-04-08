@@ -12,7 +12,7 @@ $(document).ready(function() {
 	let adjustedCartTotal;
 	let windowPath = window.location.pathname;
 
-	let singleItemRoute = windowPath.split("/")[2];
+	let singleItemRoute;
 
 	let stripeTotal;
 
@@ -371,54 +371,6 @@ $(document).ready(function() {
 		shopContainer.append(productsToAdd);
 	}
 
-	// $(document).on('click', 'button.add-to-cart', function() {
-	//         let itemName = $(this).parent().parent().find('.shop-item-name').text();
-	//         let itemPrice = $(this).parent().parent().find('.shop-item-price').text();
-	//         let itemQuantity = $(this).parent().find("input[name='item-quantity']").val();
-	//         let itemSize = $(this).parent().find('select.size-control').val();
-	//         let itemStock = $(this).parent().parent().find('.shop-item-stock').text();
-	//         let itemId = $(this).parent().parent().find('.shop-item-id').text();
-
-	//         //grabbing total price by multiply item's price by the quantity selected
-	//         let priceInteger = parseFloat(itemPrice.slice(1));
-	//         let quantityInteger = parseInt(itemQuantity);
-	//         let totalPrice = (priceInteger * quantityInteger).toFixed(2);
-
-	//         itemToAdd = {
-	//                 name: `${itemName}`,
-	//                 price: `${itemPrice}`,
-	//                 quantity: `${itemQuantity}`,
-	//                 size: `${itemSize}`,
-	//                 totalPrice: `${totalPrice}`,
-	//                 stock: `${itemStock}`,
-	//                 id: `${itemId}`
-	//         };
-
-	//         if (itemToAdd.size == 'undefined') {
-	//                 itemToAdd.size = ' ';
-	//         }
-
-	//         cartItems.push(itemToAdd);
-
-	//         localStorage.setItem('item', JSON.stringify(cartItems));
-
-	//         // adding item quantity to cartTotal
-	//         // cartTotals = cartTotals + parseInt(itemToAdd.quantity);
-
-	//         itemToAdd = {
-	//                 name: '',
-	//                 price: '',
-	//                 quantity: '',
-	//                 size: '',
-	//                 totalPrice: '',
-	//                 stock: '',
-	//                 id: ''
-	//         };
-
-	//         $('.nav-cart-btn').text(`CART [ ${cartTotals} ]`);
-
-	// });
-
 	// Creating template for Checkout Cart Item Row
 	function createCheckoutCartRow(items) {
 		let cartRow = $("<li>");
@@ -600,6 +552,15 @@ $(document).ready(function() {
 		console.log(product);
 	}
 
+	$("button.view-item").on("click", function(e) {
+		e.preventDefault();
+
+		singleItemRoute = $(this)
+			.parent()
+			.attr("value");
+		console.log(singleItemRoute);
+	});
+
 	// ~~~~~~~~~~~~~~~~~~~HANDLING ALL DATA REQUESTS / FILTERING OF DATA SETS FROM DB~~~~~~~~~~~~~~~~~~
 	//get all products from DB
 	$.get("/products/all", function(data) {
@@ -613,40 +574,34 @@ $(document).ready(function() {
 	});
 
 	//get single product from DB
-	if (window.location.pathname.split("/")[1] == "single-item") {
-		console.log(window.location.pathname.split("/")[1]);
-		$.get("/api/" + singleItemRoute, function(data) {
-			product = data;
-			console.log(data);
+	if (windowPath.split("/")[1] == "single-item") {
+		$.get("/api/" + windowPath.split("/")[2], function(allData) {
+			console.log(allData);
+			product = allData;
+			console.log(product);
 			// initializeSingleProductElements();
-			console.log(singleItemRoute);
 			singleProductContainer.empty();
 
-			singleProductContainer.append(
+			singleProductContainer.html(
 				`
-                                <img src="${
-					product.image_source
-				}" class="single-product-img" />
-                                
-                                <p class="single-product-name">${
-					product.product_name
-				}</p>
-                                <p class="single-product-price">${
-					product.price
-				}</p>
-                                <div class='btn-group size-control-div' role='group'>
-                                <div class="form-group" value="">
-                                <select class="form-control size-control" id="exampleFormControlSelect1">
-                                <option class="size-option single-product-s" value="Small">Small</option>
-                                <option class="size-option single-product-m" value="Medium">Medium</option>
-                                <option class="size-option single-product-l" value="Large">Large</option>
-                                <option class="size-option single-product-xl" value="X-Large">X-Large</option>
-                                </select>
-                                </div>
-                                </div>
-                                `
+			        <img src="${product[0].image_source}" class="single-product-img" />
+
+			        <p class="single-product-name">${product[0].product_name}</p>
+			        <p class="single-product-price">${product[0].price}</p>
+			        <div class='btn-group size-control-div' role='group'>
+			        <div class="form-group" value="">
+			        <select class="form-control size-control" id="exampleFormControlSelect1">
+			        <option class="size-option single-product-s" value="Small">Small</option>
+			        <option class="size-option single-product-m" value="Medium">Medium</option>
+			        <option class="size-option single-product-l" value="Large">Large</option>
+				<option class="size-option single-product-xl" value="X-Large">X-Large</option>
+				<option class="size-option single-product-xxl" value="XX-Large">XX-Large</option>
+			        </select>
+			        </div>
+			        </div>
+			        `
 			);
-			console.log(singleProductContainer);
+			return singleProductContainer;
 		});
 	}
 

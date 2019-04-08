@@ -7,6 +7,16 @@ body {
 @import url("https://fonts.googleapis.com/css?family=Cinzel");
 @import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative");
 
+@font-face {
+	font-family: "lhf_amarilloregular";
+	src: url("../fonts/webfontkit-lhf-amarillo/lhf_amarillo_bold1-webfont.woff2")
+			format("woff2"),
+		url("../fonts/webfontkit-lhf-amarillo/lhf_amarillo_bold1-webfont.woff")
+			format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
 body * {
 	font-family: "Cinzel", serif;
 }
@@ -126,6 +136,7 @@ nav > ul > li > a {
 	transition: 0.5s;
 	margin-left: 20px;
 	margin-right: 20px;
+	font-family: "lhf_amarilloregular", serif;
 }
 
 nav.transparent > ul > li > a {
@@ -147,10 +158,7 @@ div.sec1 {
 	height: 85vh;
 	background: url("../images/HomeHeader.png");
 	background-size: cover;
-	/* overflow: hidden; */
 	position: relative;
-	/* top: -100px; */
-	/* background-position-y: 100px; */
 }
 
 .sec1 > .sec1-street-logo {
@@ -433,6 +441,7 @@ div > a > #home-barbers-card:hover {
 	font-size: 30px;
 	margin-top: 100px;
 	padding: 30px 30px;
+	font-family: "lhf_amarilloregular", serif;
 }
 
 .home-content-text > p {
@@ -460,6 +469,7 @@ div > a > #home-barbers-card:hover {
 	margin-left: 30px;
 	margin-right: 0px;
 	text-align: center;
+	font-family: "lhf_amarilloregular", serif;
 }
 
 .home-content-scroll-down-p {
@@ -591,7 +601,8 @@ div > a > #home-barbers-card:hover {
 }
 
 nav#mobile-nav {
-	background-color: #1e1e23;
+	background: url("../images/nav-wood.png");
+	background-color: rgba(0, 0, 0, 0.95);
 	height: 65px;
 }
 
@@ -622,7 +633,7 @@ nav#mobile-nav {
 	height: 2px;
 	margin-bottom: 5px;
 	position: relative;
-	background: #ffffff;
+	background: #9d855d;
 	border-radius: 3px;
 	z-index: 1;
 	transform-origin: 5px 0px;
@@ -642,7 +653,7 @@ nav#mobile-nav {
 #menuToggle input:checked ~ span {
 	opacity: 1;
 	transform: rotate(45deg) translate(-3px, -1px);
-	background: #36383f;
+	background: #9d855d;
 }
 #menuToggle input:checked ~ span:nth-last-child(3) {
 	opacity: 0;
@@ -655,14 +666,14 @@ nav#mobile-nav {
 
 #menu {
 	position: absolute;
-	width: 180px;
-	height: 400px;
-	box-shadow: 0 0 10px #85888c;
+	width: 50%;
+	height: 105vh;
+	box-shadow: 0 0 10px #9d855d;
 	margin: -50px 0 0 -50px;
 	padding: 50px;
 	padding-top: 125px;
-	background-color: #f5f6fa;
-	-webkit-font-smoothing: antialiased;
+	background: url("../images/footer-bg.jpg");
+	/* background-color: rgba(0, 0, 0, 0.9); */
 	transform-origin: 0% 0%;
 	transform: translate(-100%, 0);
 	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -675,6 +686,15 @@ nav#mobile-nav {
 
 #menuToggle input:checked ~ ul {
 	transform: none;
+	text-decoration: none;
+	list-style: none;
+}
+
+#menu > li > a {
+	color: #9d855d;
+	text-decoration: none !important;
+	font-size: 30px;
+	font-family: "lhf_amarilloregular", serif;
 }
 
 /* ---------------------------------------------------------- ABOUT PAGE STYLING ---------------------------------------------------------- */
@@ -1573,157 +1593,1269 @@ div.card-body {
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------- */
 
-@media screen and (min-width: 349px) and (max-width: 399px) {
+@media screen and (min-width: 320px) and (max-width: 399px) {
 	/* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
 
-	/* Lower Nav CSS */
-	nav {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 180px;
-		padding: 0;
-		box-sizing: border-box;
-		transition: 0.5s;
-		background: #555;
-		z-index: 5;
+	/* MOBILE NAV STYLING */
+	#menu {
+		width: 60%;
 	}
 
-	nav > ul {
-		height: 135px;
-		background: url("../images/nav-wood.png");
-		transition: 0.5s;
-	}
-
-	nav.transparent > ul {
-		height: 105px;
-		background-color: rgba(102, 102, 102, 0.3);
-		transition: 0.5s;
-	}
-
-	/* transparent class will be added upon user scroll to lower-nav */
-	nav.transparent {
-		background-color: rgba(102, 102, 102, 0.5);
-		height: 150px;
-		padding: 0;
-	}
-
-	nav > .logo {
-		display: block;
-		margin: auto;
-	}
-
-	nav > ul > li.logo > div#base > img {
-		height: 145px;
-		transition: 0.5s;
-	}
-
-	nav.transparent > ul > li.logo > div#base > img {
-		height: 110px;
-	}
-
-	/* styling banner around SB Logo in nav bar */
-	#base {
-		background: #9d855d;
-		display: inline-block;
-		height: 145px;
-		position: relative;
-		width: 120px;
-		transition: 0.5s;
-	}
-
-	#base:before {
-		border-top: 35px solid #9d855d;
-		border-left: 60px solid transparent;
-		border-right: 60px solid transparent;
-		border-radius: 2px;
-		content: "";
-		height: 0;
-		left: 0;
-		position: absolute;
-		top: 145px;
-		width: 0;
-		transition: 0.5s;
-	}
-
-	nav.transparent > ul > li.logo > div#base {
-		background: #9d855d;
-		display: inline-block;
-		height: 110px;
-		position: relative;
-		width: 90px;
-		transition: 0.5s;
-	}
-
-	nav.transparent > ul > li.logo > div#base:before {
-		border-top: 35px solid #9d855d;
-		border-left: 45px solid transparent;
-		border-right: 45px solid transparent;
-		border-radius: 2px;
-		content: "";
-		height: 0;
-		left: 0;
-		position: absolute;
-		top: 109px;
-		width: 0;
-		transition: 0.5s;
-	}
-
-	nav > ul {
-		margin: 0px;
-		padding: 0px;
-		display: flex;
-		justify-content: center;
-	}
-
-	nav > ul > li {
-		list-style: none;
-	}
-
-	nav > ul > li > a {
-		line-height: 115px;
-		color: #fff;
-		padding: 5px 10px;
-		text-decoration: none;
-		transition: 0.5s;
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-
-	nav.transparent > ul > li > a {
-		line-height: 95px;
-	}
-
-	nav > ul > li > a.active,
-	nav > ul > li > a:hover {
-		color: #000;
-		background-color: #9d855d;
-		border-radius: 2px;
-		text-decoration: none;
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 20px;
 	}
 
 	/* Section 1 */
 	div.sec1 {
 		width: 100%;
-		height: 85vh;
+		height: 30vh;
 		background: url("../images/HomeHeader.png");
 		background-size: cover;
-		/* overflow: hidden; */
-		/* position: relative; */
-		/* top: -100px; */
-		/* background-position-y: 100px; */
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 200px;
+		height: 130px;
+		top: 42%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-cards-container {
+		display: block;
+		width: 100%;
+		height: 60vh;
+		justify-content: center;
+		margin-bottom: 100px;
+	}
+
+	.home-service-card {
+		height: 30%;
+		width: 85%;
+		margin: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	#home-appointments-card:hover,
+	#home-shop-card:hover,
+	#home-barbers-card:hover {
+		transform: none !important;
+	}
+
+	.home-service-card > i {
+		font-size: 25px;
+	}
+
+	.home-content {
+		margin-top: -95px;
+		height: 30vh;
+	}
+
+	.home-content-image {
+		margin-left: 20px;
+		height: 90%;
+	}
+
+	.home-content-text {
+		width: 55%;
+		height: 90%;
+		padding: 0px;
+		float: left;
+		text-align: center;
+	}
+
+	.home-content-text > h1 {
+		font-size: 16px;
+		margin-top: 0px;
+		padding: 0px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 130px;
+		height: 20px;
+		font-size: 14px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 250px;
+		width: 90%;
+		font-size: 12px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 15px;
+	}
+
+	.carousel-testimonial-divs > h5 {
+		font-size: 14px;
+	}
+
+	.fas {
+		font-size: 20px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 10px;
+		padding: 0px 20px;
+	}
+
+	.footer,
+	.footer-content-container {
+		height: 200px;
+	}
+
+	.footer-sb-image {
+		height: 50%;
+	}
+
+	.footer-content-one,
+	.footer-content-two {
+		font-size: 10px;
+	}
+
+	.fa-angle-double-up {
+		font-size: 15px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 35%;
+		margin-right: 7%;
+		margin-left: -9%;
+		margin-top: 10px;
+		height: 15px;
+	}
+
+	.third-scroll {
+		width: 30%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 479px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 22.5px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 35vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 200px;
+		height: 130px;
+		top: 42%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-cards-container {
+		display: block;
+		width: 100%;
+		height: 60vh;
+		justify-content: center;
+		margin-bottom: 100px;
+	}
+
+	.home-service-card {
+		height: 30%;
+		width: 85%;
+		margin: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	#home-appointments-card:hover,
+	#home-shop-card:hover,
+	#home-barbers-card:hover {
+		transform: none !important;
+	}
+
+	.home-service-card > i {
+		font-size: 30px;
+	}
+
+	.home-content {
+		margin-top: -95px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 70%;
+	}
+
+	.home-content-text {
+		width: 55%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 15px;
+		margin-top: 0px;
+		padding-top: 0px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 130px;
+		height: 20px;
+		font-size: 14px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 200px;
+		width: 90%;
+		font-size: 12px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 15px;
+	}
+
+	.carousel-testimonial-divs > h5 {
+		font-size: 14px;
+	}
+
+	.fas {
+		font-size: 20px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 10px;
+		padding: 0px 20px;
+	}
+
+	.footer,
+	.footer-content-container {
+		height: 200px;
+	}
+
+	.footer-content-one,
+	.footer-content-two {
+		font-size: 11px;
+	}
+
+	.fa-angle-double-up {
+		font-size: 15px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 40%;
+		margin-right: 2%;
+		margin-left: -9%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 25%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 509px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 300px;
+		height: 180px;
+		top: 32%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 85px;
+		width: 150px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.home-service-card > i {
+		font-size: 16.5px;
+	}
+
+	.home-content {
+		margin-top: -95px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 50%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 15px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 130px;
+		height: 20px;
+		font-size: 14px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 250px;
+		width: 80%;
+		font-size: 14px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-testimonial-divs > h5 {
+		font-size: 15px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 10px;
+		padding: 0px 20px;
+	}
+
+	.footer,
+	.footer-content-container {
+		height: 200px;
+	}
+
+	.footer-content-one,
+	.footer-content-two {
+		font-size: 12px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 40%;
+		margin-right: 2%;
+		margin-left: -11%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 510px) and (max-width: 589px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
 	}
 
 	.sec1 > .sec1-street-logo {
 		width: 400px;
 		height: 230px;
-		background: url("../images/SBLogo3.png");
+		top: 20%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 80px;
+		width: 155px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.home-service-card > i {
+		font-size: 16.5px;
+	}
+
+	.home-content {
+		margin-top: -95px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 50%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 15px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 130px;
+		height: 20px;
+		font-size: 14px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 250px;
+		width: 80%;
+		font-size: 14px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-testimonial-divs > h5 {
+		font-size: 15px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 10px;
+		padding: 0px 20px;
+	}
+
+	.footer,
+	.footer-content-container {
+		height: 200px;
+	}
+
+	.footer-content-one,
+	.footer-content-two {
+		font-size: 12px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 30%;
+		margin-right: 12%;
+		margin-left: -12%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 590px) and (max-width: 639px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
 		background-size: cover;
-		margin: auto;
-		position: relative;
-		top: 40%;
-		opacity: 0.4;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 400px;
+		height: 230px;
+		top: 20%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 100px;
+		width: 175px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.home-service-card > i {
+		font-size: 16.5px;
+	}
+
+	.home-content {
+		margin-top: -40px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 20px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 170px;
+		height: 30px;
+		font-size: 18px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 250px;
+		width: 80%;
+		font-size: 16px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 12px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 35%;
+		margin-right: 6.5%;
+		margin-left: -12%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 679px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 400px;
+		height: 230px;
+		top: 20%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 100px;
+		width: 175px;
+	}
+
+	.home-service-card > i {
+		font-size: 18px;
+	}
+
+	.home-content {
+		margin-top: -40px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 20px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 170px;
+		height: 30px;
+		font-size: 18px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 250px;
+		width: 80%;
+		font-size: 16px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 12px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 30%;
+		margin-right: 7.5%;
+		margin-left: -7%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 680px) and (max-width: 739px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 400px;
+		height: 230px;
+		top: 20%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 100px;
+		width: 175px;
+	}
+
+	.home-service-card > i {
+		font-size: 18px;
+	}
+
+	.home-content {
+		margin-top: -40px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 65%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 22px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 170px;
+		height: 30px;
+		font-size: 18px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 250px;
+		width: 80%;
+		font-size: 16px;
+		margin-top: 40px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 12px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 30%;
+		margin-right: 7.5%;
+		margin-left: -7%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 740px) and (max-width: 766px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 400px;
+		height: 230px;
+		top: 20%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 120px;
+		width: 210px;
+	}
+
+	.home-service-card > i {
+		font-size: 21px;
+	}
+
+	.home-content {
+		margin-top: -40px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 50px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 25px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 170px;
+		height: 30px;
+		font-size: 18px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 300px;
+		width: 70%;
+		font-size: 16px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 10px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 13px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 11px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 20%;
+		margin-right: 20%;
+		margin-left: -7%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 767px) and (max-width: 939px) {
+	/* MOBILE NAV STYLING */
+	#menu > li > a {
+		color: #9d855d;
+		text-decoration: none !important;
+		font-size: 30px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 47vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	.sec1 > .sec1-street-logo {
+		width: 400px;
+		height: 230px;
+		top: 20%;
+		opacity: 0.5;
+	}
+
+	/* scroll buttons */
+	.first-scroll,
+	.home-content-scroll-down-p {
+		display: none;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 140px;
+		width: 245px;
+	}
+
+	.home-service-card > i {
+		font-size: 23px;
+	}
+
+	.home-content {
+		margin-top: -40px;
+		height: 50vh;
+	}
+
+	.home-content-image {
+		margin-left: 50px;
+		height: 100%;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 25px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 170px;
+		height: 30px;
+		font-size: 18px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 300px;
+		width: 50%;
+		font-size: 16px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	.carousel-indicators > li {
+		display: none;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 12px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 30px;
+		height: 30px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 9px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 7px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 25%;
+		margin-right: 20%;
+		margin-left: -7%;
+		margin-top: 15px;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 20px;
+		margin-left: 0px;
+		margin-right: 17%;
+		margin-top: 15px;
+	}
+
+	.full-nav {
+		display: none !important;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	/* #mobile-nav {
+		display: none !important;
+	} */
+}
+
+@media screen and (min-width: 940px) and (max-width: 1029px) {
+	/* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
+
+	nav > ul > li > a {
+		line-height: 115px;
+		margin-left: 25px;
+		margin-right: 25px;
+		font-size: 14px;
 	}
 
 	/* Nav Header CSS */
@@ -1734,10 +2866,9 @@ div.card-body {
 		width: 100%;
 		height: 45px;
 		padding: 0;
-		box-sizing: border-box;
 		transition: 0.5s;
 		background: #000;
-		font-size: 13px;
+		font-size: 16px;
 	}
 
 	.nav-header > ul {
@@ -1751,449 +2882,340 @@ div.card-body {
 		list-style: none;
 		margin: 0px;
 		padding: 0px;
+		font-size: 12px;
 	}
 
 	.nav-header > ul > li > .dropdown > button {
 		width: 80px;
-		font-size: 12px;
+		font-size: 10px;
 		height: 23px;
-		margin: 0px;
-		padding: 0px;
-		background-color: #9d855d;
-		color: #000;
-	}
-
-	.dropdown-divider {
-		border-top: 7px solid #9d855d !important;
-	}
-
-	div.cart-item {
-		min-width: 100%;
-		font-size: 16px;
-		height: 200px;
-	}
-
-	div.cart-item > img {
-		width: 80px;
-		height: 80px;
-		font-size: 14px;
-		float: left;
-		margin: 0;
-		padding: 0;
-		margin-top: 20px;
-	}
-
-	div.cart-item > .cart-item-info {
-		width: 200px;
-		height: 100px;
-		margin: 0;
-		padding: 0;
-		float: right;
-		text-align: center;
-		margin-top: 20px;
 	}
 
 	.nav-cart-dropdown-menu {
 		width: 350px;
-		*/max-height: 500px;
-		overflow: scroll;
-		border: 0;
-	}
-
-	.nav-header > ul > li > a {
-		list-style: none;
-		height: 20px;
-		margin: 0px;
-		padding: 0px 5px 0px 5px;
-		text-decoration: none;
-		color: #000;
-		background-color: #9d855d;
-		border-radius: 2px;
-		text-decoration: none;
+		max-height: 75vh;
 	}
 
 	.nav-header > ul > li.phone-logo,
 	.nav-header > ul > li.email-logo {
-		margin-right: 20px;
-		float: left;
-		padding-top: 5px;
+		margin-right: 10px;
+		padding-top: 0px;
 	}
 
 	.nav-header > ul > li.phone-logo {
-		font-size: 16px;
-	}
-
-	.nav-header > ul > li.instagram-logo > a,
-	.nav-header > ul > li.facebook-logo > a {
-		margin-right: 20px;
-		float: left;
-		padding-top: 10px;
-	}
-
-	.nav-header > ul > li > img {
-		width: 45px;
-		height: 45px;
+		font-size: 14px;
 	}
 
 	.nav-header > ul > li.instagram-logo > a > img,
 	.nav-header > ul > li.facebook-logo > a > img {
-		width: 10px;
-		height: 10px;
-		padding-top: 0px;
+		width: 25px;
+		height: 25px;
 	}
 
-	.instagram-link {
-		background-image: url("../images/instagram.png");
-		width: 20px !important;
+	.nav-header > ul > li.facebook-logo > a > img {
+		margin-top: 9px;
 	}
 
-	.nav-header > ul > li,
-	.nav-header > ul > li > p {
-		display: flex;
-		color: #fff;
-		padding: 0px;
-		padding-top: 12px;
-		margin: 0px;
-		text-decoration: none;
-		transition: 0.5s;
-	}
-
-	.nav-header > ul > li.nav-book-appointment,
-	.nav-header > ul > li.nav-shop,
-	.nav-header > ul > li.nav-cart {
-		margin-right: 20px;
-		margin-left: 10px;
-		padding-top: 10px;
-		margin-top: 0px;
+	.nav-header > ul > li.instagram-logo > a > img {
+		margin-top: 11px;
 	}
 
 	.nav-header > ul > li.nav-book-appointment {
-		margin-left: 550px;
+		margin-left: 17vw;
 	}
 
-	.nav-header > ul > li.nav-book-appointment > p,
-	.nav-header > ul > li.nav-shop > p,
-	.nav-header > ul > li.nav-cart > p {
-		background: #9d855d;
-		color: #000;
-		padding: 0px;
-		padding-left: 2.5px;
-		padding-right: 2.5px;
-		border-radius: 2px;
-		height: 20px;
+	.nav-header > ul > li.nav-book-appointment > a {
+		width: 135px;
+		font-size: 12px;
 	}
 
-	/* scroll buttons */
-	.first-scroll,
-	.second-scroll,
-	.about-page-scroll {
-		color: white;
-		position: relative;
-		width: 50px;
+	.nav-header > ul > li.nav-book-appointment,
+	.nav-header > ul > li.nav-shop {
+		margin-top: 3px;
+		padding-bottom: 5px;
+	}
 
-		top: 40%;
-		left: 48.37%;
-		height: 50px;
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 70vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
 	}
 
 	/* Home Service Cards */
-	.home-service-cards-container {
-		display: flex;
-		width: 100%;
-		height: 30vh;
-		justify-content: center;
-	}
-
 	.home-service-card {
-		height: 200px;
-		width: 350px;
-		position: relative;
-		margin-left: 20px;
-		margin-right: 20px;
-		margin-top: 10px;
-		background-color: #444;
-		outline: 1px solid #fff;
-		outline-offset: -10px;
+		height: 150px;
+		width: 263px;
 	}
 
-	.home-service-card-text {
-		width: 100%;
-		font-size: 35px;
-		color: #9d855d;
-		text-shadow: #000 2px 2px;
-		bottom: 10px;
-		position: absolute;
-		text-align: center;
-	}
-
-	div > a > #home-appointments-card {
-		background: url("../images/service2_bg.jpg");
-		background-size: cover;
-		transition: 0.1s ease-in-out;
-	}
-
-	div > a > #home-shop-card {
-		background: url("../images/rebelRazor.jpg");
-		background-size: cover;
-		transition: 0.1s ease-in-out;
-	}
-
-	div > a > #home-barbers-card {
-		background: url("../images/service1_bg.jpg");
-		background-size: cover;
-		transition: 0.1s ease-in-out;
-	}
-
-	div > a > #home-appointments-card:hover {
-		transform: scale(1.1);
-		transition: 0.1s ease-in-out;
-	}
-
-	div > a > #home-shop-card:hover {
-		transform: scale(1.1);
-		transition: 0.1s ease-in-out;
-	}
-
-	div > a > #home-barbers-card:hover {
-		transform: scale(1.1);
-		transition: 0.1s ease-in-out;
-	}
-
-	/* Home Content */
-	.home-content {
-		width: 100%;
-		height: 600px;
+	.home-service-card > i {
+		font-size: 27px;
 	}
 
 	.home-content-image {
-		margin-left: 20px;
-		height: 90%;
-		float: left;
+		margin-left: 40px;
+		height: 70%;
 	}
 
 	.home-content-text {
 		width: 60%;
 		height: 90%;
-		padding: 10px 20px 10px 20px;
+		padding: 10px 20px;
 		float: left;
 	}
 
 	.home-content-text > h1 {
-		font-size: 30px;
-		margin-top: 20px;
-		padding: 30px 30px;
-	}
-
-	.home-content-text > p {
-		font-size: 20px;
-		padding: 30px 30px;
-	}
-
-	.home-content-text > a {
-		text-decoration: none;
-		color: black;
-	}
-
-	.home-content-text > a:hover {
-		text-decoration: none;
-		color: black;
+		font-size: 25px;
+		margin-top: 45px;
 	}
 
 	.home-content-learn-more-btn {
-		position: relative;
-		width: 120px;
+		width: 170px;
 		height: 30px;
-		background-color: #9d855d;
-		font-size: 20px;
-		border-radius: 2px;
-		margin-left: 30px;
-		margin-right: 0px;
-		text-align: center;
+		font-size: 18px;
 	}
 
 	.home-content-scroll-down-p {
-		float: right;
-		transform: rotate(90deg);
-		transform-origin: left top 0;
-		margin-left: 13px;
+		font-size: 17.5px;
+		margin-right: -200px;
 		margin-top: 100px;
 	}
 
 	.carousel-testimonial-divs {
 		height: 300px;
-		width: 700px;
-		padding: 20px 20px;
-		background-color: #fff;
-		color: #000;
-		border-radius: 5px;
-		font-size: 18px;
-		margin: auto;
-		margin-top: 20px;
-		text-align: center;
-		margin-bottom: 20px;
-
-		-webkit-box-shadow: 0px 0px 30px 3px rgba(128, 128, 128, 1);
-		-moz-box-shadow: 0px 0px 30px 3px rgba(128, 128, 128, 1);
-		box-shadow: 0px 0px 30px 3px rgba(128, 128, 128, 1);
+		width: 50%;
+		font-size: 16px;
 	}
 
 	.carousel-testimonial-divs > p {
-		float: left;
-		width: 88%;
-		margin: auto;
-	}
-
-	.carousel-testimonial-divs > h5 {
-		margin: auto;
-		clear: both;
-	}
-
-	.fa-quote-left {
-		color: #9d855d;
-		float: left;
-		font-size: 35px;
-	}
-
-	.fa-quote-right {
-		color: #9d855d;
-		float: right;
-		font-size: 35px;
+		margin-left: 30px;
 	}
 
 	/* Footer */
-	.footer {
-		width: 100%;
-		height: 300px;
-		background: url("../images/footer-bg.jpg");
-		color: #fff;
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 13px;
+		padding: 0px 20px;
 	}
 
-	.footer-content-container {
-		width: 100%;
-		height: 300px;
-		display: flex;
-		justify-content: center;
-		text-align: center;
-	}
-
-	.footer-sb-image {
-		height: 75%;
-		display: block;
-		margin: auto;
-	}
-
-	.footer-content-one {
-		width: 250px;
-		float: left;
-		margin: auto;
-	}
-
-	.footer-content-two {
-		width: 250px;
-		float: left;
-		margin: auto;
-	}
-
-	footer Bar .footer-bar {
-		width: 100%;
-		height: 45px;
-		padding: 0;
-		box-sizing: border-box;
-		background: #000;
-		font-size: 15px;
-		float: left;
-		display: flex;
-		justify-content: center;
-	}
-
-	.footer-bar > .copyright-logo {
-		float: left;
-		margin-top: 10px;
-		margin-left: 15px;
-	}
-
-	.footer-bar > .instagram-logo,
-	.footer-bar > .facebook-logo {
-		float: right;
-		margin-top: 5px;
-		margin-right: 15px;
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
 		width: 30px;
 		height: 30px;
 	}
 
+	.footer-bar > a > .instagram-logo {
+		margin-top: 5px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 3px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 20%;
+		margin-right: 20%;
+		margin-left: -7%;
+	}
+
 	.third-scroll {
-		width: 200px;
+		width: 20%;
 		height: 40px;
-		margin: auto;
-		margin-left: 29%;
+		margin-left: 0px;
+		margin-right: 17%;
 	}
 
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 400px) and (max-width: 479px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 480px) and (max-width: 509px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 510px) and (max-width: 589px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 590px) and (max-width: 639px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 640px) and (max-width: 679px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 680px) and (max-width: 739px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 740px) and (max-width: 766px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 767px) and (max-width: 939px) {
-	.full-nav {
-		display: none !important;
-	}
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	#mobile-nav {
-		display: none !important;
-	}
-}
-
-@media screen and (min-width: 940px) and (max-width: 1029px) {
 	#mobile-nav {
 		display: none !important;
 	}
 }
 
 @media screen and (min-width: 1030px) and (max-width: 1159px) {
+	/* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
+
+	nav > ul > li > a {
+		line-height: 115px;
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 15px;
+	}
+
+	/* Nav Header CSS */
+	.nav-header {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 45px;
+		padding: 0;
+		transition: 0.5s;
+		background: #000;
+		font-size: 16px;
+	}
+
+	.nav-header > ul {
+		margin: 0px;
+		padding: 0px;
+		display: flex;
+		color: white;
+	}
+
+	.nav-header > ul > li {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		font-size: 12px;
+	}
+
+	.nav-header > ul > li > .dropdown > button {
+		width: 100px;
+		font-size: 12px;
+		height: 23px;
+	}
+
+	.nav-cart-dropdown-menu {
+		width: 450px;
+		max-height: 75vh;
+	}
+
+	.nav-header > ul > li.phone-logo,
+	.nav-header > ul > li.email-logo {
+		margin-right: 30px;
+		padding-top: 0px;
+	}
+
+	.nav-header > ul > li.phone-logo {
+		font-size: 16px;
+	}
+
+	.nav-header > ul > li.instagram-logo > a > img,
+	.nav-header > ul > li.facebook-logo > a > img {
+		width: 30px;
+		height: 30px;
+	}
+
+	.nav-header > ul > li.facebook-logo > a > img {
+		margin-top: 7px;
+	}
+
+	.nav-header > ul > li.instagram-logo > a > img {
+		margin-top: 9px;
+	}
+
+	.instagram-link {
+		background-image: url("../images/instagram.png");
+	}
+
+	.nav-header > ul > li.nav-book-appointment {
+		margin-left: 17vw;
+	}
+
+	.nav-header > ul > li.nav-book-appointment > a {
+		width: 135px;
+	}
+
+	.nav-header > ul > li.nav-book-appointment,
+	.nav-header > ul > li.nav-shop {
+		margin-top: 3px;
+		padding-bottom: 5px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 70vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 160px;
+		width: 280px;
+	}
+
+	.home-service-card > i {
+		font-size: 30px;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 75%;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 27.5px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 170px;
+		height: 30px;
+		font-size: 18px;
+	}
+
+	.home-content-scroll-down-p {
+		font-size: 20px;
+		margin-right: -205px;
+		margin-top: 100px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 350px;
+		width: 50%;
+		font-size: 20px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 13px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 30px;
+		height: 30px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 5px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 3px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 20%;
+		margin-right: 20%;
+		margin-left: -7%;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 40px;
+		margin-left: 0px;
+		margin-right: 17%;
+	}
+
 	#mobile-nav {
 		display: none !important;
 	}
@@ -2206,12 +3228,354 @@ div.card-body {
 }
 
 @media screen and (min-width: 1160px) and (max-width: 1249px) {
+	/* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
+
+	nav > ul > li > a {
+		line-height: 115px;
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 15px;
+	}
+
+	/* Nav Header CSS */
+	.nav-header {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 45px;
+		padding: 0;
+		transition: 0.5s;
+		background: #000;
+		font-size: 16px;
+	}
+
+	.nav-header > ul {
+		margin: 0px;
+		padding: 0px;
+		display: flex;
+		color: white;
+	}
+
+	.nav-header > ul > li {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		font-size: 12px;
+	}
+
+	.nav-header > ul > li > .dropdown > button {
+		width: 100px;
+		font-size: 12px;
+		height: 23px;
+	}
+
+	.nav-cart-dropdown-menu {
+		width: 450px;
+		max-height: 75vh;
+	}
+
+	.nav-header > ul > li.phone-logo,
+	.nav-header > ul > li.email-logo {
+		margin-right: 60px;
+		padding-top: 0px;
+	}
+
+	.nav-header > ul > li.phone-logo {
+		font-size: 16px;
+	}
+
+	.nav-header > ul > li.instagram-logo > a > img,
+	.nav-header > ul > li.facebook-logo > a > img {
+		width: 35px;
+		height: 35px;
+	}
+
+	.nav-header > ul > li.facebook-logo > a > img {
+		margin-top: 3px;
+	}
+
+	.instagram-link {
+		background-image: url("../images/instagram.png");
+	}
+
+	.nav-header > ul > li.nav-book-appointment {
+		margin-left: 17vw;
+	}
+
+	.nav-header > ul > li.nav-book-appointment > a {
+		width: 135px;
+	}
+
+	.nav-header > ul > li.nav-book-appointment,
+	.nav-header > ul > li.nav-shop {
+		margin-top: 3px;
+		padding-bottom: 5px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 70vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 180px;
+		width: 315px;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+		height: 75%;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 30px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 190px;
+		height: 35px;
+		font-size: 20px;
+	}
+
+	.home-content-scroll-down-p {
+		font-size: 20px;
+		margin-right: -150px;
+		margin-top: 100px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 350px;
+		width: 50%;
+		font-size: 20px;
+	}
+
+	.carousel-testimonial-divs > p {
+		margin-left: 30px;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 15px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 30px;
+		height: 30px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 5px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 3px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 20%;
+		margin-right: 20%;
+		margin-left: -7%;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 40px;
+		margin-left: 0px;
+		margin-right: 17%;
+	}
+
 	#mobile-nav {
 		display: none !important;
 	}
 }
 
 @media screen and (min-width: 1250px) and (max-width: 1339px) {
+	/* ----------------------------- HOME PAGE & SOME BASIC ELEMENTS STYLING (NAVBAR / FOOTER .. etc.) ----------------------------- */
+
+	nav > ul > li > a {
+		line-height: 115px;
+		margin-left: 40px;
+		margin-right: 40px;
+		font-size: 18px;
+	}
+
+	/* Nav Header CSS */
+	.nav-header {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 45px;
+		padding: 0;
+		transition: 0.5s;
+		background: #000;
+		font-size: 16px;
+	}
+
+	.nav-header > ul {
+		margin: 0px;
+		padding: 0px;
+		display: flex;
+		color: white;
+	}
+
+	.nav-header > ul > li {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		font-size: 12px;
+	}
+
+	.nav-header > ul > li > .dropdown > button {
+		width: 100px;
+		font-size: 12px;
+		height: 23px;
+	}
+
+	.nav-cart-dropdown-menu {
+		width: 450px;
+		max-height: 75vh;
+	}
+
+	.nav-header > ul > li.phone-logo,
+	.nav-header > ul > li.email-logo {
+		margin-right: 60px;
+		padding-top: 0px;
+	}
+
+	.nav-header > ul > li.phone-logo {
+		font-size: 16px;
+	}
+
+	.nav-header > ul > li.instagram-logo > a > img,
+	.nav-header > ul > li.facebook-logo > a > img {
+		width: 35px;
+		height: 35px;
+	}
+
+	.nav-header > ul > li.facebook-logo > a > img {
+		margin-top: 3px;
+	}
+
+	.instagram-link {
+		background-image: url("../images/instagram.png");
+	}
+
+	.nav-header > ul > li.nav-book-appointment {
+		margin-left: 25vw;
+	}
+
+	.nav-header > ul > li.nav-book-appointment > a {
+		width: 135px;
+	}
+
+	.nav-header > ul > li.nav-book-appointment,
+	.nav-header > ul > li.nav-shop {
+		margin-top: 3px;
+		padding-bottom: 5px;
+	}
+
+	/* Section 1 */
+	div.sec1 {
+		width: 100%;
+		height: 70vh;
+		background: url("../images/HomeHeader.png");
+		background-size: cover;
+	}
+
+	/* Home Service Cards */
+	.home-service-card {
+		height: 200px;
+		width: 350px;
+	}
+
+	.home-content-image {
+		margin-left: 40px;
+	}
+
+	.home-content-text {
+		width: 60%;
+		height: 90%;
+		padding: 10px 20px;
+		float: left;
+	}
+
+	.home-content-text > h1 {
+		font-size: 40px;
+		margin-top: 45px;
+	}
+
+	.home-content-learn-more-btn {
+		width: 190px;
+		height: 35px;
+		font-size: 20px;
+	}
+
+	.home-content-scroll-down-p {
+		font-size: 20px;
+		margin-right: -200px;
+		margin-top: 100px;
+	}
+
+	.carousel-testimonial-divs {
+		height: 400px;
+		width: 50%;
+		font-size: 25px;
+	}
+
+	/* Footer */
+
+	/* footer Bar */
+	.footer-bar {
+		font-size: 17px;
+		padding: 0px 20px;
+	}
+
+	.footer-bar > a > .instagram-logo,
+	.footer-bar > a > .facebook-logo {
+		width: 35px;
+		height: 35px;
+	}
+
+	.footer-bar > a > .instagram-logo {
+		margin-top: 5px;
+	}
+
+	.footer-bar > a > .facebook-logo {
+		margin-top: 3px;
+	}
+
+	.footer-bar > .copyright-logo {
+		float: left;
+		width: 20%;
+		margin-right: 17%;
+	}
+
+	.third-scroll {
+		width: 20%;
+		height: 40px;
+		margin-left: 0px;
+		margin-right: 20%;
+	}
+
 	#mobile-nav {
 		display: none !important;
 	}
@@ -2335,8 +3699,8 @@ div.card-body {
 
 	.home-content-learn-more-btn {
 		width: 190px;
-		height: 45px;
-		font-size: 30px;
+		height: 35px;
+		font-size: 20px;
 	}
 
 	.home-content-scroll-down-p {
@@ -2355,7 +3719,7 @@ div.card-body {
 
 	/* footer Bar */
 	.footer-bar {
-		font-size: 20.5px;
+		font-size: 18px;
 		padding: 0px 20px;
 	}
 
@@ -2384,10 +3748,6 @@ div.card-body {
 		height: 40px;
 		margin-left: 0px;
 		margin-right: 20%;
-	}
-
-	#mobile-nav {
-		display: none !important;
 	}
 
 	#mobile-nav {
@@ -2509,8 +3869,8 @@ div.card-body {
 
 	.home-content-learn-more-btn {
 		width: 190px;
-		height: 45px;
-		font-size: 30px;
+		height: 35px;
+		font-size: 20px;
 	}
 
 	.home-content-scroll-down-p {
@@ -2679,8 +4039,8 @@ div.card-body {
 
 	.home-content-learn-more-btn {
 		width: 190px;
-		height: 45px;
-		font-size: 30px;
+		height: 35px;
+		font-size: 20px;
 	}
 
 	.home-content-scroll-down-p {
@@ -2770,6 +4130,7 @@ div.card-body {
 		margin: 0px;
 		padding: 0px;
 		font-size: 14px;
+		font-family: "lhf_amarilloregular", serif;
 	}
 
 	.nav-header > ul > li > .dropdown > button {
@@ -2849,14 +4210,15 @@ div.card-body {
 
 	.home-content-learn-more-btn {
 		width: 190px;
-		height: 45px;
-		font-size: 30px;
+		height: 35px;
+		font-size: 20px;
 	}
 
 	.home-content-scroll-down-p {
-		font-size: 25px;
-		margin-right: -200px;
-		margin-top: 100px;
+		font-size: 20px;
+		margin-right: -350px;
+		margin-top: 20px;
+		font-family: "lhf_amarilloregular", serif;
 	}
 
 	.carousel-testimonial-divs {
@@ -3019,8 +4381,8 @@ div.card-body {
 
 	.home-content-learn-more-btn {
 		width: 190px;
-		height: 45px;
-		font-size: 30px;
+		height: 40px;
+		font-size: 20px;
 	}
 
 	.home-content-scroll-down-p {
@@ -3218,8 +4580,8 @@ div.card-body {
 
 	.home-content-learn-more-btn {
 		width: 190px;
-		height: 45px;
-		font-size: 30px;
+		height: 35px;
+		font-size: 20px;
 	}
 
 	.home-content-scroll-down-p {
