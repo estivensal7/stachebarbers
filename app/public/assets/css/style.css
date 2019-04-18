@@ -703,6 +703,20 @@ nav#mobile-nav {
 	font-family: "lhf_amarilloregular", serif;
 }
 
+/* SUCCESS PAGE JUMBO STYLING */
+/* SUCCESS PAGE JUMBO STYLING */
+/* SUCCESS PAGE JUMBO STYLING */
+/* SUCCESS PAGE JUMBO STYLING */
+
+.success-jumbo {
+	margin: 0 !important;
+	background: url("../images/bgPattern.jpg") !important;
+}
+
+#success-sec-1 {
+	top: 0px !important;
+}
+
 /* ----------------ABOUT PAGE STYLING ------------------ */
 /* ----------------ABOUT PAGE STYLING ------------------ */
 /* ----------------ABOUT PAGE STYLING ------------------ */
@@ -1320,6 +1334,10 @@ div.card-body {
 .checkout-page-container {
 	padding: 20px;
 	margin-top: 250px;
+}
+
+.stripe-button-el {
+	margin-bottom: 100px;
 }
 
 /* --------------- APPOINTMENT PAGE STYLING -------------------- */
