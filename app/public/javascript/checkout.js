@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	Stripe.setPublishableKey("pk_test_fHYWvPPZvMWJQ8YZKvOYafuY");
+	const keys = require("../../config/keys");
+	Stripe.setPublishableKey(keys.stripePublishableKey);
 
 	//grabbing elements
 	let $form = $("#checkout-form");
@@ -47,7 +48,7 @@ $(document).ready(function() {
 			//insert token into the form so it gets sent to the server
 			$form.append(
 				$(
-					"<input type='hidden' name='stripeToken />"
+					"<input type='hidden' name='stripeToken' />"
 				).val(token)
 			);
 
