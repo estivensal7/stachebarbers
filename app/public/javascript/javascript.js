@@ -66,7 +66,7 @@ $(document).ready(function() {
 			{
 				scrollTop:
 					$(".barbers-list-container").offset()
-						.top - 175
+						.top - 225
 			},
 			2000
 		);

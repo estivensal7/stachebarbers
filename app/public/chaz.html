@@ -1,282 +1,463 @@
 <!DOCTYPE html>
 
 <html>
+	<head>
+		<title>Stache Barbers</title>
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./assets/css/media.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+			integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+			crossorigin="anonymous"
+		/>
 
-        <head>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+		/>
 
-                <title>Stache Barbers</title>
-                <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-                <link rel="stylesheet" type="text/css" href="./assets/css/media.css">
-                <link 
-                        rel="stylesheet" 
-                        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
-                        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
-                        crossorigin="anonymous"
-                >
-                <link 
-                        rel="stylesheet" 
-                        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
-                        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
-                        crossorigin="anonymous"
-                >
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+			integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+			integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	</head>
 
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<body>
+		<!-- NAV HEADER / LOWER NAV BAR -->
+		<nav class="full-nav">
+			<div class="nav-header shop-nav">
+				<ul>
+					<li class="phone-logo">
+						<img
+							src="/assets/images/phone.png"
+						/>
+						<p>(908) 810-1648</p>
+					</li>
 
-                
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+					<li class="email-logo">
+						<img
+							src="/assets/images/emailLogo.png"
+						/>
+						<p>stachebarbers@gmail.com</p>
+					</li>
 
-        </head>
+					<li class="instagram-logo">
+						<a
+							href="https://www.instagram.com/stachebarbers/?hl=en"
+							target="_blank"
+							><img
+								class="instagram-image"
+								src="/assets/images/instagram.png"
+						/></a>
+					</li>
 
-        <body>
+					<li class="facebook-logo">
+						<a
+							href="https://m.facebook.com/Stache-Barbershop-443832585682371/"
+							target="_blank"
+							><img
+								src="/assets/images/facebook.png"
+						/></a>
+					</li>
 
-                <!-- NAV HEADER / LOWER NAV BAR -->
-                <nav>
-                        
-                        <div class="nav-header shop-nav">
-                                
-                                <ul>
-                                        
-                                        <li class="phone-logo">
-                                                <img src="/assets/images/phone.png">
-                                                <p>(908) 810-1648</p>
-                                        </li>
-                                        
-                                        <li class="email-logo">
-                                                <img src="/assets/images/emailLogo.png">
-                                                <p>stachebarbers@gmail.com</p>
-                                        </li>
-                                        
-                                        <li class="instagram-logo">
-                                                <a href="https://www.instagram.com/stachebarbers/?hl=en" target="_blank"><img class="instagram-image" src="/assets/images/instagram.png"></a>
-                                        </li>
-                                        
-                                        <li class="facebook-logo">
-                                                <a href="https://m.facebook.com/Stache-Barbershop-443832585682371/" target="_blank"><img src="/assets/images/facebook.png"></a>
-                                        </li>
-                                        
-                                        <li class="nav-book-appointment">
-                                                <a href="/book-appointment"><p>BOOK APPOINTMENT</p></a>
-                                        </li>
-                                        
-                                        <li class="nav-shop">
-                                                <a href="/products/"><p>SHOP</p></a>
-                                        </li>
-                                        
-                                        <li class="nav-cart">
-                                                <!-- <p>CART [ 0 ]</p> -->
-                                                <div class="dropdown nav-cart-dropdown">
-                                                        <button class="btn btn-secondary nav-cart-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        CART
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                <!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
-                                                        </div>
-                                                </div>
-                                        </li>
-                                        
-                                </ul>
-                        </div>
-                        
-                        
-                        <ul class="main-ul">
-                                <li><a href="/">HOME</a></li>
-                                <li><a href="/about" class="active">ABOUT</a></li>
-                                <li><a href="/services">SERVICES</a></li>
+					<li class="nav-book-appointment">
+						<a href="/book-appointment"
+							><p>
+								BOOK APPOINTMENT
+							</p></a
+						>
+					</li>
 
-                                <li class="logo">
-                                        <div id="base">
-                                                <img src="/assets/images/sbLogo1.png">
-                                        </div>
-                                </li>
+					<li class="nav-shop">
+						<a href="/products/"
+							><p>SHOP</p></a
+						>
+					</li>
 
-                                <li><a href="/gallery">GALLERY</a></li>
-                                <li><a href="/news">NEWS</a></li>
-                                <li><a href="/contact">CONTACT</a></li>
-                        </ul>
+					<li class="nav-cart">
+						<!-- <p>CART [ 0 ]</p> -->
+						<div
+							class="dropdown nav-cart-dropdown"
+						>
+							<button
+								class="btn btn-secondary nav-cart-btn"
+								type="button"
+								id="dropdownMenuButton"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								CART
+							</button>
+							<div
+								class="dropdown-menu dropdown-menu-right nav-cart-dropdown-menu"
+								aria-labelledby="dropdownMenuButton"
+							>
+								<!-- <p class="no-items-in-cart-p">You Have No Items In Your Cart Yet!?</p> -->
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 
-                </nav>
+			<ul class="main-ul">
+				<li><a href="/">HOME</a></li>
+				<li>
+					<a href="/about" class="active"
+						>ABOUT</a
+					>
+				</li>
+				<li><a href="/services">SERVICES</a></li>
 
-                <!-- ABOUT PAGE HEADER -->
+				<li class="logo">
+					<div id="base">
+						<img
+							src="/assets/images/sbLogo1.png"
+						/>
+					</div>
+				</li>
 
-                <div class="barber-page-top-sec">
+				<li><a href="/gallery">GALLERY</a></li>
+				<li><a href="#">NEWS</a></li>
+				<li><a href="/contact">CONTACT</a></li>
+			</ul>
+		</nav>
 
-                        <div class="top-sec-header">CHAZ</div>
-        
-                </div>
+		<nav role="navigation" id="mobile-nav">
+			<div id="menuToggle">
+				<input type="checkbox" />
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="/">HOME</a></li>
+					<li><a href="/about">ABOUT</a></li>
+					<li>
+						<a href="/services">SERVICES</a>
+					</li>
+					<li><a href="/gallery">GALLERY</a></li>
+					<li><a href="/news">NEWS</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/products/">SHOP</a></li>
+				</ul>
+			</div>
+		</nav>
 
+		<!-- ABOUT PAGE HEADER -->
 
-                <!-- ABOUT PAGE CONTENT -->
+		<div class="barber-page-top-sec">
+			<div class="top-sec-header">CHAZ</div>
+		</div>
 
-                <div class="barber-page-content-container">
+		<!-- ABOUT PAGE CONTENT -->
 
-                        <div class="barber-top-bio-container">
-                                <div class="profile-pic-widget-container">
-                                        <img class="barber-profile-pic" src="./assets/images/chaz/chazHS.png" />
+		<div class="barber-page-content-container">
+			<div class="barber-top-bio-container">
+				<div class="profile-pic-widget-container">
+					<img
+						class="barber-profile-pic"
+						src="./assets/images/chaz/chazHS.png"
+					/>
 
-                                        <p class="barber-availibility">Available Tuesday – Saturday</p>
+					<p class="barber-availibility">
+						Available Tuesday – Saturday
+					</p>
 
-                                        <p class="barber-vacation-hours">Vacation Days: October 26th – 28th</p>
+					<p class="barber-vacation-hours">
+						Vacation Days: October 26th –
+						28th
+					</p>
 
-                                        <div 
-                                                class="vagaro" 
-                                                id="barber-vagaro-widget"
-                                                style="width:250px; padding:0; border:0; text-align:center; font-size:14px; color:#AAA;"
-                                        >
-                                                <style>
-                                                        .vagaro a {font-size:14px; color:#AAA; text-decoration:none;}
-                                                </style>
-                                                <a href="https://sales.vagaro.com/">Powered by Vagaro</a>
-                                                &nbsp;
-                                                <a href="https://sales.vagaro.com/salon-software">Salon Software</a>
-                                                ,&nbsp;
-                                                <a href="https://sales.vagaro.com/spa-software">Spa Software</a>
-                                                &nbsp;&amp;&nbsp;
-                                                <a href="https://sales.vagaro.com/fitness-software">Fitness Software</a>
-                                                
-                                                <script 
-                                                        type="text/javascript" 
-                                                        src="https://www.vagaro.com//resources/WidgetWindowLoader/OZqnEJOpC2PqFJ5y79oz34mC2PlFK9lRsiWJcyxapkUcPCu7gCmjZcoapOUcO?v=PWAYhJyz5y01eMmHNzMyYHweOX6FWKZhOgiizFIL4wUO#"
-                                                >
-                                                </script>
-                                        </div>
-                                </div>
+					<div
+						class="vagaro"
+						id="barber-vagaro-widget"
+						style="width:250px; padding:0; border:0; text-align:center; font-size:14px; color:#AAA;"
+					>
+						<style>
+							.vagaro a {
+								font-size: 14px;
+								color: #aaa;
+								text-decoration: none;
+							}
+						</style>
+						<a
+							href="https://sales.vagaro.com/"
+							>Powered by Vagaro</a
+						>
+						&nbsp;
+						<a
+							href="https://sales.vagaro.com/salon-software"
+							>Salon Software</a
+						>
+						,&nbsp;
+						<a
+							href="https://sales.vagaro.com/spa-software"
+							>Spa Software</a
+						>
+						&nbsp;&amp;&nbsp;
+						<a
+							href="https://sales.vagaro.com/fitness-software"
+							>Fitness Software</a
+						>
 
-                                <div class="barber-video-container">
-                                        <iframe 
-                                                width="560" 
-                                                height="315" 
-                                                src="https://www.youtube.com/embed/z0h45r0khIE" 
-                                                frameborder="0" 
-                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                                                allowfullscreen
-                                                class="barber-video"
-                                                >
-                                        </iframe>
-                                </div>
-                        </div>
-                        
-                        <!-- DIVIDER / "BARBERS" HEADER -->
-                        <div class="barber-divider-container">
-                                <p class="divider-header">PASSION • INSPIRATION • DETERMINATION</p>
-                                <img src="./assets/images/deco.svg" class="divider-img"/>
-                        </div>
-                        
-                        <div class="barber-bio-container">
-                                <p>
-                                        Chaz Hazlitt is an immensely passionate and a notorious Master Barber who has earned remarkable respect and admiration for his work as a hair stylist. In the past, 
-                                        Chaz had an incredible passion for the art of barbering and this passion inspired him to pursue a career as a professional barber. Chaz’s appetite for creativity enabled 
-                                        him to cultivate his natural talents and powered his pursuit into the success it is today. His passion and love for the profession inspired him to strive for greatness. 
-                                        Equipped with an experience of more than 20 years of serving as a barber, Chaz formulated his own business under the name of “Stache Barbers” alongside his partner Michael Checo.
+						<script
+							type="text/javascript"
+							src="https://www.vagaro.com//resources/WidgetWindowLoader/OZqnEJOpC2PqFJ5y79oz34mC2PlFK9lRsiWJcyxapkUcPCu7gCmjZcoapOUcO?v=PWAYhJyz5y01eMmHNzMyYHweOX6FWKZhOgiizFIL4wUO#"
+						></script>
+					</div>
+				</div>
 
-                                        Chaz serves as the mentor to his partner and acquired his training from The American Crew, Sexy Hair, & Vidal Sassoon. As a Master barber, Chaz’s primary objective has always 
-                                        been to serve the community. One of his primary goals is to help the industry grow by cultivating the skills and talents of today’s barbers and future talent to come. 
-                                        Working his way up to the ladder of success, he was able to create a name for himself as a leader in the industry. Chaz’s fame & popularity assisted him in taking a leap 
-                                        of faith as he embarked on his professional career as a celebrity barber. Chaz is currently working with several renowned celebrities such as Diddy, Usher, Big Sean, Machine Gun Kelly, 
-                                        Reggie Miller, Anthony Mackie, YBN Cordae, YBN Nahmir, DJ Drama, and Stevie J.
-                                        
-                                        His work had also been featured on star-studded shows such as the Jimmy Fallon Show, Seth Myers, The View, Good Morning America, MTV, BET, VH1, and Fuse. 
-                                        Chaz’s editorial work includes Vogue Magazine, GQ, Rolling Stones, Inked Magazine, XXL, Vibe, YRB and The Source. With the mindset to expand the Stache brand globally,
-                                         he is always on the lookout for an opportunity to give new meaning to traditional barbering & hair styling values. Chaz is also a co-creator and designer for the 
-                                         Stache Barbers Apparel – An awe-inspiring Barber Life Style Brand which offers top-notch T-Shirts, Hats, and Barber Capes.
-                                        
-                                        Chaz’s inventiveness & ingenuity has also enabled him to reach new heights as a creator & inventor of The Rebel Razor – The first-ever exposed straight razor which provides the 
-                                        optimum level barbering experience. Aside from this, he shares an incredible passion for music, art, and developing trend setting hair styling products.
-                                        
-                                        In closing, Chaz’s greatest source of inspiration comes from his family and peers in the industry. This alone will fuel his passion to not only perfect his abilities but to create 
-                                        a culture within the barbering community.
-                                </p>
-                        </div>
+				<div class="barber-video-container">
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/z0h45r0khIE"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+						class="barber-video"
+					>
+					</iframe>
+				</div>
+			</div>
 
-                        <div class="gallery">
+			<!-- DIVIDER / "BARBERS" HEADER -->
+			<div class="barber-divider-container">
+				<p class="divider-header">
+					PASSION • INSPIRATION • DETERMINATION
+				</p>
+				<img
+					src="./assets/images/deco.svg"
+					class="divider-img"
+				/>
+			</div>
 
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets/images/chaz/chaz1.jpg" >
-                                        </div>
-                        
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz2.jpg" >
-                                        </div>
-                        
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz3.jpg" >
-                                        </div>
-                        
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz4.jpg" >
-                                        </div>
-                        
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz5.jpg" >
-                                        </div>
-                        
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz6.jpg" >
-                                        </div>
+			<div class="barber-bio-container">
+				<p>
+					Chaz Hazlitt is an immensely passionate
+					and a notorious Master Barber who has
+					earned remarkable respect and admiration
+					for his work as a hair stylist. In the
+					past, Chaz had an incredible passion for
+					the art of barbering and this passion
+					inspired him to pursue a career as a
+					professional barber. Chaz’s appetite for
+					creativity enabled him to cultivate his
+					natural talents and powered his pursuit
+					into the success it is today. His
+					passion and love for the profession
+					inspired him to strive for greatness.
+					Equipped with an experience of more than
+					20 years of serving as a barber, Chaz
+					formulated his own business under the
+					name of “Stache Barbers” alongside his
+					partner Michael Checo. Chaz serves as
+					the mentor to his partner and acquired
+					his training from The American Crew,
+					Sexy Hair, & Vidal Sassoon. As a Master
+					barber, Chaz’s primary objective has
+					always been to serve the community. One
+					of his primary goals is to help the
+					industry grow by cultivating the skills
+					and talents of today’s barbers and
+					future talent to come. Working his way
+					up to the ladder of success, he was able
+					to create a name for himself as a leader
+					in the industry. Chaz’s fame &
+					popularity assisted him in taking a leap
+					of faith as he embarked on his
+					professional career as a celebrity
+					barber. Chaz is currently working with
+					several renowned celebrities such as
+					Diddy, Usher, Big Sean, Machine Gun
+					Kelly, Reggie Miller, Anthony Mackie,
+					YBN Cordae, YBN Nahmir, DJ Drama, and
+					Stevie J. His work had also been
+					featured on star-studded shows such as
+					the Jimmy Fallon Show, Seth Myers, The
+					View, Good Morning America, MTV, BET,
+					VH1, and Fuse. Chaz’s editorial work
+					includes Vogue Magazine, GQ, Rolling
+					Stones, Inked Magazine, XXL, Vibe, YRB
+					and The Source. With the mindset to
+					expand the Stache brand globally, he is
+					always on the lookout for an opportunity
+					to give new meaning to traditional
+					barbering & hair styling values. Chaz is
+					also a co-creator and designer for the
+					Stache Barbers Apparel – An
+					awe-inspiring Barber Life Style Brand
+					which offers top-notch T-Shirts, Hats,
+					and Barber Capes. Chaz’s inventiveness &
+					ingenuity has also enabled him to reach
+					new heights as a creator & inventor of
+					The Rebel Razor – The first-ever exposed
+					straight razor which provides the
+					optimum level barbering experience.
+					Aside from this, he shares an incredible
+					passion for music, art, and developing
+					trend setting hair styling products. In
+					closing, Chaz’s greatest source of
+					inspiration comes from his family and
+					peers in the industry. This alone will
+					fuel his passion to not only perfect his
+					abilities but to create a culture within
+					the barbering community.
+				</p>
+			</div>
 
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz7.jpg" >
-                                        </div>
-                        
-                                        <div class="gallery-item">
-                                                <img class="gallery-image" src="./assets//images/chaz/chaz8.jpg" >
-                                        </div>
-                        
-                                </div>
-                        
-                </div>
+			<div class="gallery barber-gallery">
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets/images/chaz/chaz1.jpg"
+					/>
+				</div>
 
-                <!-- FOOTER / FOOTER - BAR -->
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz2.jpg"
+					/>
+				</div>
 
-                <div class="footer">
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz3.jpg"
+					/>
+				</div>
 
-                        <div class="footer-content-container">
-                                <p class="footer-content-one">
-                                                414 Chestnut St, 
-                                                <br />
-                                                Union, NJ 07083
-                                                <br />
-                                                (908) 810-1648
-                                                <br />
-                                                stachebarbers@gmail.com
-                                </p>
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz4.jpg"
+					/>
+				</div>
 
-                                <img src="./assets/images/SBTransparent.png" class="footer-sb-image"/>
-                        
-                                <p class="footer-content-two">
-                                                Monday	10AM–8PM
-                                                <br />
-                                                Tuesday	10AM–8PM
-                                                <br />
-                                                Wednesday 10AM–8PM
-                                                <br />
-                                                Thursday 10AM–8PM
-                                                <br />
-                                                Friday 10AM–8PM
-                                                <br />
-                                                Saturday 10AM–6PM
-                                                <br />
-                                                Sunday Closed
-                                </p>
-                        </div>
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz5.jpg"
+					/>
+				</div>
 
-                        <div class="barber-footer-bar">
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz6.jpg"
+					/>
+				</div>
 
-                                <p class="copyright-logo">Copyright <i class="far fa-copyright"> 2019 Stache Barbers</i></p>
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz7.jpg"
+					/>
+				</div>
 
-                                <img src="./assets/images/instagram.png" class="instagram-logo">
+				<div class="gallery-item">
+					<img
+						class="gallery-image"
+						src="./assets//images/chaz/chaz8.jpg"
+					/>
+				</div>
+			</div>
+		</div>
 
-                                <img src="./assets/images/facebook.png" class="facebook-logo">
-                                
-                        </div>
+		<!-- FOOTER / FOOTER - BAR -->
 
-                </div>
+		<div class="footer barber-footer">
+			<div
+				class="footer-content-container barber-footer-content-container"
+			>
+				<p class="footer-content-one">
+					414 Chestnut St,
+					<br />
+					Union, NJ 07083
+					<br />
+					(908) 810-1648
+					<br />
+					stachebarbers@gmail.com
+				</p>
 
-        </body>
+				<img
+					src="./assets/images/SBTransparent.png"
+					class="footer-sb-image"
+				/>
 
-        <script type="text/javascript" src="./javascript/javascript.js"></script>
-        <script type="text/javascript" src="/javascript/shop.js"></script>
+				<p class="footer-content-two">
+					Monday 10AM–8PM
+					<br />
+					Tuesday 10AM–8PM
+					<br />
+					Wednesday 10AM–8PM
+					<br />
+					Thursday 10AM–8PM
+					<br />
+					Friday 10AM–8PM
+					<br />
+					Saturday 10AM–6PM
+					<br />
+					Sunday Closed
+				</p>
+			</div>
 
+			<div class="barber-footer-bar">
+				<p class="copyright-logo">
+					Copyright
+					<i class="far fa-copyright">
+						2019 Stache Barbers</i
+					>
+				</p>
+
+				<img
+					src="./assets/images/instagram.png"
+					class="instagram-logo"
+				/>
+
+				<img
+					src="./assets/images/facebook.png"
+					class="facebook-logo"
+				/>
+			</div>
+		</div>
+	</body>
+
+	<script
+		type="text/javascript"
+		src="./javascript/javascript.js"
+	></script>
+	<script type="text/javascript" src="/javascript/shop.js"></script>
 </html>

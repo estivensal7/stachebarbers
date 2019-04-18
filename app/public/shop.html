@@ -3,6 +3,10 @@
 <html>
 	<head>
 		<title>Stache Barbers</title>
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1"
+		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
@@ -47,7 +51,7 @@
 
 	<body>
 		<!-- NAV HEADER / LOWER NAV BAR -->
-		<nav>
+		<nav class="full-nav">
 			<div class="nav-header shop-nav">
 				<ul>
 					<li class="phone-logo">
@@ -113,18 +117,6 @@
 			</div>
 
 			<ul class="main-ul">
-				<li>
-					<a href="#">
-						<span class="open-slide">
-							<a
-								href="#"
-								onclick="openSlideMenu()"
-							>
-								FILTER
-							</a>
-						</span>
-					</a>
-				</li>
 				<li><a href="/">HOME</a></li>
 				<li><a href="/about">ABOUT</a></li>
 				<li><a href="/services">SERVICES</a></li>
@@ -138,77 +130,157 @@
 				</li>
 
 				<li><a href="/gallery">GALLERY</a></li>
-				<li><a href="/news">NEWS</a></li>
+				<li><a href="#">NEWS</a></li>
 				<li><a href="/contact">CONTACT</a></li>
-
-				<li>
-					<a
-						href="/checkout"
-						class="checkout-page-link"
-						>CHECKOUT</a
-					>
-				</li>
 			</ul>
 		</nav>
 
-		<!-- SERVICES PAGE HEADER -->
+		<nav role="navigation" id="mobile-nav">
+			<div id="menuToggle">
+				<input type="checkbox" />
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="/">HOME</a></li>
+					<li><a href="/about">ABOUT</a></li>
+					<li>
+						<a href="/services">SERVICES</a>
+					</li>
+					<li><a href="/gallery">GALLERY</a></li>
+					<li><a href="/news">NEWS</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/products/">SHOP</a></li>
+					<li>
+						<a href="/checkout">CHECKOUT</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-		<div class="shop-page-top-sec">
-			<div class="top-sec-header">STACHE SHOP</div>
-		</div>
+		<!-- SHOP PAGE CONTENT -->
 
-		<!-- SERVICES PAGE CONTENT -->
-
-		<!-- SIDE NAV -->
-		<div id="side-menu" class="side-nav">
-			<a href="#" class="btn-close" onclick="closeSlideMenu()"
-				>&times;</a
-			>
-			<a href="#">STACHE ORIGINALS</a>
-			<a href="#" class="category-links" id="filter-capes"
-				>Capes</a
-			>
-			<a href="#" class="category-links" id="filter-tShirts"
-				>T-Shirts</a
-			>
-			<a
-				href="#"
-				class="category-links"
-				id="filter-hairStyling"
-				>Hair Styling</a
-			>
-			<a
-				href="#"
-				class="category-links"
-				id="filter-beardShaveMustache"
-				>Beard/Shave/Mustache</a
-			>
-			<a
-				href="#"
-				class="category-links"
-				id="filter-facialBody"
-				>Facial Body</a
-			>
-			<a href="#" class="category-links" id="filter-razors"
-				>Razors</a
-			>
-			<!-- <a href="#" class="category-links" id="filter-snapbacks">Snapbacks</a> -->
-			<a href="#">Shop By Brand</a>
-			<a href="#" class="brand-links" id="filter-stache"
-				>Stache</a
-			>
-			<a href="#" class="brand-links" id="filter-modernMale"
-				>Modern Male</a
-			>
-			<a href="#" class="brand-links" id="filter-slickGorilla"
-				>Slick Gorilla</a
-			>
-			<a href="#" class="brand-links" id="filter-victoryCrown"
-				>Victory Crown</a
-			>
-			<a href="#" class="brand-links" id="filter-xotics"
-				>Xotics</a
-			>
+		<div class="container filter-container">
+			<div class="row">
+				<div
+					class="col-12 col-sm-12 col-md-6 col-lg-6 offset-md-3 offset-lg-3"
+				>
+					<p class="collapse-container">
+						<a
+							class="btn btn-outline-dark btn-block"
+							data-toggle="collapse"
+							href="#collapseExample"
+							role="button"
+							aria-expanded="false"
+							aria-controls="collapseExample"
+						>
+							FILTER ITEMS
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div
+					class="col-12 col-sm-12 col-md-6 col-lg-6 offset-md-3 offset-lg-3 collapse"
+					id="collapseExample"
+				>
+					<div
+						class="card card-body collapse-card-body row"
+					>
+						<div class="col-6">
+							<strong
+								href="#"
+								class="category-links"
+							>
+								STACHE ORIGINALS
+							</strong>
+							<div
+								href="#"
+								class="category-links"
+								id="filter-capes"
+							>
+								Capes
+							</div>
+							<div
+								href="#"
+								class="category-links"
+								id="filter-tShirts"
+							>
+								T-Shirts
+							</div>
+							<div
+								href="#"
+								class="category-links"
+								id="filter-hairStyling"
+							>
+								Hair Styling
+							</div>
+							<div
+								href="#"
+								class="category-links"
+								id="filter-beardShaveMustache"
+							>
+								Beard/Shave/Mustache
+							</div>
+							<div
+								href="#"
+								class="category-links"
+								id="filter-facialBody"
+							>
+								Facial Body
+							</div>
+							<div
+								href="#"
+								class="category-links"
+								id="filter-razors"
+							>
+								Razors
+							</div>
+						</div>
+						<!-- <a href="#" class="category-links" id="filter-snapbacks">Snapbacks</a> -->
+						<div class="col-6">
+							<strong href="#">
+								SHOP BY BRAND
+							</strong>
+							<div
+								href="#"
+								class="brand-links"
+								id="filter-stache"
+							>
+								Stache
+							</div>
+							<div
+								href="#"
+								class="brand-links"
+								id="filter-modernMale"
+							>
+								Modern Male
+							</div>
+							<div
+								href="#"
+								class="brand-links"
+								id="filter-slickGorilla"
+							>
+								Slick Gorilla
+							</div>
+							<div
+								href="#"
+								class="brand-links"
+								id="filter-victoryCrown"
+							>
+								Victory Crown
+							</div>
+							<div
+								href="#"
+								class="brand-links"
+								id="filter-xotics"
+							>
+								Xotics
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="shop-page-content-container"></div>
@@ -257,11 +329,7 @@
 					>
 				</p>
 
-				<p class="shop-footer-scroll">
-					<i class="fas fa-angle-double-up"></i>
-					Back To Top
-					<i class="fas fa-angle-double-up"></i>
-				</p>
+				<p class="shop-footer-scroll"></p>
 
 				<img
 					src="/assets/images/instagram.png"

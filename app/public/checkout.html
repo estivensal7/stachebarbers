@@ -3,8 +3,11 @@
 <html>
         <head>
                         <title>Stache Barbers</title>
+                        <meta
+			name="viewport"
+			content="width=device-width,initial-scale=1"
+		        />
                         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-                        <link rel="stylesheet" type="text/css" href="./assets/css/media.css">
                         <link 
                                 rel="stylesheet" 
                                 href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
@@ -29,7 +32,7 @@
 
         <body>
 
-                <nav>
+                <nav class="full-nav">
                 
                         <div class="nav-header">
                                 <ul>
@@ -79,11 +82,32 @@
                                 </li>
 
                                 <li><a href="/gallery">GALLERY</a></li>
-                                <li><a href="/news">NEWS</a></li>
+                                <li><a href="#">NEWS</a></li>
                                 <li><a href="/contact">CONTACT</a></li>
                         </ul>
 
                 </nav>
+
+                <nav role="navigation" id="mobile-nav">
+			<div id="menuToggle">
+				<input type="checkbox" />
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="/">HOME</a></li>
+					<li><a href="/about">ABOUT</a></li>
+					<li>
+						<a href="/services">SERVICES</a>
+					</li>
+					<li><a href="/gallery">GALLERY</a></li>
+					<li><a href="/news">NEWS</a></li>
+                                        <li><a href="/contact">CONTACT</a></li>
+                                        <li><a href="/products/">SHOP</a></li>
+                                        <li><a href="/checkout">CHECKOUT</a></li>
+				</ul>
+			</div>
+		</nav>
 
                 <div class="row checkout-page-container align-items-center">
                         <div class="col-md-8 mx-auto mb-4">

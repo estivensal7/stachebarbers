@@ -35,7 +35,118 @@ $(document).ready(function() {
 
 	$(".nav-cart-btn").text(`CART [ ${cartTotals} ]`);
 
-	// ADD ITEMS TO CART - FUNCTION
+	// ADD SINGLE PAGE SIZED ITEMS TO CART - FUNCTION
+	$(document).on("click", "button.single-add-to-cart", function() {
+		let currentIndex;
+		let currentSize = "";
+
+		let indexPath = windowPath.split("/")[2].split("-");
+
+		if (indexPath[indexPath.length - 1] == "small") {
+			currentIndex = 0;
+			currentSize = "Small";
+		} else if (indexPath[indexPath.length - 1] == "medium") {
+			currentIndex = 1;
+			currentSize = "Medium";
+		} else if (
+			indexPath[indexPath.length - 1] == "large" &&
+			indexPath[indexPath.length - 2] !== "x" &&
+			indexPath[indexPath.length - 2] !== "xx"
+		) {
+			currentIndex = 2;
+			currentSize = "Large";
+		} else if (indexPath[indexPath.length - 2] == "x") {
+			currentIndex = 3;
+			currentSize = "X-Large";
+		} else if (indexPath[indexPath.length - 2] == "xx") {
+			currentIndex = 4;
+			currentSize = "XX-Large";
+		}
+
+		console.log(currentIndex, currentSize);
+
+		let itemName = $(this)
+			.parent()
+			.parent()
+			.parent()
+			.find(".single-product-name")
+			.text();
+		let itemPrice = $(this)
+			.parent()
+			.parent()
+			.parent()
+			.find(".single-product-price")
+			.text();
+		let itemQuantity = $(this)
+			.parent()
+			.parent()
+			.parent()
+			.find("input[name='item-quantity']")
+			.val();
+
+		let itemSize = currentSize;
+
+		let itemStock = $(this)
+			.parent()
+			.parent()
+			.parent()
+			.find(".single-product-stock")
+			.text();
+
+		let itemId = $(this).val();
+
+		console.log(itemId);
+
+		let itemImgSource = $(this)
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.find("img")
+			.attr("src");
+
+		//grabbing total price by multiply item's price by the quantity selected
+		let priceInteger = parseFloat(itemPrice.slice(0));
+		let quantityInteger = parseInt(itemQuantity);
+		let totalPrice = (priceInteger * quantityInteger).toFixed(2);
+
+		itemToAdd = {
+			name: `${itemName}`,
+			price: `${itemPrice}`,
+			quantity: `${itemQuantity}`,
+			size: `${itemSize}`,
+			totalPrice: `${totalPrice}`,
+			stock: `${itemStock}`,
+			id: `${itemId}`,
+			image_source: `${itemImgSource}`
+		};
+
+		if (itemToAdd.size == "undefined") {
+			itemToAdd.size = " ";
+		}
+
+		cartItems.push(itemToAdd);
+
+		localStorage.setItem("item", JSON.stringify(cartItems));
+
+		// adding item quantity to cartTotal
+		cartTotals = cartTotals + parseInt(itemToAdd.quantity);
+
+		itemToAdd = {
+			name: "",
+			price: "",
+			quantity: "",
+			size: "",
+			totalPrice: "",
+			stock: "",
+			id: "",
+			image_source: ""
+		};
+
+		$(".nav-cart-btn").text(`CART [ ${cartTotals} ]`);
+	});
+
+	// ADD NON-SIZED ITEMS TO CART - FUNCTION
 	$(document).on("click", "button.add-to-cart", function() {
 		let itemName = $(this)
 			.parent()
@@ -146,20 +257,27 @@ $(document).ready(function() {
 	//On-Click fn to handle user checking the cart for their items
 	$(".nav-cart").on("click", function() {
 		let items = JSON.parse(localStorage.getItem("item"));
-
 		let itemToAddToCart = [];
+
+		let checkoutLink = $("<a>")
+			.addClass("btn btn-outline-dark btn-block")
+			.attr("href", "/checkout")
+			.text("Checkout!");
 
 		for (let i = 0; i < items.length; i++) {
 			itemToAddToCart.push(createCartRow(items[i]));
 		}
 
 		cartDropDownContainer.append(itemToAddToCart);
+		cartDropDownContainer.append(checkoutLink);
 	});
 
 	//using jQuery to render html elements for each product
 	function createNewDataContainer(product) {
 		let productContainer = $("<div>");
-		productContainer.addClass("shop-item");
+		productContainer.addClass(
+			"shop-item col-10 col-sm-5 col-md-3 offset-md-1 col-lg-3 col-xl-3 justify-content-between"
+		);
 
 		productContainer.html(`
                 
@@ -195,7 +313,7 @@ $(document).ready(function() {
                                         <div class='btn-group size-control-div' role='group'>
                                                 
                                         </div>
-                                        <button  class=' shop-item-btn add-to-cart'  value=${
+                                        <button  class=' shop-item-btn add-to-cart btn btn-outline-dark btn-block'  value=${
 						product.id
 					}>Add To Cart</button>
                                 </div>
@@ -208,7 +326,9 @@ $(document).ready(function() {
 
 	function createNewSizedDataContainer(product) {
 		let productContainer = $("<div>");
-		productContainer.addClass("shop-item");
+		productContainer.addClass(
+			"shop-item col-10 col-sm-5 col-md-3 offset-md-1 col-lg-3 col-xl-3 justify-content-between"
+		);
 
 		// console.log(product);
 
@@ -233,33 +353,9 @@ $(document).ready(function() {
 					}</p>
                                 </div>
                                 <div class="card-body second-c-body">
-                                        <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
-                                                <div class='input-group'>
-                                                        <div class='input-group-prepend'>
-                                                                <div class='input-group-text shop-item-btn item-quantity' id='btnGroupAddon'>Qty</div>
-                                                        </div>
-                                                        <input type='number' min="1" max=${
-								product.stock
-							} class='form-control shop-item-qty-text' name='item-quantity' aria-label='Input group example' aria-describedby='btnGroupAddon' value="1">
-                                                </div>
-                                        </div>
-                                        <div class='btn-group size-control-div' role='group'>
-                                                <div class="form-group" value="">
-                                                        <select class="form-control size-control" id="exampleFormControlSelect1">
-                                                                <option class="size-option" value="Small">Small</option>
-                                                                <option class="size-option" value="Medium">Medium</option>
-                                                                <option class="size-option" value="Large">Large</option>
-                                                                <option class="size-option" value="X-Large">X-Large</option>
-                                                                <option class="size-option" value="XX-Large">XX-Large</option>
-                                                        </select>
-                                                </div>
-                                        </div>
-                                        <button  class='shop-item-btn add-to-cart'  value=${
-						product.id
-					}>Add To Cart</button>
                                         <a class="view-item-a-tag" value="${
 						product.route_name
-					}"><button  class='shop-item-btn view-item'  value=${product.route_name}>View Item</button></a>
+					}" href="/single-item/${product.route_name}"><button  class='shop-item-btn view-item btn btn-outline-dark btn-block'  value=${product.route_name}>View Item</button></a>
                                 </div>
                         </div>
 
@@ -270,7 +366,9 @@ $(document).ready(function() {
 
 	function outOfStockSizedDataContainer(product) {
 		let productContainer = $("<div>");
-		productContainer.addClass("shop-item");
+		productContainer.addClass(
+			"shop-item col-10 col-sm-5 col-md-3 offset-md-1 col-lg-3 col-xl-3 justify-content-between"
+		);
 
 		productContainer.html(`
                 
@@ -291,7 +389,7 @@ $(document).ready(function() {
                                         <p class="card-text shop-item-id">${
 						product.id
 					}</p>
-                                        <div  class='shop-item-btn sized-out-of-stock-div'  value=${
+                                        <div  class='shop-item-btn sized-out-of-stock-div btn btn-outline-dark btn-block'  value=${
 						product.id
 					}>Out Of Stock</div>
                                 </div>
@@ -304,7 +402,9 @@ $(document).ready(function() {
 
 	function outOfStockDataContainer(product) {
 		let productContainer = $("<div>");
-		productContainer.addClass("shop-item");
+		productContainer.addClass(
+			"shop-item col-10 col-sm-5 col-md-3 offset-md-1 col-lg-3 col-xl-3 justify-content-between"
+		);
 
 		productContainer.html(`
                 
@@ -325,7 +425,7 @@ $(document).ready(function() {
                                         <p class="card-text shop-item-id">${
 						product.id
 					}</p>
-                                        <div  class=' shop-item-btn out-of-stock-div'  value=${
+                                        <div  class=' shop-item-btn out-of-stock-div btn btn-outline-dark btn-block' value=${
 						product.id
 					}>Out Of Stock</div>
                                 </div>
@@ -503,7 +603,9 @@ $(document).ready(function() {
 			let itemRouteId = parseInt(items[i].id);
 			let itemRouteStock = parseInt(items[i].stock);
 			let itemRouteQty = parseInt(items[i].quantity);
-			let itemNewStock = itemRouteStock - itemRouteQty;
+			let itemNewStock = parseInt(
+				itemRouteStock - itemRouteQty
+			);
 
 			$.ajax({
 				method: "PUT",
@@ -513,43 +615,6 @@ $(document).ready(function() {
 				console.log("ran function: update on checkout");
 			});
 		}
-	}
-
-	function singleProductElements(product) {
-		let singleProductDiv = $("<div>");
-
-		singleProductDiv.html(`
-                        <img src="${
-				product.image_source
-			}" class="single-product-img" />
-
-                        <p class="single-product-name">${
-				product.product_name
-			}</p>
-                        <p class="single-product-price">${product.price}</p>
-                        <div class='btn-group size-control-div' role='group'>
-                                <div class="form-group" value="">
-                                        <select class="form-control size-control" id="exampleFormControlSelect1">
-                                                <option class="size-option single-product-s" value="Small">Small</option>
-                                                <option class="size-option single-product-m" value="Medium">Medium</option>
-                                                <option class="size-option single-product-l" value="Large">Large</option>
-                                                <option class="size-option single-product-xl" value="X-Large">X-Large</option>
-                                        </select>
-                                </div>
-                        </div>
-                `);
-
-		return singleProductDiv;
-	}
-
-	// adding information into SINGLE PRODUCT PAGE elements.
-	function initializeSingleProductElements() {
-		singleProductContainer.empty();
-
-		singleProductContainer.append(singleProductElements(product));
-
-		// singleProductContainer.append(productToAdd);
-		console.log(product);
 	}
 
 	$("button.view-item").on("click", function(e) {
@@ -579,6 +644,25 @@ $(document).ready(function() {
 			console.log(allData);
 			product = allData;
 			console.log(product);
+
+			let currentIndex;
+
+			let indexPath = windowPath.split("/")[2].split("-");
+
+			if (indexPath[indexPath.length - 1] == "small") {
+				currentIndex = 0;
+			} else if (
+				indexPath[indexPath.length - 1] == "medium"
+			) {
+				currentIndex = 1;
+			} else if (indexPath[indexPath.length - 1] == "large") {
+				currentIndex = 2;
+			} else if (indexPath[indexPath.length - 1] == "x") {
+				currentIndex = 3;
+			} else if (indexPath[indexPath.length - 1] == "xx") {
+				currentIndex = 4;
+			}
+
 			// initializeSingleProductElements();
 			singleProductContainer.empty();
 
@@ -586,19 +670,49 @@ $(document).ready(function() {
 				`
 			        <img src="${product[0].image_source}" class="single-product-img" />
 
-			        <p class="single-product-name">${product[0].product_name}</p>
-			        <p class="single-product-price">${product[0].price}</p>
-			        <div class='btn-group size-control-div' role='group'>
-			        <div class="form-group" value="">
-			        <select class="form-control size-control" id="exampleFormControlSelect1">
-			        <option class="size-option single-product-s" value="Small">Small</option>
-			        <option class="size-option single-product-m" value="Medium">Medium</option>
-			        <option class="size-option single-product-l" value="Large">Large</option>
-				<option class="size-option single-product-xl" value="X-Large">X-Large</option>
-				<option class="size-option single-product-xxl" value="XX-Large">XX-Large</option>
-			        </select>
-			        </div>
-			        </div>
+				<div class="single-product-info-container">
+					<p class="single-product-name">${product[0].product_name}</p>
+					<p class="single-product-price">${product[0].price}</p>
+					<p class="single-product-stock" value="${product[currentIndex].stock}">${
+					product[currentIndex].stock
+				}</p>
+					<div class='btn-group size-control-div' role='group'>
+						<div class="form-group single-item-size-form" value="${
+							windowPath
+								.split("/")[2]
+								.split("-")[4]
+						}">
+							<a class="btn btn-outline-dark" href="/single-item/${
+								product[0]
+									.route_name
+							}">S</a>
+							<a class="btn btn-outline-dark" href="/single-item/${
+								product[1]
+									.route_name
+							}">M</a>
+							<a class="btn btn-outline-dark" href="/single-item/${
+								product[2]
+									.route_name
+							}">L</a>
+							<a class="btn btn-outline-dark" href="/single-item/${
+								product[3]
+									.route_name
+							}">XL</a>
+							<a class="btn btn-outline-dark" href="/single-item/${
+								product[4]
+									.route_name
+							}">XXL</a>
+							<button  class='shop-item-btn single-add-to-cart'  value=${
+								product[
+									currentIndex
+								].id
+							}>Add To Cart</button>
+						</div>
+					</div>
+					<input type='number' min="1" max=${
+						product[currentIndex].stock
+					} class='form-control shop-item-qty-text' name='item-quantity' aria-label='Quantity Input' aria-describedby='btnGroupAddon' value="1">
+				</div>
 			        `
 			);
 			return singleProductContainer;
@@ -675,16 +789,6 @@ $(document).ready(function() {
 			console.log(data);
 		});
 	});
-
-	// $('#filter-snapbacks').on('click', function(e) {
-	//         e.preventDefault();
-
-	//         $.get('/products/category/snapbacks', (data) => {
-	//                 products = data;
-	//                 initializeDataContainers();
-	//                 console.log(data);
-	//         })
-	// })
 
 	$("#filter-modernMale").on("click", function(e) {
 		e.preventDefault();

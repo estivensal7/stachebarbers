@@ -22,7 +22,10 @@ module.exports = function(app) {
 	//get products by category
 	app.get("/products/category/:category", (req, res) => {
 		Products.findAll({
-			where: { category: req.params.category }
+			where: {
+				category: req.params.category,
+				primary_item: true
+			}
 		})
 			.then(data => {
 				res.json(data);
@@ -35,7 +38,10 @@ module.exports = function(app) {
 	//get products by brand
 	app.get("/products/brand/:brand", (req, res) => {
 		Products.findAll({
-			where: { brand: req.params.brand }
+			where: {
+				brand: req.params.brand,
+				primary_item: true
+			}
 		})
 			.then(data => {
 				res.json(data);
@@ -59,19 +65,6 @@ module.exports = function(app) {
 				console.log(err);
 			});
 	});
-
-	//get single-item based off route-name
-	// app.get("/api/:routename", (req, res) => {
-	// 	Products.findAll({
-	// 		where: { route_name: req.params.routename }
-	// 	})
-	// 		.then(function(data) {
-	// 			res.json(data);
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err);
-	// 		});
-	// });
 
 	app.get("/api/:routename", (req, res) => {
 		Products.findAll({

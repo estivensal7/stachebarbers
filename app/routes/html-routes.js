@@ -82,10 +82,6 @@ app.get("/charge/update", function(req, res) {
 	res.sendFile(path.join(__dirname, "../public/success.html"));
 });
 
-// app.get("/single-item", function(req, res) {
-// 	res.sendFile(path.join(__dirname, "../public/singleProduct.html"));
-// });
-
 app.get("/single-item/:routename?", function(req, res) {
 	res.sendFile(path.join(__dirname, "../public/singleProduct.html"));
 });
