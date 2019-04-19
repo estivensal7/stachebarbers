@@ -1628,6 +1628,10 @@ div.card-body {
 	font-size: 35px;
 }
 
+.single-product-stock {
+	display: none !important;
+}
+
 /* ------------ MEDIA QUERIES ------------ */
 /* ------------ MEDIA QUERIES ------------ */
 /* ------------ MEDIA QUERIES ------------ */
@@ -5134,6 +5138,14 @@ div.card-body {
 	.barber-bio-container > p {
 		font-size: 22px;
 	}
+	
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+	}
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -5694,6 +5706,14 @@ div.card-body {
 		margin: auto;
 		margin-left: 0%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 100px;
+	}
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -6240,6 +6260,14 @@ div.card-body {
 		height: 40px;
 		margin: auto;
 		margin-left: 8%;
+	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 100px;
 	}
 }
 
@@ -10306,6 +10334,38 @@ div.card-body {
 		margin: auto;
 		margin-left: 15%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 100px;
+		display: flex;
+		justify-content: space-between;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock,
+	.single-add-to-cart {
+		font-size: 18px;
+	}
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -11074,6 +11134,36 @@ div.card-body {
 		margin: auto;
 		margin-left: 29%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+		display: block;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock {
+		font-size: 20px;
+	}
 }
 
 /* iPhone 5 ----------- */
@@ -11834,6 +11924,38 @@ div.card-body {
 		height: 40px;
 		margin: auto;
 		margin-left: 15%;
+	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 10px;
+		display: flex;
+		justify-content: space-between;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock,
+	.single-add-to-cart {
+		font-size: 18px;
 	}
 }
 
@@ -12597,6 +12719,36 @@ div.card-body {
 		margin: auto;
 		margin-left: 29%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+		display: block;
+		height: 150vh;
+	}
+
+	.single-product-img {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock {
+		font-size: 20px;
+	}
 }
 
 /* iPhone 6, 7, 8 ----------- */
@@ -13354,6 +13506,38 @@ div.card-body {
 		height: 40px;
 		margin: auto;
 		margin-left: 15%;
+	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+		display: flex;
+		justify-content: space-between;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock,
+	.single-add-to-cart {
+		font-size: 18px;
 	}
 }
 
@@ -14116,6 +14300,30 @@ div.card-body {
 		height: 40px;
 		margin: auto;
 		margin-left: 29%;
+	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+		display: block;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
 	}
 }
 
@@ -15522,6 +15730,38 @@ div.card-body {
 		margin: auto;
 		margin-left: 29%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 100px;
+		display: flex;
+		justify-content: space-between;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock,
+	.single-add-to-cart {
+		font-size: 20px;
+	}
 }
 
 /* iPhone X ----------- */
@@ -16288,6 +16528,38 @@ div.card-body {
 		margin: auto;
 		margin-left: 15%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 100px;
+		display: flex;
+		justify-content: space-between;
+		height: 100vh;
+	}
+
+	.single-product-img {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 40%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
+
+	.single-product-name,
+	.single-product-price,
+	.single-product-stock,
+	.single-add-to-cart {
+		font-size: 20px;
+	}
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
@@ -17050,6 +17322,30 @@ div.card-body {
 		margin: auto;
 		margin-left: 29%;
 	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+		display: block;
+		height: 120vh;
+	}
+
+	.single-product-img {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.single-product-info-container {
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
+	}
 }
 
 /* iPads -----------------*/
@@ -17669,6 +17965,28 @@ div.card-body {
 		height: 40px;
 		margin: auto;
 		margin-left: 29%;
+	}
+
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	/* ------SINGLE PRODUCT PAGE STYLING------ */
+	.single-product-page-content-container {
+		padding: 50px 50px;
+		display: block;
+		height: 160vh;
+	}
+
+	.single-product-img {
+		width: 100%
+	}
+
+	.single-product-info-container {
+		width: 100%;
+	}
+
+	.shop-item-qty-text {
+		width: 75px !important;
 	}
 }
 

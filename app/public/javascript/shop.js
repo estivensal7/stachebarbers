@@ -702,7 +702,7 @@ $(document).ready(function() {
 								product[4]
 									.route_name
 							}">XXL</a>
-							<button  class='shop-item-btn single-add-to-cart'  value=${
+							<button  class='shop-item-btn single-add-to-cart btn btn-dark'  value=${
 								product[
 									currentIndex
 								].id
