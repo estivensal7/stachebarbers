@@ -246,13 +246,33 @@ $(document).ready(function() {
                                         <p class='cart-item-quantity'>Quantity: ${
 						item.quantity
 					}</p>
-                                </div>
+				</div>
+				<button type="button" class="close cart-delete-btn" value= ${item.id}>
+					<span aria-hidden="true">&times;</span>
+				</button>
                         </div>
                         <div class="dropdown-divider"></div>
                 `);
 
 		return cartRow;
 	}
+
+	// FUNCTION FOR DELETING CART ITEMS
+	$(document).on("click", ".cart-delete-btn", function(e) {
+		e.preventDefault();
+		let itemId = $(this).attr("value");
+		let cartData = JSON.parse(localStorage.getItem("item"));
+		let updatedCartData = [];
+
+		cartData.forEach(function(cartItem) {
+			if (cartItem.id !== itemId) {
+				updatedCartData.push(cartItem);
+			}
+		});
+
+		localStorage.setItem("item", JSON.stringify(updatedCartData));
+		location.reload();
+	});
 
 	//On-Click fn to handle user checking the cart for their items
 	$(".nav-cart").on("click", function() {
