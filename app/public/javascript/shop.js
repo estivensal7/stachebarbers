@@ -582,7 +582,6 @@ $(document).ready(function() {
 
 		$.get("/keys/all", function(data) {
 			keysObj = data;
-			console.log(keysObj);
 			$("#stripe-form").html(
 				`<script 
                                 src="https://checkout.stripe.com/checkout.js" 
