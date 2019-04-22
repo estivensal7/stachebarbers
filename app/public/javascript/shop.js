@@ -580,11 +580,14 @@ $(document).ready(function() {
 	if (window.location.pathname === "/checkout") {
 		initializeCheckoutCartRows();
 
-		$("#stripe-form").html(
-			`<script 
+		$.get("/keys/all", function(data) {
+			keysObj = data;
+			console.log(keysObj);
+			$("#stripe-form").html(
+				`<script 
                                 src="https://checkout.stripe.com/checkout.js" 
                                 class="stripe-button" 
-                                data-key="${keys.stripeSecretKey}" 
+                                data-key=${keysObj.STRIPE_PUB_KEY}
                                 data-amount="${stripeTotal}"
                                 data-zip-code="true" 
                                 data-currency="usd" 
@@ -594,8 +597,9 @@ $(document).ready(function() {
                                 data-description="Stache Shop" 
                                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                 data-locale="auto">
-                        </script>`
-		);
+				</script>`
+			);
+		});
 
 		$("#stripe-form").append(
 			`<input name='coKey' value ='${stripeTotal}' class="d-none"/>`
@@ -657,12 +661,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		console.log("hello");
 	});
-
-	if (windowPath === "/products/") {
-		$.get("/keys/all", function(data) {
-			console.log(data);
-		});
-	}
 
 	//get single product from DB
 	if (windowPath.split("/")[1] == "single-item") {

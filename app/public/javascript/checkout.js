@@ -1,5 +1,11 @@
 $(document).ready(function() {
-	Stripe.setPublishableKey(keys.stripePublishableKey);
+	$.get("/keys/all", function(data) {
+		console.log(data);
+		let keysObj = data;
+		console.log(keysObj);
+		Stripe.setPublishableKey(keysObj.STRIPE_PUB_KEY);
+		// console.log(keysObj.STRIPE_PUB_KEY);
+	});
 
 	//grabbing elements
 	let $form = $("#checkout-form");
