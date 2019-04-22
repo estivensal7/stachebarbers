@@ -703,6 +703,11 @@ nav#mobile-nav {
 	font-family: "lhf_amarilloregular", serif;
 }
 
+.mobile-cart-link {
+	padding: 5px 20px;
+	cursor: pointer;
+}
+
 /* SUCCESS PAGE JUMBO STYLING */
 /* SUCCESS PAGE JUMBO STYLING */
 /* SUCCESS PAGE JUMBO STYLING */

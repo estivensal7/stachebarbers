@@ -34,6 +34,7 @@ $(document).ready(function() {
 	}
 
 	$(".nav-cart-btn").text(`CART [ ${cartTotals} ]`);
+	$(".badge-light").text(cartTotals);
 
 	// ADD SINGLE PAGE SIZED ITEMS TO CART - FUNCTION
 	$(document).on("click", "button.single-add-to-cart", function() {
