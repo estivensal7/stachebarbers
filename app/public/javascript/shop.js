@@ -584,7 +584,7 @@ $(document).ready(function() {
 			`<script 
                                 src="https://checkout.stripe.com/checkout.js" 
                                 class="stripe-button" 
-                                data-key="pk_test_fHYWvPPZvMWJQ8YZKvOYafuY" 
+                                data-key="${keys.stripeSecretKey}" 
                                 data-amount="${stripeTotal}"
                                 data-zip-code="true" 
                                 data-currency="usd" 
@@ -657,6 +657,12 @@ $(document).ready(function() {
 		e.preventDefault();
 		console.log("hello");
 	});
+
+	if (windowPath === "/products/") {
+		$.get("/keys/all", function(data) {
+			console.log(data);
+		});
+	}
 
 	//get single product from DB
 	if (windowPath.split("/")[1] == "single-item") {

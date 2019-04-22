@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	const keys = require("../../config/keys");
 	Stripe.setPublishableKey(keys.stripePublishableKey);
 
 	//grabbing elements

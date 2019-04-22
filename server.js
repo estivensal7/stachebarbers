@@ -5,7 +5,6 @@ const path = require("path");
 const stripe = require("stripe")("sk_test_P3IxjKMfr7aqzjaid30giao4");
 const db = require("./app/config/connection");
 const htmlRoutes = require("./app/routes/html-routes.js");
-const apiRoutes = require("./app/routes/api-routes.js");
 
 //Initialize app
 const app = express();
@@ -19,9 +18,8 @@ app.use(express.static("app/public"));
 // app.set('view engine', 'html');
 
 app.use("/", htmlRoutes);
-// app.use("/products", apiRoutes);
 require("./app/routes/api-routes.js")(app);
-// require('./app/routes/charge-routes.js')(app);
+require("./app/routes/keys-routes.js")(app);
 
 app.post("/charge", (req, res) => {
 	const amount = req.body.coKey;
